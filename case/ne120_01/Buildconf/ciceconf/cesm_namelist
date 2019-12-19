@@ -1,0 +1,6 @@
+&cice_inparm 
+xndt_dyn = 1
+ndte = 60
+distribution_type='roundrobin'
+ 
+/ 

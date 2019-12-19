@@ -1,0 +1,14 @@
+#! /bin/csh -f
+#==============================================================================
+# Purpose:
+#     (a) Build gptl library
+#==============================================================================
+
+if (-d $CASEROOT/SourceMods/src.cpe) then
+    setenv CPE_DIR $CASEROOT/SourceMods/src.cpe
+    if (! -d $SHAREDPATH/cpe) then
+        mkdir -p $SHAREDPATH/cpe
+    endif
+    make -C $SHAREDPATH/cpe -f $CASEROOT/Tools/Makefile.cpe install  MACFILE=$CASEROOT/Macros || exit 1
+    exit 0
+endif

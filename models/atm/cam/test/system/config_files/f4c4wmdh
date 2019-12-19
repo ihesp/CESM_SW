@@ -1,0 +1,8 @@
+-spmd -smp
+-debug
+-chem waccm_mozart
+-age_of_air_trcs
+-dyn fv
+-res 4x5
+-phys cam4
+-s

@@ -1,0 +1,7 @@
+fpftcon = /home/export/online1/xwan/cesm/inputdata/lnd/clm2/pftdata/pft-physiology.clm40.c130424.nc
+fsnowaging = /home/export/online1/xwan/cesm/inputdata/lnd/clm2/snicardata/snicar_drdt_bst_fit_60_c070416.nc
+fatmlndfrc = /home/export/online1/xwan/cesm/inputdata/share/domains/domain.lnd.ne120np4_tx01v2.120412.nc
+fsnowoptics = /home/export/online1/xwan/cesm/inputdata/lnd/clm2/snicardata/snicar_optics_5bnd_c090915.nc
+fsurdat = /home/export/online1/xwan/cesm/inputdata/lnd/clm2/surfdata_map/surfdata_ne120np4_simyr1850_c130311.nc
+finidat = /home/export/online1/cesm01/wangl/inputdata/ccsm4_init/b.e13.B1850C5CN.ne120_g16.tuning.005ax/0102-01-01/b.e13.B1850C5CN.ne120_g16.tuning.005ax.clm2.r.0102-01-01-00000.IP_2_T12.nc
+megan_factors_file = /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart/emis/megan21_emis_factors_c20120313.nc

@@ -1,0 +1,11 @@
+&cpl_inparm 
+profile_depth_limit=99999
+profile_detail_limit=99999
+profile_outpe_num=512
+profile_outpe_stride=4
+profile_depth_limit=99999
+profile_detail_limit=99999
+profile_outpe_num=512
+profile_outpe_stride=4
+tprof_n = 1
+tprof_option = 'nday'/ 

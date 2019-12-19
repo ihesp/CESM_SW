@@ -1,0 +1,2 @@
+./xmlchange OCN_CHL_TYPE=prognostic
+./xmlchange POP_TAVG_R8=TRUE

@@ -1,0 +1,13 @@
+lnd2rof_fmapname = /home/export/online1/xwan/cesm/inputdata/lnd/clm2/mappingdata/maps/ne120np4/map_ne120np4_to_0.5x0.5rtm_aave_da_110320.nc
+rof2lnd_fmapname = /home/export/online1/xwan/cesm/inputdata/lnd/clm2/mappingdata/maps/ne120np4/map_0.5x0.5_nomask_to_ne120np4_nomask_aave_da_c121019.nc
+rof2ocn_rmapname = /home/export/online1/xwan/cesm/inputdata/cpl/cpl6/map_r05_to_tx0.1v2_r500e1000_080620.nc
+atm2ocn_fmapname = /home/export/online1/xwan/cesm/inputdata/cpl/gridmaps/ne120np4/map_ne120np4_to_tx0.1v2_aave_110331.nc
+atm2ice_smapname = /home/export/online1/xwan/cesm/inputdata/cpl/gridmaps/ne120np4/map_ne120np4_to_tx0.1v2_090127_bilin_110331.nc
+ocn2atm_fmapname = /home/export/online1/xwan/cesm/inputdata/cpl/gridmaps/tx0.1v2/map_tx0.1v2_to_ne120np4_aave_110331.nc
+atm2ice_vmapname = /home/export/online1/xwan/cesm/inputdata/cpl/gridmaps/ne120np4/map_ne120np4_to_tx0.1v2_090127_bilin_110331.nc
+ice2atm_fmapname = /home/export/online1/xwan/cesm/inputdata/cpl/gridmaps/tx0.1v2/map_tx0.1v2_to_ne120np4_aave_110331.nc
+ice2atm_smapname = /home/export/online1/xwan/cesm/inputdata/cpl/gridmaps/tx0.1v2/map_tx0.1v2_to_ne120np4_aave_110331.nc
+atm2ocn_vmapname = /home/export/online1/xwan/cesm/inputdata/cpl/gridmaps/ne120np4/map_ne120np4_to_tx0.1v2_090127_bilin_110331.nc
+atm2ice_fmapname = /home/export/online1/xwan/cesm/inputdata/cpl/gridmaps/ne120np4/map_ne120np4_to_tx0.1v2_aave_110331.nc
+atm2ocn_smapname = /home/export/online1/xwan/cesm/inputdata/cpl/gridmaps/ne120np4/map_ne120np4_to_tx0.1v2_090127_bilin_110331.nc
+ocn2atm_smapname = /home/export/online1/xwan/cesm/inputdata/cpl/gridmaps/tx0.1v2/map_tx0.1v2_to_ne120np4_aave_110331.nc

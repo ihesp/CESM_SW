@@ -1,0 +1,13 @@
+=================================================================================
+Originator: mickelso
+Date: Oct 08, 2014
+Model: load_balancing_tool
+Version: load_balancing_tool_141008
+One-line: Update default layouts, fix env_archive.xml cpy bug, and connect
+plot points with lines. 
+
+M       global_variables.csh
+M       run_first.csh
+M       code/load_balance.pl
+M       code/cesm_scaling.gplot
+=================================================================================

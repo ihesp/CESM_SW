@@ -1,0 +1,11 @@
+&modelio
+ diri = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/bld/test100_95ocn190515/ocn'
+ diro = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515'
+ logfile = 'ocn.log.190813-183408'
+/
+&pio_inparm
+ pio_numiotasks = -1
+ pio_root = -99
+ pio_stride = -99
+ pio_typename = 'nothing'
+/

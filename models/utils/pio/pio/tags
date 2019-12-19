@@ -1,0 +1,790 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+100	ionf_mod.F90	/^100 call piodie(__PIO_FILE__,__LINE__,'File open error ',0,filename)$/;"	l	subroutine:check_file_type	file:
+101	ionf_mod.F90	/^101 call piodie(__PIO_FILE__,__LINE__,'File read error ',0,filename)$/;"	l	subroutine:check_file_type	file:
+COLLECTIVE	rearr_options.h	5;"	d
+COMPmap	pio_types.F90	/^        type (DecompMap_t)  :: COMPmap /;"	k	type:io_desc_t
+C_F_string_chars	C_interface_mod.F90	/^  subroutine C_F_string_chars(/;"	s	module:C_interface_mod
+C_F_string_ptr	C_interface_mod.F90	/^  subroutine C_F_string_ptr(/;"	s	module:C_interface_mod
+C_associated_pure	C_interface_mod.F90	/^  function C_associated_pure(/;"	f	module:C_interface_mod
+C_enum	C_interface_mod.F90	/^  integer, parameter :: C_enum /;"	v	module:C_interface_mod
+C_interface_mod	C_interface_mod.F90	/^module C_interface_mod$/;"	m
+C_long_int	C_interface_mod.F90	/^      C_short_int = C_short, &$/;"	v	module:C_interface_mod
+C_long_long_int	C_interface_mod.F90	/^      C_long_int = C_long, &$/;"	v	module:C_interface_mod
+C_short_int	C_interface_mod.F90	/^  integer, parameter :: &$/;"	v	module:C_interface_mod
+C_ssize_t	C_interface_mod.F90	/^      C_unsigned_char = C_signed_char, &$/;"	v	module:C_interface_mod
+C_string_alloc	C_interface_mod.F90	/^  function C_string_alloc(/;"	f
+C_string_free	C_interface_mod.F90	/^  subroutine C_string_free(/;"	s
+C_string_value	C_interface_mod.F90	/^  function C_string_value(/;"	f
+C_strlen_safe	C_interface_mod.F90	/^  function C_strlen_safe(/;"	f
+C_uint16_t	C_interface_mod.F90	/^      C_uint8_t = C_int8_t, &$/;"	v	module:C_interface_mod
+C_uint32_t	C_interface_mod.F90	/^      C_uint16_t = C_int16_t, &$/;"	v	module:C_interface_mod
+C_uint64_t	C_interface_mod.F90	/^      C_uint32_t = C_int32_t, &$/;"	v	module:C_interface_mod
+C_uint8_t	C_interface_mod.F90	/^      C_ssize_t = C_size_t, &$/;"	v	module:C_interface_mod
+C_uint_fast16_t	C_interface_mod.F90	/^      C_uint_fast8_t = C_int_fast8_t, &$/;"	v	module:C_interface_mod
+C_uint_fast32_t	C_interface_mod.F90	/^      C_uint_fast16_t = C_int_fast16_t, &$/;"	v	module:C_interface_mod
+C_uint_fast64_t	C_interface_mod.F90	/^      C_uint_fast32_t = C_int_fast32_t, &$/;"	v	module:C_interface_mod
+C_uint_fast8_t	C_interface_mod.F90	/^      C_uint_least64_t = C_int_least64_t, &$/;"	v	module:C_interface_mod
+C_uint_least16_t	C_interface_mod.F90	/^      C_uint_least8_t = C_int_least8_t, &$/;"	v	module:C_interface_mod
+C_uint_least32_t	C_interface_mod.F90	/^      C_uint_least16_t = C_int_least16_t, &$/;"	v	module:C_interface_mod
+C_uint_least64_t	C_interface_mod.F90	/^      C_uint_least32_t = C_int_least32_t, &$/;"	v	module:C_interface_mod
+C_uint_least8_t	C_interface_mod.F90	/^      C_uint64_t = C_int64_t, &$/;"	v	module:C_interface_mod
+C_uintmax_t	C_interface_mod.F90	/^      C_uint_fast64_t = C_int_fast64_t, &$/;"	v	module:C_interface_mod
+C_unsigned	C_interface_mod.F90	/^  integer, parameter :: &$/;"	v	module:C_interface_mod
+C_unsigned_char	C_interface_mod.F90	/^      C_unsigned_long_long = C_long_long, &$/;"	v	module:C_interface_mod
+C_unsigned_int	C_interface_mod.F90	/^      C_long_long_int = C_long_long, &$/;"	v	module:C_interface_mod
+C_unsigned_long	C_interface_mod.F90	/^      C_unsigned_short = C_short, &$/;"	v	module:C_interface_mod
+C_unsigned_long_int	C_interface_mod.F90	/^      C_unsigned_short_int = C_short, &$/;"	v	module:C_interface_mod
+C_unsigned_long_long	C_interface_mod.F90	/^      C_unsigned_long = C_long, &$/;"	v	module:C_interface_mod
+C_unsigned_long_long_int	C_interface_mod.F90	/^      C_unsigned_long_int = C_long, &$/;"	v	module:C_interface_mod
+C_unsigned_short	C_interface_mod.F90	/^      C_unsigned = C_int, &$/;"	v	module:C_interface_mod
+C_unsigned_short_int	C_interface_mod.F90	/^      C_unsigned_int = C_unsigned, &$/;"	v	module:C_interface_mod
+CalcStartandCount	calcdecomp.F90	/^  subroutine CalcStartandCount(/;"	s
+CheckMPIreturn	pio_support.F90	/^  subroutine CheckMPIreturn(/;"	s
+DEF_P2P_HANDSHAKE	rearr_options.h	10;"	d
+DEF_P2P_ISEND	rearr_options.h	11;"	d
+DEF_P2P_MAXREQ	rearr_options.h	12;"	d
+FLOW_CONTROL	rearr_options.h	7;"	d
+F_C_string_chars	C_interface_mod.F90	/^  subroutine F_C_string_chars(/;"	s
+F_C_string_dup	C_interface_mod.F90	/^  function F_C_string_dup(/;"	f
+F_C_string_ptr	C_interface_mod.F90	/^  subroutine F_C_string_ptr(/;"	s	module:C_interface_mod
+F_string_assign_C_string	C_interface_mod.F90	/^  subroutine F_string_assign_C_string(/;"	s	module:C_interface_mod
+File_desc_t	pio_types.F90	/^    type, public :: File_desc_t$/;"	t
+GCDblocksize	calcdisplace_mod.F90	/^  SUBROUTINE GCDblocksize(/;"	s
+IOMaster	pio_types.F90	/^        integer(i4)              :: IOMaster /;"	k	type:IOSystem_desc_t
+IOSystem_desc_t	pio_types.F90	/^    type, public :: IOSystem_desc_t$/;"	t
+IO_comm	pio_types.F90	/^        integer(i4)              :: IO_comm=/;"	k	type:IOSystem_desc_t
+IO_desc2_t	pio_types.F90	/^    type, public :: IO_desc2_t$/;"	t
+IOmap	pio_types.F90	/^        type (DecompMap_t)  :: IOmap /;"	k	type:io_desc_t
+IOproc	pio_types.F90	/^        logical(log_kind)        :: IOproc /;"	k	type:IOSystem_desc_t
+IOroot	pio_types.F90	/^        integer(i4)              :: IOroot /;"	k	type:IOSystem_desc_t
+Info	pio_types.F90	/^        integer(i4)              :: Info=/;"	k	type:IOSystem_desc_t
+MAX_IO_SYSTEMS	pio_types.F90	/^    integer, parameter :: MAX_IO_SYSTEMS=/;"	v
+MPI_TYPE_CREATE_INDEXED_BLOCK	pio_support.F90	/^  subroutine MPI_TYPE_CREATE_INDEXED_BLOCK(/;"	s
+NUL	C_interface_mod.F90	/^  character(len=1,kind=C_char), parameter :: NUL /;"	v	module:C_interface_mod
+PIO_64BIT_DATA	pio_types.F90	/^   integer, public, parameter :: PIO_64BIT_DATA /;"	v
+PIO_64BIT_OFFSET	pio_types.F90	/^   integer, public, parameter :: PIO_64BIT_OFFSET /;"	v
+PIO_BCAST_ERROR	pio_types.F90	/^  integer(i4), public, parameter :: PIO_BCAST_ERROR /;"	v
+PIO_CLOBBER	pio_types.F90	/^   integer, public, parameter :: PIO_CLOBBER /;"	v
+PIO_FILE_IS_OPEN	piolib_mod.F90	/^  logical function PIO_FILE_IS_OPEN(/;"	f
+PIO_INTERNAL_ERROR	pio_types.F90	/^  integer(i4), public, parameter :: PIO_INTERNAL_ERROR /;"	v
+PIO_MAX_NAME	pio_types.F90	/^   integer, public, parameter :: PIO_MAX_NAME /;"	v
+PIO_MAX_VAR_DIMS	pio_types.F90	/^   integer, public, parameter :: PIO_MAX_VAR_DIMS /;"	v
+PIO_NOCLOBBER	pio_types.F90	/^   integer, public, parameter :: PIO_NOCLOBBER /;"	v
+PIO_NOFILL	pio_types.F90	/^   integer, public, parameter :: PIO_NOFILL /;"	v
+PIO_NOWRITE	pio_types.F90	/^   integer, public, parameter :: PIO_NOWRITE /;"	v
+PIO_OFFSET	pio_kinds.F90	/^   integer, parameter, public ::          &$/;"	v	module:pio_kinds
+PIO_RETURN_ERROR	pio_types.F90	/^  integer(i4), public, parameter :: PIO_RETURN_ERROR /;"	v
+PIO_WRITE	pio_types.F90	/^   integer, public, parameter :: PIO_WRITE /;"	v
+PIO_char	pio_types.F90	/^   integer, public, parameter :: PIO_char /;"	v
+PIO_def_dim	nf_mod.F90	/^  integer function PIO_def_dim(/;"	f	module:nf_mod
+PIO_double	pio_types.F90	/^   integer, public, parameter :: PIO_double /;"	v
+PIO_enddef	nf_mod.F90	/^  integer function PIO_enddef(/;"	f	module:nf_mod
+PIO_get_local_array_size	piolib_mod.F90	/^  integer function PIO_get_local_array_size(/;"	f
+PIO_getnum_OST	piolib_mod.F90	/^  integer function PIO_getnum_OST(/;"	f
+PIO_global	pio_types.F90	/^   integer, public, parameter :: PIO_global /;"	v
+PIO_initdecomp_bc	piolib_mod.F90	/^  subroutine PIO_initdecomp_bc(/;"	s
+PIO_initdecomp_dof_dof	piolib_mod.F90	/^  subroutine PIO_initdecomp_dof_dof(/;"	s
+PIO_initdecomp_dof_i4	piolib_mod.F90	/^  subroutine PIO_initdecomp_dof_i4(/;"	s
+PIO_initdecomp_dof_i8	piolib_mod.F90	/^  subroutine PIO_initdecomp_dof_i8(/;"	s
+PIO_initdecomp_dof_i8_vdc	piolib_mod.F90	/^  subroutine PIO_initdecomp_dof_i8_vdc(/;"	s
+PIO_inquire_dimension	nf_mod.F90	/^  integer function PIO_inquire_dimension(/;"	f	module:nf_mod
+PIO_int	pio_types.F90	/^   integer, public, parameter :: PIO_int /;"	v
+PIO_iotype_binary	pio_types.F90	/^        PIO_iotype_direct_pbinary = 2,  & !use MPI-IO with data types to read\/write direct access binary files$/;"	v
+PIO_iotype_direct_pbinary	pio_types.F90	/^        PIO_iotype_pbinary = 1, &! use MPI-IO with data types to read\/write C like binary files$/;"	v
+PIO_iotype_netcdf	pio_types.F90	/^        PIO_iotype_pnetcdf = 5, &   ! parallel read\/write of pNetCDF files$/;"	v
+PIO_iotype_netcdf4c	pio_types.F90	/^        PIO_iotype_netcdf  = 6, &   ! serial read\/write of NetCDF file using 'base_node'$/;"	v
+PIO_iotype_netcdf4p	pio_types.F90	/^        PIO_iotype_netcdf4c = 7, &  ! netcdf4 (hdf5 format) file opened for compression (serial write access only)   $/;"	v
+PIO_iotype_pbinary	pio_types.F90	/^    integer(i4), public, parameter ::  &$/;"	v
+PIO_iotype_pnetcdf	pio_types.F90	/^        PIO_iotype_binary  = 4, &   ! serial read\/write of binary files using 'base_node'$/;"	v
+PIO_iotype_vdc2	pio_types.F90	/^        PIO_iotype_netcdf4p = 8, &  ! netcdf4 (hdf5 format) file opened in parallel (all netcdf4 files for read will be opened this way)$/;"	v
+PIO_noerr	pio_types.F90	/^   integer, public, parameter :: PIO_noerr /;"	v
+PIO_nowrite	pio_types.F90	/^   integer, public, parameter :: PIO_nowrite /;"	v
+PIO_num_OST	pio_types.F90	/^   integer, public, parameter :: PIO_num_OST /;"	v
+PIO_openfile	piolib_mod.F90	/^  integer function PIO_openfile(/;"	f
+PIO_real	pio_types.F90	/^   integer, public, parameter :: PIO_real /;"	v
+PIO_rearr_box	pio_types.F90	/^    integer(i4), public, parameter :: PIO_rearr_box /;"	v
+PIO_rearr_none	pio_types.F90	/^    integer(i4), public, parameter :: PIO_rearr_none /;"	v
+PIO_redef	nf_mod.F90	/^  integer function PIO_redef(/;"	f	module:nf_mod
+PIO_set_hint	piolib_mod.F90	/^  subroutine PIO_set_hint(/;"	s
+PIO_setnum_OST	piolib_mod.F90	/^  subroutine PIO_setnum_OST(/;"	s
+PIO_unlimited	pio_types.F90	/^   integer, public, parameter :: PIO_unlimited /;"	v
+POINT_TO_POINT	rearr_options.h	6;"	d
+Personality	topology.c	18;"	d	file:
+Personality	topology.c	35;"	d	file:
+Personality	topology.c	53;"	d	file:
+Personality_getLocationString	topology.c	19;"	d	file:
+Personality_getLocationString	topology.c	36;"	d	file:
+Personality_numIONodes	topology.c	20;"	d	file:
+Personality_numIONodes	topology.c	37;"	d	file:
+Personality_numNodesInPset	topology.c	22;"	d	file:
+Personality_numNodesInPset	topology.c	38;"	d	file:
+Personality_numPsets	topology.c	21;"	d	file:
+Personality_psetNum	topology.c	24;"	d	file:
+Personality_psetNum	topology.c	40;"	d	file:
+Personality_rankInPset	topology.c	23;"	d	file:
+Personality_rankInPset	topology.c	39;"	d	file:
+REARR_OPTIONS_H	rearr_options.h	2;"	d
+Read	pio_types.F90	/^        type(IO_desc2_t)    :: Read$/;"	k	type:io_desc_t
+Read_FORTRAN_CntrlWord	iompi_mod.F90	/^ subroutine Read_FORTRAN_CntrlWord(/;"	s	module:iompi_mod
+TYPEDOUBLE	dtypes.h	1;"	d
+TYPEINT	dtypes.h	2;"	d
+TYPELONG	dtypes.h	4;"	d
+TYPEREAL	dtypes.h	5;"	d
+TYPETEXT	dtypes.h	3;"	d
+UseRearranger	pio_types.F90	/^        logical(log_kind)        :: UseRearranger /;"	k	type:IOSystem_desc_t
+Var_desc_t	pio_types.F90	/^    type, public :: Var_desc_t$/;"	t
+Write	pio_types.F90	/^        type(IO_desc2_t)    :: Write$/;"	k	type:io_desc_t
+Write_FORTRAN_CntrlWord	iompi_mod.F90	/^ subroutine Write_FORTRAN_CntrlWord(/;"	s	module:iompi_mod
+add_data_to_buffer_double	piodarray.F90	/^  subroutine add_data_to_buffer_double /;"	s
+add_data_to_buffer_int	piodarray.F90	/^  subroutine add_data_to_buffer_int /;"	s
+add_data_to_buffer_real	piodarray.F90	/^  subroutine add_data_to_buffer_real /;"	s
+add_to_file_list	pio_msg_mod.F90	/^  subroutine add_to_file_list(/;"	s
+add_to_iodesc_list	pio_msg_mod.F90	/^  subroutine add_to_iodesc_list(/;"	s
+adjust_bounds	piovdc.F90	/^  subroutine adjust_bounds(/;"	s	module:piovdc
+advanceframe	piolib_mod.F90	/^  subroutine advanceframe(/;"	s
+alloc_check_0d_double	alloc_mod.F90	/^  subroutine alloc_check_0d_double(/;"	s	module:alloc_mod
+alloc_check_0d_int	alloc_mod.F90	/^  subroutine alloc_check_0d_int(/;"	s	module:alloc_mod
+alloc_check_0d_long	alloc_mod.F90	/^  subroutine alloc_check_0d_long(/;"	s	module:alloc_mod
+alloc_check_0d_real	alloc_mod.F90	/^  subroutine alloc_check_0d_real(/;"	s	module:alloc_mod
+alloc_check_1d_double	alloc_mod.F90	/^  subroutine alloc_check_1d_double /;"	s	module:alloc_mod
+alloc_check_1d_int	alloc_mod.F90	/^  subroutine alloc_check_1d_int /;"	s	module:alloc_mod
+alloc_check_1d_long	alloc_mod.F90	/^  subroutine alloc_check_1d_long /;"	s	module:alloc_mod
+alloc_check_1d_real	alloc_mod.F90	/^  subroutine alloc_check_1d_real /;"	s	module:alloc_mod
+alloc_check_2d_double	alloc_mod.F90	/^  subroutine alloc_check_2d_double /;"	s	module:alloc_mod
+alloc_check_2d_int	alloc_mod.F90	/^  subroutine alloc_check_2d_int /;"	s	module:alloc_mod
+alloc_check_2d_long	alloc_mod.F90	/^  subroutine alloc_check_2d_long /;"	s	module:alloc_mod
+alloc_check_2d_real	alloc_mod.F90	/^  subroutine alloc_check_2d_real /;"	s	module:alloc_mod
+alloc_mod	alloc_mod.F90	/^module alloc_mod$/;"	m
+alloc_print_usage	alloc_mod.F90	/^  subroutine alloc_print_usage(/;"	s	module:alloc_mod
+alloc_trace_off	alloc_mod.F90	/^  subroutine alloc_trace_off(/;"	s	module:alloc_mod
+alloc_trace_on	alloc_mod.F90	/^  subroutine alloc_trace_on(/;"	s	module:alloc_mod
+async_id	pio_types.F90	/^        integer(i4) :: async_id$/;"	k	type:io_desc_t
+async_interface	pio_types.F90	/^        logical(log_kind)        :: async_interface=/;"	k	type:IOSystem_desc_t
+att_1d_handler	pio_msg_callbacks.F90	/^subroutine att_1d_handler(/;"	s
+att_handler	pio_msg_callbacks.F90	/^subroutine att_handler(/;"	s
+auto_get_start_count	piovdc.F90	/^  subroutine auto_get_start_count(/;"	s	module:piovdc
+bad_iotype	pio_utils.F90	/^  subroutine bad_iotype(/;"	s	module:pio_utils
+baseTYPE	pio_types.F90	/^        integer :: baseTYPE$/;"	k	type:io_desc_t
+bgq_ion_id	topology.c	/^int bgq_ion_id (void)$/;"	f
+bgq_pset_info	topology.c	/^int bgq_pset_info (MPI_Fint comm2, int* tot_pset, int* psetID, int* pset_size, int* rank_in_pset)$/;"	f
+box_rearrange	box_rearrange.F90	/^module box_rearrange$/;"	m
+box_rearrange_comp2io_double	box_rearrange.F90	/^subroutine box_rearrange_comp2io_double /;"	s	module:box_rearrange
+box_rearrange_comp2io_int	box_rearrange.F90	/^subroutine box_rearrange_comp2io_int /;"	s	module:box_rearrange
+box_rearrange_comp2io_real	box_rearrange.F90	/^subroutine box_rearrange_comp2io_real /;"	s	module:box_rearrange
+box_rearrange_create	box_rearrange.F90	/^  subroutine box_rearrange_create(/;"	s	module:box_rearrange
+box_rearrange_free	box_rearrange.F90	/^  subroutine box_rearrange_free(/;"	s	module:box_rearrange
+box_rearrange_io2comp_double	box_rearrange.F90	/^subroutine box_rearrange_io2comp_double /;"	s	module:box_rearrange
+box_rearrange_io2comp_int	box_rearrange.F90	/^subroutine box_rearrange_io2comp_int /;"	s	module:box_rearrange
+box_rearrange_io2comp_real	box_rearrange.F90	/^subroutine box_rearrange_io2comp_real /;"	s	module:box_rearrange
+buffsize	pio_types.F90	/^       integer :: buffsize=/;"	k	type:File_desc_t
+calcdisplace	calcdisplace_mod.F90	/^  subroutine calcdisplace(/;"	s
+calcdisplace_box	calcdisplace_mod.F90	/^  subroutine calcdisplace_box(/;"	s
+ceil2	pio_spmd_utils.F90	/^  integer function ceil2(/;"	f	module:pio_spmd_utils
+char_len	pio_kinds.F90	/^   integer, parameter, public ::          &$/;"	v	module:pio_kinds
+check_file_type	ionf_mod.F90	/^  subroutine check_file_type(/;"	s
+check_netcdf	pio_utils.F90	/^  subroutine check_netcdf(/;"	s	module:pio_utils
+close_mpiio	iompi_mod.F90	/^ integer function close_mpiio(/;"	f	module:iompi_mod
+close_nf	ionf_mod.F90	/^  integer function close_nf(/;"	f
+closefile	piolib_mod.F90	/^  subroutine closefile(/;"	s
+compMaster	pio_types.F90	/^        integer(i4)              :: compMaster /;"	k	type:IOSystem_desc_t
+comp_comm	pio_types.F90	/^        integer(i4)              :: comp_comm=/;"	k	type:IOSystem_desc_t
+comp_rank	pio_types.F90	/^        integer(i4)              :: comp_rank /;"	k	type:IOSystem_desc_t
+comproot	pio_types.F90	/^        integer(i4)              :: comproot /;"	k	type:IOSystem_desc_t
+compsize	pio_types.F90	/^	integer(i4)         :: compsize /;"	k	type:io_desc_t
+compute_counts	box_rearrange.F90	/^  subroutine compute_counts(/;"	s	module:box_rearrange
+compute_dest	box_rearrange.F90	/^  subroutine compute_dest(/;"	s	module:box_rearrange
+computestartandcount	calcdecomp.F90	/^  subroutine computestartandcount(/;"	s
+converged	calcdecomp.F90	/^  logical :: converged=/;"	v	program:sandctest
+copy_decompmap	piolib_mod.F90	/^  subroutine copy_decompmap(/;"	s
+copy_pio_var01d	pio_nf_utils.F90	/^subroutine copy_pio_var01d(/;"	s	module:pio_nf_utils
+copy_pio_var2d	pio_nf_utils.F90	/^subroutine copy_pio_var2d(/;"	s	module:pio_nf_utils
+count	calcdecomp.F90	/^  integer(kind=pio_offset) :: start(ndims), count(/;"	v	program:sandctest
+count	pio_types.F90	/^	integer(kind=PIO_Offset), pointer :: count(/;"	k	type:io_desc_t
+create_file_handler	pio_msg_callbacks.F90	/^subroutine create_file_handler(/;"	s
+create_mpiio	iompi_mod.F90	/^ integer function create_mpiio(/;"	f	module:iompi_mod
+create_nf	ionf_mod.F90	/^  integer function create_nf(/;"	f
+createfile	piolib_mod.F90	/^  integer function createfile(/;"	f
+darray_write_complete	piodarray.F90	/^  subroutine darray_write_complete(/;"	s
+data_double	pio_types.F90	/^       real(r8), pointer :: data_double(/;"	k	type:io_data_list
+data_int	pio_types.F90	/^       integer(i4), pointer :: data_int(/;"	k	type:io_data_list
+data_list_top	pio_types.F90	/^       type(io_data_list), pointer :: data_list_top /;"	k	type:File_desc_t
+data_real	pio_types.F90	/^       real(r4), pointer :: data_real(/;"	k	type:io_data_list
+dealloc_check_0d_double	alloc_mod.F90	/^subroutine dealloc_check_0d_double /;"	s	module:alloc_mod
+dealloc_check_0d_int	alloc_mod.F90	/^subroutine dealloc_check_0d_int /;"	s	module:alloc_mod
+dealloc_check_0d_long	alloc_mod.F90	/^subroutine dealloc_check_0d_long /;"	s	module:alloc_mod
+dealloc_check_0d_real	alloc_mod.F90	/^subroutine dealloc_check_0d_real /;"	s	module:alloc_mod
+dealloc_check_1d_double	alloc_mod.F90	/^  subroutine dealloc_check_1d_double /;"	s	module:alloc_mod
+dealloc_check_1d_int	alloc_mod.F90	/^  subroutine dealloc_check_1d_int /;"	s	module:alloc_mod
+dealloc_check_1d_long	alloc_mod.F90	/^  subroutine dealloc_check_1d_long /;"	s	module:alloc_mod
+dealloc_check_1d_real	alloc_mod.F90	/^  subroutine dealloc_check_1d_real /;"	s	module:alloc_mod
+dealloc_check_2d_double	alloc_mod.F90	/^  subroutine dealloc_check_2d_double /;"	s	module:alloc_mod
+dealloc_check_2d_int	alloc_mod.F90	/^  subroutine dealloc_check_2d_int /;"	s	module:alloc_mod
+dealloc_check_2d_long	alloc_mod.F90	/^  subroutine dealloc_check_2d_long /;"	s	module:alloc_mod
+dealloc_check_2d_real	alloc_mod.F90	/^  subroutine dealloc_check_2d_real /;"	s	module:alloc_mod
+def_var_0d	nf_mod.F90	/^  integer function def_var_0d(/;"	f	module:nf_mod
+def_var_md	nf_mod.F90	/^  integer function def_var_md(/;"	f	module:nf_mod
+delete_from_file_list	pio_msg_mod.F90	/^  subroutine delete_from_file_list(/;"	s
+delete_from_iodesc_list	pio_msg_mod.F90	/^  function delete_from_iodesc_list(/;"	f
+dest_ioindex	pio_types.F90	/^        integer(kind=pio_offset), pointer :: dest_ioindex(/;"	k	type:io_desc_t
+dest_ioproc	pio_types.F90	/^        integer, pointer :: dest_ioproc(/;"	k	type:io_desc_t
+determineiotasks	topology.c	/^void determineiotasks(const MPI_Comm comm, const int stride, const int rearr, $/;"	f
+dupiodesc	piolib_mod.F90	/^  subroutine dupiodesc(/;"	s
+dupiodesc2	piolib_mod.F90	/^  subroutine dupiodesc2(/;"	s
+elemTYPE	pio_types.F90	/^        integer(i4)         ::  elemTYPE$/;"	k	type:IO_desc2_t
+error_handling	pio_types.F90	/^	integer(i4)              :: error_handling /;"	k	type:IOSystem_desc_t
+fh	pio_types.F90	/^       integer(i4) :: fh$/;"	k	type:File_desc_t
+fileTYPE	pio_types.F90	/^        integer(i4)         ::  fileTYPE /;"	k	type:IO_desc2_t
+file_is_open	pio_types.F90	/^       logical                  :: file_is_open /;"	k	type:File_desc_t
+finalize	piolib_mod.F90	/^  subroutine finalize(/;"	s
+finalize_handler	pio_msg_callbacks.F90	/^subroutine finalize_handler(/;"	s
+find_io_comprank	box_rearrange.F90	/^  integer function find_io_comprank(/;"	f	module:box_rearrange
+find_ioproc	box_rearrange.F90	/^  logical function find_ioproc(/;"	f	module:box_rearrange
+freedecomp_file	piolib_mod.F90	/^  subroutine freedecomp_file(/;"	s
+freedecomp_handler	pio_msg_callbacks.F90	/^subroutine freedecomp_handler(/;"	s
+freedecomp_ios	piolib_mod.F90	/^  subroutine freedecomp_ios(/;"	s
+gcd_array_i4	calcdisplace_mod.F90	/^  integer function gcd_array_i4(/;"	f
+gcd_array_i8	calcdisplace_mod.F90	/^  integer(kind=pio_offset) function gcd_array_i8(/;"	f
+gcd_pair_i4	calcdisplace_mod.F90	/^  integer FUNCTION gcd_pair_i4(/;"	f
+gcd_pair_i8	calcdisplace_mod.F90	/^  integer(kind=pio_offset) FUNCTION gcd_pair_i8(/;"	f
+gdims	calcdecomp.F90	/^  integer, parameter :: gdims(/;"	v	program:sandctest
+genindexedblock	piolib_mod.F90	/^  subroutine genindexedblock(/;"	s
+gensubarray	piolib_mod.F90	/^  subroutine gensubarray(/;"	s
+get_att_1d_double	pionfatt_mod.F90	/^  integer function get_att_1d_double /;"	f
+get_att_1d_int	pionfatt_mod.F90	/^  integer function get_att_1d_int /;"	f
+get_att_1d_real	pionfatt_mod.F90	/^  integer function get_att_1d_real /;"	f
+get_att_desc_1d_double	pionfatt_mod.F90	/^  integer function get_att_desc_1d_double /;"	f
+get_att_desc_1d_int	pionfatt_mod.F90	/^  integer function get_att_desc_1d_int /;"	f
+get_att_desc_1d_real	pionfatt_mod.F90	/^  integer function get_att_desc_1d_real /;"	f
+get_att_desc_double	pionfatt_mod.F90	/^  integer function get_att_desc_double /;"	f
+get_att_desc_int	pionfatt_mod.F90	/^  integer function get_att_desc_int /;"	f
+get_att_desc_real	pionfatt_mod.F90	/^  integer function get_att_desc_real /;"	f
+get_att_desc_text	pionfatt_mod.F90	/^  integer function get_att_desc_text /;"	f
+get_att_double	pionfatt_mod.F90	/^  integer function get_att_double /;"	f
+get_att_int	pionfatt_mod.F90	/^  integer function get_att_int /;"	f
+get_att_real	pionfatt_mod.F90	/^  integer function get_att_real /;"	f
+get_att_text	pionfatt_mod.F90	/^  integer function get_att_text /;"	f
+get_personality	topology.c	16;"	d	file:
+get_personality	topology.c	33;"	d	file:
+get_personality	topology.c	51;"	d	file:
+get_processor_id	topology.c	17;"	d	file:
+get_processor_id	topology.c	34;"	d	file:
+get_processor_id	topology.c	52;"	d	file:
+get_var1_double	pionfget_mod.F90	/^  integer function get_var1_double /;"	f
+get_var1_int	pionfget_mod.F90	/^  integer function get_var1_int /;"	f
+get_var1_real	pionfget_mod.F90	/^  integer function get_var1_real /;"	f
+get_var1_text	pionfget_mod.F90	/^  integer function get_var1_text /;"	f
+get_var1_vdesc_double	pionfget_mod.F90	/^  integer function get_var1_vdesc_double /;"	f
+get_var1_vdesc_int	pionfget_mod.F90	/^  integer function get_var1_vdesc_int /;"	f
+get_var1_vdesc_real	pionfget_mod.F90	/^  integer function get_var1_vdesc_real /;"	f
+get_var1_vdesc_text	pionfget_mod.F90	/^  integer function get_var1_vdesc_text /;"	f
+get_var_0d_double	pionfget_mod.F90	/^  integer function get_var_0d_double /;"	f
+get_var_0d_int	pionfget_mod.F90	/^  integer function get_var_0d_int /;"	f
+get_var_0d_real	pionfget_mod.F90	/^  integer function get_var_0d_real /;"	f
+get_var_0d_text	pionfget_mod.F90	/^  integer function get_var_0d_text /;"	f
+get_var_1d_double	pionfget_mod.F90	/^  integer function get_var_1d_double /;"	f
+get_var_1d_int	pionfget_mod.F90	/^  integer function get_var_1d_int /;"	f
+get_var_1d_real	pionfget_mod.F90	/^  integer function get_var_1d_real /;"	f
+get_var_1d_text	pionfget_mod.F90	/^  integer function get_var_1d_text /;"	f
+get_var_2d_double	pionfget_mod.F90	/^  integer function get_var_2d_double /;"	f
+get_var_2d_int	pionfget_mod.F90	/^  integer function get_var_2d_int /;"	f
+get_var_2d_real	pionfget_mod.F90	/^  integer function get_var_2d_real /;"	f
+get_var_2d_text	pionfget_mod.F90	/^  integer function get_var_2d_text /;"	f
+get_var_3d_double	pionfget_mod.F90	/^  integer function get_var_3d_double /;"	f
+get_var_3d_int	pionfget_mod.F90	/^  integer function get_var_3d_int /;"	f
+get_var_3d_real	pionfget_mod.F90	/^  integer function get_var_3d_real /;"	f
+get_var_3d_text	pionfget_mod.F90	/^  integer function get_var_3d_text /;"	f
+get_var_4d_double	pionfget_mod.F90	/^  integer function get_var_4d_double /;"	f
+get_var_4d_int	pionfget_mod.F90	/^  integer function get_var_4d_int /;"	f
+get_var_4d_real	pionfget_mod.F90	/^  integer function get_var_4d_real /;"	f
+get_var_4d_text	pionfget_mod.F90	/^  integer function get_var_4d_text /;"	f
+get_var_5d_double	pionfget_mod.F90	/^  integer function get_var_5d_double /;"	f
+get_var_5d_int	pionfget_mod.F90	/^  integer function get_var_5d_int /;"	f
+get_var_5d_real	pionfget_mod.F90	/^  integer function get_var_5d_real /;"	f
+get_var_5d_text	pionfget_mod.F90	/^  integer function get_var_5d_text /;"	f
+get_var_vdesc_0d_double	pionfget_mod.F90	/^  integer function get_var_vdesc_0d_double /;"	f
+get_var_vdesc_0d_int	pionfget_mod.F90	/^  integer function get_var_vdesc_0d_int /;"	f
+get_var_vdesc_0d_real	pionfget_mod.F90	/^  integer function get_var_vdesc_0d_real /;"	f
+get_var_vdesc_0d_text	pionfget_mod.F90	/^  integer function get_var_vdesc_0d_text /;"	f
+get_var_vdesc_1d_double	pionfget_mod.F90	/^  integer function get_var_vdesc_1d_double /;"	f
+get_var_vdesc_1d_int	pionfget_mod.F90	/^  integer function get_var_vdesc_1d_int /;"	f
+get_var_vdesc_1d_real	pionfget_mod.F90	/^  integer function get_var_vdesc_1d_real /;"	f
+get_var_vdesc_1d_text	pionfget_mod.F90	/^  integer function get_var_vdesc_1d_text /;"	f
+get_var_vdesc_2d_double	pionfget_mod.F90	/^  integer function get_var_vdesc_2d_double /;"	f
+get_var_vdesc_2d_int	pionfget_mod.F90	/^  integer function get_var_vdesc_2d_int /;"	f
+get_var_vdesc_2d_real	pionfget_mod.F90	/^  integer function get_var_vdesc_2d_real /;"	f
+get_var_vdesc_2d_text	pionfget_mod.F90	/^  integer function get_var_vdesc_2d_text /;"	f
+get_var_vdesc_3d_double	pionfget_mod.F90	/^  integer function get_var_vdesc_3d_double /;"	f
+get_var_vdesc_3d_int	pionfget_mod.F90	/^  integer function get_var_vdesc_3d_int /;"	f
+get_var_vdesc_3d_real	pionfget_mod.F90	/^  integer function get_var_vdesc_3d_real /;"	f
+get_var_vdesc_3d_text	pionfget_mod.F90	/^  integer function get_var_vdesc_3d_text /;"	f
+get_var_vdesc_4d_double	pionfget_mod.F90	/^  integer function get_var_vdesc_4d_double /;"	f
+get_var_vdesc_4d_int	pionfget_mod.F90	/^  integer function get_var_vdesc_4d_int /;"	f
+get_var_vdesc_4d_real	pionfget_mod.F90	/^  integer function get_var_vdesc_4d_real /;"	f
+get_var_vdesc_4d_text	pionfget_mod.F90	/^  integer function get_var_vdesc_4d_text /;"	f
+get_var_vdesc_5d_double	pionfget_mod.F90	/^  integer function get_var_vdesc_5d_double /;"	f
+get_var_vdesc_5d_int	pionfget_mod.F90	/^  integer function get_var_vdesc_5d_int /;"	f
+get_var_vdesc_5d_real	pionfget_mod.F90	/^  integer function get_var_vdesc_5d_real /;"	f
+get_var_vdesc_5d_text	pionfget_mod.F90	/^  integer function get_var_vdesc_5d_text /;"	f
+get_vara_1d_double	pionfget_mod.F90	/^  integer function get_vara_1d_double /;"	f
+get_vara_1d_int	pionfget_mod.F90	/^  integer function get_vara_1d_int /;"	f
+get_vara_1d_real	pionfget_mod.F90	/^  integer function get_vara_1d_real /;"	f
+get_vara_1d_text	pionfget_mod.F90	/^  integer function get_vara_1d_text /;"	f
+get_vara_2d_double	pionfget_mod.F90	/^  integer function get_vara_2d_double /;"	f
+get_vara_2d_int	pionfget_mod.F90	/^  integer function get_vara_2d_int /;"	f
+get_vara_2d_real	pionfget_mod.F90	/^  integer function get_vara_2d_real /;"	f
+get_vara_2d_text	pionfget_mod.F90	/^  integer function get_vara_2d_text /;"	f
+get_vara_3d_double	pionfget_mod.F90	/^  integer function get_vara_3d_double /;"	f
+get_vara_3d_int	pionfget_mod.F90	/^  integer function get_vara_3d_int /;"	f
+get_vara_3d_real	pionfget_mod.F90	/^  integer function get_vara_3d_real /;"	f
+get_vara_3d_text	pionfget_mod.F90	/^  integer function get_vara_3d_text /;"	f
+get_vara_4d_double	pionfget_mod.F90	/^  integer function get_vara_4d_double /;"	f
+get_vara_4d_int	pionfget_mod.F90	/^  integer function get_vara_4d_int /;"	f
+get_vara_4d_real	pionfget_mod.F90	/^  integer function get_vara_4d_real /;"	f
+get_vara_4d_text	pionfget_mod.F90	/^  integer function get_vara_4d_text /;"	f
+get_vara_5d_double	pionfget_mod.F90	/^  integer function get_vara_5d_double /;"	f
+get_vara_5d_int	pionfget_mod.F90	/^  integer function get_vara_5d_int /;"	f
+get_vara_5d_real	pionfget_mod.F90	/^  integer function get_vara_5d_real /;"	f
+get_vara_5d_text	pionfget_mod.F90	/^  integer function get_vara_5d_text /;"	f
+get_vara_vdesc_1d_double	pionfget_mod.F90	/^  integer function get_vara_vdesc_1d_double /;"	f
+get_vara_vdesc_1d_int	pionfget_mod.F90	/^  integer function get_vara_vdesc_1d_int /;"	f
+get_vara_vdesc_1d_real	pionfget_mod.F90	/^  integer function get_vara_vdesc_1d_real /;"	f
+get_vara_vdesc_1d_text	pionfget_mod.F90	/^  integer function get_vara_vdesc_1d_text /;"	f
+get_vara_vdesc_2d_double	pionfget_mod.F90	/^  integer function get_vara_vdesc_2d_double /;"	f
+get_vara_vdesc_2d_int	pionfget_mod.F90	/^  integer function get_vara_vdesc_2d_int /;"	f
+get_vara_vdesc_2d_real	pionfget_mod.F90	/^  integer function get_vara_vdesc_2d_real /;"	f
+get_vara_vdesc_2d_text	pionfget_mod.F90	/^  integer function get_vara_vdesc_2d_text /;"	f
+get_vara_vdesc_3d_double	pionfget_mod.F90	/^  integer function get_vara_vdesc_3d_double /;"	f
+get_vara_vdesc_3d_int	pionfget_mod.F90	/^  integer function get_vara_vdesc_3d_int /;"	f
+get_vara_vdesc_3d_real	pionfget_mod.F90	/^  integer function get_vara_vdesc_3d_real /;"	f
+get_vara_vdesc_3d_text	pionfget_mod.F90	/^  integer function get_vara_vdesc_3d_text /;"	f
+get_vara_vdesc_4d_double	pionfget_mod.F90	/^  integer function get_vara_vdesc_4d_double /;"	f
+get_vara_vdesc_4d_int	pionfget_mod.F90	/^  integer function get_vara_vdesc_4d_int /;"	f
+get_vara_vdesc_4d_real	pionfget_mod.F90	/^  integer function get_vara_vdesc_4d_real /;"	f
+get_vara_vdesc_4d_text	pionfget_mod.F90	/^  integer function get_vara_vdesc_4d_text /;"	f
+get_vara_vdesc_5d_double	pionfget_mod.F90	/^  integer function get_vara_vdesc_5d_double /;"	f
+get_vara_vdesc_5d_int	pionfget_mod.F90	/^  integer function get_vara_vdesc_5d_int /;"	f
+get_vara_vdesc_5d_real	pionfget_mod.F90	/^  integer function get_vara_vdesc_5d_real /;"	f
+get_vara_vdesc_5d_text	pionfget_mod.F90	/^  integer function get_vara_vdesc_5d_text /;"	f
+getnumiotasks	piolib_mod.F90	/^   subroutine getnumiotasks(/;"	s
+gindex_to_coord	box_rearrange.F90	/^  subroutine gindex_to_coord(/;"	s	module:box_rearrange
+glen	pio_types.F90	/^        integer(kind=PIO_OFFSET)         :: glen /;"	k	type:io_desc_t
+i	calcdecomp.F90	/^  in/;"	v	program:sandctest
+i4	pio_kinds.F90	/^      int_kind  = kind(1)                ,&$/;"	v	module:pio_kinds
+i8	pio_kinds.F90	/^      i4        = selected_int_kind(6)   ,&$/;"	v	module:pio_kinds
+identity	topology.c	/^void identity(MPI_Fint *comm, int *iotask)$/;"	f
+imax	calcdecomp.F90	/^  integer, parameter :: imax=/;"	v	program:sandctest
+index	pio_msg_mod.F90	/^      integer :: index$/;"	k	type:io_desc_list
+init_intercom	piolib_mod.F90	/^  subroutine init_intercom(/;"	s
+init_intracom	piolib_mod.F90	/^  subroutine init_intracom(/;"	s
+init_vdc2	piovdc.F90	/^  subroutine init_vdc2(/;"	s	module:piovdc
+initdecomp_1dof_bin_i4	piolib_mod.F90	/^  subroutine initdecomp_1dof_bin_i4(/;"	s
+initdecomp_1dof_bin_i8	piolib_mod.F90	/^  subroutine initdecomp_1dof_bin_i8(/;"	s
+initdecomp_1dof_nf_i4	piolib_mod.F90	/^  subroutine initdecomp_1dof_nf_i4(/;"	s
+initdecomp_1dof_nf_i8	piolib_mod.F90	/^  subroutine initdecomp_1dof_nf_i8(/;"	s
+initdecomp_2dof_bin_i4	piolib_mod.F90	/^  subroutine initdecomp_2dof_bin_i4(/;"	s
+initdecomp_2dof_bin_i8	piolib_mod.F90	/^  subroutine initdecomp_2dof_bin_i8(/;"	s
+initdecomp_2dof_nf_i4	piolib_mod.F90	/^  subroutine initdecomp_2dof_nf_i4(/;"	s
+initdecomp_2dof_nf_i8	piolib_mod.F90	/^  subroutine initdecomp_2dof_nf_i8(/;"	s
+initdecomp_dof_handler	pio_msg_callbacks.F90	/^subroutine initdecomp_dof_handler(/;"	s
+inq_att_vardesc	nf_mod.F90	/^  integer function inq_att_vardesc(/;"	f	module:nf_mod
+inq_att_vardesc_pio2	nf_mod.F90	/^  integer function inq_att_vardesc_pio2(/;"	f	module:nf_mod
+inq_att_vid	nf_mod.F90	/^  integer function inq_att_vid(/;"	f	module:nf_mod
+inq_att_vid_pio2	nf_mod.F90	/^  integer function inq_att_vid_pio2(/;"	f	module:nf_mod
+inq_attlen_vardesc	nf_mod.F90	/^  integer function inq_attlen_vardesc(/;"	f	module:nf_mod
+inq_attlen_vardesc_pio2	nf_mod.F90	/^  integer function inq_attlen_vardesc_pio2(/;"	f	module:nf_mod
+inq_attlen_vid	nf_mod.F90	/^  integer function inq_attlen_vid(/;"	f	module:nf_mod
+inq_attlen_vid_pio2	nf_mod.F90	/^  integer function inq_attlen_vid_pio2(/;"	f	module:nf_mod
+inq_attname_vardesc	nf_mod.F90	/^  integer function inq_attname_vardesc(/;"	f	module:nf_mod
+inq_attname_vid	nf_mod.F90	/^  integer function inq_attname_vid(/;"	f	module:nf_mod
+inq_vardimid_vdesc	nf_mod.F90	/^  integer function inq_vardimid_vdesc(/;"	f	module:nf_mod
+inq_vardimid_vid	nf_mod.F90	/^  integer function inq_vardimid_vid(/;"	f	module:nf_mod
+inq_varid_vardesc	nf_mod.F90	/^  integer function inq_varid_vardesc(/;"	f	module:nf_mod
+inq_varid_vid	nf_mod.F90	/^  integer function inq_varid_vid(/;"	f	module:nf_mod
+inq_varname_vdesc	nf_mod.F90	/^  integer function inq_varname_vdesc(/;"	f	module:nf_mod
+inq_varname_vid	nf_mod.F90	/^  integer function inq_varname_vid(/;"	f	module:nf_mod
+inq_varnatts_vdesc	nf_mod.F90	/^  integer function inq_varnatts_vdesc(/;"	f	module:nf_mod
+inq_varnatts_vid	nf_mod.F90	/^  integer function inq_varnatts_vid(/;"	f	module:nf_mod
+inq_varndims_vdesc	nf_mod.F90	/^  integer function inq_varndims_vdesc(/;"	f	module:nf_mod
+inq_varndims_vid	nf_mod.F90	/^  integer function inq_varndims_vid(/;"	f	module:nf_mod
+inq_vartype_vdesc	nf_mod.F90	/^  integer function inq_vartype_vdesc(/;"	f	module:nf_mod
+inq_vartype_vid	nf_mod.F90	/^  integer function inq_vartype_vid(/;"	f	module:nf_mod
+inquire_variable_vdesc	nf_mod.F90	/^  integer function inquire_variable_vdesc(/;"	f	module:nf_mod
+inquire_variable_vid	nf_mod.F90	/^  integer function inquire_variable_vid(/;"	f	module:nf_mod
+int_kind	pio_kinds.F90	/^      log_kind  = kind(.true.)           ,&$/;"	v	module:pio_kinds
+intercomm	pio_types.F90	/^        integer(i4)              :: intercomm=/;"	k	type:IOSystem_desc_t
+io_comm	pio_msg_mod.F90	/^   integer :: io_comm,/;"	v
+io_data_list	pio_types.F90	/^    type, public :: io_data_list$/;"	t
+io_desc_list	pio_msg_mod.F90	/^   type :: io_desc_list$/;"	t
+io_desc_t	pio_types.F90	/^   type, public :: io_desc_t$/;"	t
+io_rank	pio_types.F90	/^        integer(i4)              :: io_rank /;"	k	type:IOSystem_desc_t
+iodesc	pio_msg_mod.F90	/^      type(io_desc_t), pointer :: iodesc /;"	k	type:io_desc_list
+iompi_mod	iompi_mod.F90	/^module iompi_mod$/;"	m
+iorank	calcdecomp.F90	/^  integer :: iorank,/;"	v	program:sandctest
+iorank	pio_msg_mod.F90	/^   integer :: io_comm, iorank$/;"	v
+ioranks	pio_types.F90	/^        integer(i4),pointer      :: ioranks(/;"	k	type:IOSystem_desc_t
+iosystem	pio_types.F90	/^       type(iosystem_/;"	k	type:File_desc_t
+iosystem_list_t	pio_types.F90	/^    type iosystem_list_t$/;"	t
+iosystems	pio_types.F90	/^    type(iosystem_list_t), save :: iosystems(/;"	v
+iotype	pio_types.F90	/^       integer(i4)              :: iotype /;"	k	type:File_desc_t
+iotype_binary	pio_types.F90	/^        iotype_direct_pbinary = PIO_iotype_direct_pbinary,  &$/;"	v
+iotype_direct_pbinary	pio_types.F90	/^        iotype_pbinary = PIO_iotype_pbinary,                &$/;"	v
+iotype_netcdf	pio_types.F90	/^        iotype_pnetcdf = PIO_iotype_pnetcdf,                &$/;"	v
+iotype_pbinary	pio_types.F90	/^    integer(i4), public, parameter ::                       &$/;"	v
+iotype_pnetcdf	pio_types.F90	/^        iotype_binary  = PIO_iotype_binary,                 &$/;"	v
+j	calcdecomp.F90	/^  integer :: psize, n, i,j,/;"	v	program:sandctest
+jmax	calcdecomp.F90	/^  integer, parameter :: imax=200,jmax=/;"	v	program:sandctest
+k	calcdecomp.F90	/^  integer :: psize, n, i,j,k,/;"	v	program:sandctest
+kmax	calcdecomp.F90	/^  integer, parameter :: imax=200,jmax=200,kmax=/;"	v	program:sandctest
+lastrss	box_rearrange.F90	/^integer :: msize, rss, mshare, mtext, mstack, lastrss=/;"	v	module:box_rearrange
+lastrss	piodarray.F90	/^integer :: msize, rss, mshare, mtext, mstack, lastrss=/;"	v
+log_kind	pio_kinds.F90	/^      char_len  = 360                    ,&$/;"	v	module:pio_kinds
+lookupfile	pio_msg_mod.F90	/^  function lookupfile(/;"	f
+lookupiodesc	pio_msg_mod.F90	/^  function lookupiodesc(/;"	f
+m	calcdecomp.F90	/^  integer :: psize, n, i,j,k,m$/;"	v	program:sandctest
+max	topology.c	57;"	d	file:
+maxiobuflen	pio_types.F90	/^        integer(i4)         :: maxiobuflen /;"	k	type:io_desc_t
+min	topology.c	62;"	d	file:
+mmax	calcdecomp.F90	/^  integer, parameter :: imax=200,jmax=200,kmax=30,mmax=/;"	v	program:sandctest
+modName	alloc_mod.F90	/^  character(len=*), parameter :: modName=/;"	v	module:alloc_mod
+modName	box_rearrange.F90	/^  character(len=*), parameter :: modName=/;"	v	module:box_rearrange
+modName	iompi_mod.F90	/^character(len=*), parameter :: modName=/;"	v	module:iompi_mod
+modName	pio_spmd_utils.F90	/^  character(len=*), parameter :: modName=/;"	v	module:pio_spmd_utils
+modName	piodarray.F90	/^  character(len=*), parameter, private  :: modName=/;"	v
+modName	pionfatt_mod.F90	/^  character(len=*), parameter :: modName=/;"	v
+modName	pionfget_mod.F90	/^ character(len=*), parameter :: modName=/;"	v
+modName	pionfread_mod.F90	/^  character(len=*), parameter :: modName=/;"	v	module:pionfread_mod
+modName	pionfwrite_mod.F90	/^  character(len=*), parameter :: modName=/;"	v	module:pionfwrite_mod
+mshare	box_rearrange.F90	/^integer :: msize, rss, mshare,/;"	v	module:box_rearrange
+mshare	piodarray.F90	/^integer :: msize, rss, mshare,/;"	v
+msize	box_rearrange.F90	/^integer :: msize,/;"	v	module:box_rearrange
+msize	piodarray.F90	/^integer :: msize,/;"	v
+mstack	box_rearrange.F90	/^integer :: msize, rss, mshare, mtext, mstack,/;"	v	module:box_rearrange
+mstack	piodarray.F90	/^integer :: msize, rss, mshare, mtext, mstack,/;"	v
+mtext	box_rearrange.F90	/^integer :: msize, rss, mshare, mtext,/;"	v	module:box_rearrange
+mtext	piodarray.F90	/^integer :: msize, rss, mshare, mtext,/;"	v
+my_comm	pio_types.F90	/^        integer(i4)              :: my_comm=/;"	k	type:IOSystem_desc_t
+my_name	topology.c	/^char my_name[255];$/;"	v
+my_name_len	topology.c	/^int my_name_len;$/;"	v
+n	calcdecomp.F90	/^  int/;"	v	program:sandctest
+n_elemTYPE	pio_types.F90	/^        integer(kind=pio_offset)         :: n_elemTYPE$/;"	k	type:IO_desc2_t
+n_words	pio_types.F90	/^        integer(i4)         :: n_words$/;"	k	type:IO_desc2_t
+name	pio_types.F90	/^	character(len=50) :: name /;"	k	type:Var_desc_t
+ndims	calcdecomp.F90	/^  integer, parameter :: ndims=/;"	v	program:sandctest
+ndims	pio_types.F90	/^        integer(i4)     :: ndims /;"	k	type:Var_desc_t
+ndof	pio_types.F90	/^        integer(i4)         :: ndof$/;"	k	type:io_desc_t
+next	pio_msg_mod.F90	/^      type(io_desc_list), pointer :: next /;"	k	type:io_desc_list
+next	pio_types.F90	/^       type(io_data_list), pointer :: next /;"	k	type:io_data_list
+nf_mod	nf_mod.F90	/^module nf_mod$/;"	m
+np	topology.c	/^int np;$/;"	v
+nrecvs	pio_types.F90	/^        integer :: nrecvs /;"	k	type:io_desc_t
+numOST	pio_types.F90	/^        integer(i4)              :: numOST /;"	k	type:IOSystem_desc_t
+num_aiotasks	pio_types.F90	/^        integer(i4)              :: num_aiotasks /;"	k	type:IOSystem_desc_t
+num_comptasks	pio_types.F90	/^        integer(i4)              :: num_comptasks$/;"	k	type:IOSystem_desc_t
+num_io_procs	calcdecomp.F90	/^  integer :: num_io_procs=/;"	v	program:sandctest
+num_iotasks	pio_types.F90	/^        integer(i4)              :: num_iotasks /;"	k	type:IOSystem_desc_t
+num_tasks	pio_types.F90	/^        integer(i4)              :: num_tasks /;"	k	type:IOSystem_desc_t
+numaiotasks	calcdecomp.F90	/^  integer :: iorank, numaiotasks,/;"	v	program:sandctest
+numtoread	piolib_mod.F90	/^  integer function numtoread(/;"	f
+numtowrite	piolib_mod.F90	/^  integer function numtowrite(/;"	f
+offset	pio_types.F90	/^       integer(kind=PIO_OFFSET) :: offset /;"	k	type:File_desc_t
+open_file_handler	pio_msg_callbacks.F90	/^subroutine open_file_handler(/;"	s
+open_mpiio	iompi_mod.F90	/^ integer function open_mpiio(/;"	f	module:iompi_mod
+open_nf	ionf_mod.F90	/^  integer function open_nf(/;"	f
+padding	pio_types.F90	/^        integer(i4)         :: padding$/;"	k	type:io_desc_t
+pair	pio_spmd_utils.F90	/^   integer function pair(/;"	f	module:pio_spmd_utils
+pio	pio.F90	/^module pio$/;"	m
+pio_buffer_size_limit	piodarray.F90	/^  integer :: pio_buffer_size_limit=/;"	v
+pio_callback_handler	pio_msg_callbacks.F90	/^subroutine pio_callback_handler(/;"	s
+pio_copy_att	nf_mod.F90	/^  integer function pio_copy_att(/;"	f	module:nf_mod
+pio_fc_gather_offset	pio_support.F90	/^   subroutine pio_fc_gather_offset /;"	s
+pio_iam_iotask	pio.F90	/^  function pio_iam_iotask(/;"	f	module:pio
+pio_inq_dimid	nf_mod.F90	/^  integer function pio_inq_dimid(/;"	f	module:nf_mod
+pio_inq_dimlen	nf_mod.F90	/^  integer function pio_inq_dimlen(/;"	f	module:nf_mod
+pio_inq_dimname	nf_mod.F90	/^  integer function pio_inq_dimname(/;"	f	module:nf_mod
+pio_inquire	nf_mod.F90	/^  integer function pio_inquire(/;"	f	module:nf_mod
+pio_iotask_rank	pio.F90	/^  function pio_iotask_rank(/;"	f	module:pio
+pio_iotask_rank	piolib_mod.F90	/^  integer function pio_iotask_rank(/;"	f
+pio_kinds	pio_kinds.F90	/^ module pio_kinds$/;"	m
+pio_msg_handler	pio_msg_mod.F90	/^  subroutine pio_msg_handler(/;"	s
+pio_msg_handler_init	pio_msg_mod.F90	/^  subroutine pio_msg_handler_init(/;"	s
+pio_nf_utils	pio_nf_utils.F90	/^module pio_nf_utils$/;"	m
+pio_offset_kind	pio.F90	/^  integer, parameter :: pio_offset_kind /;"	v	module:pio
+pio_readdof	pio_support.F90	/^  subroutine pio_readdof /;"	s
+pio_rearr_subset	pio.F90	/^  integer, parameter :: pio_rearr_subset /;"	v	module:pio
+pio_recommend_iotasks	piolib_mod.F90	/^  subroutine pio_recommend_iotasks(/;"	s
+pio_set_blocksize	calcdecomp.F90	/^  subroutine pio_set_blocksize(/;"	s
+pio_set_buffer_size_limit_i4	piodarray.F90	/^  subroutine pio_set_buffer_size_limit_i4(/;"	s
+pio_set_buffer_size_limit_i8	piodarray.F90	/^  subroutine pio_set_buffer_size_limit_i8(/;"	s
+pio_spmd_utils	pio_spmd_utils.F90	/^module pio_spmd_utils$/;"	m
+pio_swapm_double	pio_spmd_utils.F90	/^   subroutine pio_swapm_double /;"	s	module:pio_spmd_utils
+pio_swapm_int	pio_spmd_utils.F90	/^   subroutine pio_swapm_int /;"	s	module:pio_spmd_utils
+pio_swapm_long	pio_spmd_utils.F90	/^   subroutine pio_swapm_long /;"	s	module:pio_spmd_utils
+pio_swapm_real	pio_spmd_utils.F90	/^   subroutine pio_swapm_real /;"	s	module:pio_spmd_utils
+pio_type_to_mpi_type	pio_mpi_utils.F90	/^  integer function pio_type_to_mpi_type(/;"	f
+pio_utils	pio_utils.F90	/^module pio_utils$/;"	m
+pio_writedof	pio_support.F90	/^  subroutine pio_writedof /;"	s
+piodie	pio_support.F90	/^  subroutine piodie /;"	s
+pionfread_mod	pionfread_mod.F90	/^module pionfread_mod$/;"	m
+pionfwrite_mod	pionfwrite_mod.F90	/^module pionfwrite_mod$/;"	m
+piovdc	piovdc.F90	/^module piovdc$/;"	m
+psize	calcdecomp.F90	/^  integer :: psize,/;"	v	program:sandctest
+put_att_1d_double	pionfatt_mod.F90	/^  integer function put_att_1d_double /;"	f
+put_att_1d_int	pionfatt_mod.F90	/^  integer function put_att_1d_int /;"	f
+put_att_1d_real	pionfatt_mod.F90	/^  integer function put_att_1d_real /;"	f
+put_att_desc_1d_double	pionfatt_mod.F90	/^  integer function put_att_desc_1d_double /;"	f
+put_att_desc_1d_int	pionfatt_mod.F90	/^  integer function put_att_desc_1d_int /;"	f
+put_att_desc_1d_real	pionfatt_mod.F90	/^  integer function put_att_desc_1d_real /;"	f
+put_att_desc_double	pionfatt_mod.F90	/^  integer function put_att_desc_double /;"	f
+put_att_desc_int	pionfatt_mod.F90	/^  integer function put_att_desc_int /;"	f
+put_att_desc_real	pionfatt_mod.F90	/^  integer function put_att_desc_real /;"	f
+put_att_desc_text	pionfatt_mod.F90	/^  integer function put_att_desc_text /;"	f
+put_att_double	pionfatt_mod.F90	/^  integer function put_att_double /;"	f
+put_att_int	pionfatt_mod.F90	/^  integer function put_att_int /;"	f
+put_att_real	pionfatt_mod.F90	/^  integer function put_att_real /;"	f
+put_att_text	pionfatt_mod.F90	/^  integer function put_att_text /;"	f
+put_var1_double	pionfput_mod.F90	/^  integer function put_var1_double /;"	f
+put_var1_int	pionfput_mod.F90	/^  integer function put_var1_int /;"	f
+put_var1_real	pionfput_mod.F90	/^  integer function put_var1_real /;"	f
+put_var1_text	pionfput_mod.F90	/^  integer function put_var1_text /;"	f
+put_var1_vdesc_double	pionfput_mod.F90	/^  integer function put_var1_vdesc_double /;"	f
+put_var1_vdesc_int	pionfput_mod.F90	/^  integer function put_var1_vdesc_int /;"	f
+put_var1_vdesc_real	pionfput_mod.F90	/^  integer function put_var1_vdesc_real /;"	f
+put_var1_vdesc_text	pionfput_mod.F90	/^  integer function put_var1_vdesc_text /;"	f
+put_var_0d_double	pionfput_mod.F90	/^  integer function put_var_0d_double /;"	f
+put_var_0d_int	pionfput_mod.F90	/^  integer function put_var_0d_int /;"	f
+put_var_0d_real	pionfput_mod.F90	/^  integer function put_var_0d_real /;"	f
+put_var_0d_text	pionfput_mod.F90	/^  integer function put_var_0d_text /;"	f
+put_var_1d_double	pionfput_mod.F90	/^  integer function put_var_1d_double /;"	f
+put_var_1d_int	pionfput_mod.F90	/^  integer function put_var_1d_int /;"	f
+put_var_1d_real	pionfput_mod.F90	/^  integer function put_var_1d_real /;"	f
+put_var_1d_text	pionfput_mod.F90	/^  integer function put_var_1d_text /;"	f
+put_var_2d_double	pionfput_mod.F90	/^  integer function put_var_2d_double /;"	f
+put_var_2d_int	pionfput_mod.F90	/^  integer function put_var_2d_int /;"	f
+put_var_2d_real	pionfput_mod.F90	/^  integer function put_var_2d_real /;"	f
+put_var_2d_text	pionfput_mod.F90	/^  integer function put_var_2d_text /;"	f
+put_var_3d_double	pionfput_mod.F90	/^  integer function put_var_3d_double /;"	f
+put_var_3d_int	pionfput_mod.F90	/^  integer function put_var_3d_int /;"	f
+put_var_3d_real	pionfput_mod.F90	/^  integer function put_var_3d_real /;"	f
+put_var_3d_text	pionfput_mod.F90	/^  integer function put_var_3d_text /;"	f
+put_var_4d_double	pionfput_mod.F90	/^  integer function put_var_4d_double /;"	f
+put_var_4d_int	pionfput_mod.F90	/^  integer function put_var_4d_int /;"	f
+put_var_4d_real	pionfput_mod.F90	/^  integer function put_var_4d_real /;"	f
+put_var_4d_text	pionfput_mod.F90	/^  integer function put_var_4d_text /;"	f
+put_var_5d_double	pionfput_mod.F90	/^  integer function put_var_5d_double /;"	f
+put_var_5d_int	pionfput_mod.F90	/^  integer function put_var_5d_int /;"	f
+put_var_5d_real	pionfput_mod.F90	/^  integer function put_var_5d_real /;"	f
+put_var_5d_text	pionfput_mod.F90	/^  integer function put_var_5d_text /;"	f
+put_var_vdesc_0d_double	pionfput_mod.F90	/^  integer function put_var_vdesc_0d_double /;"	f
+put_var_vdesc_0d_int	pionfput_mod.F90	/^  integer function put_var_vdesc_0d_int /;"	f
+put_var_vdesc_0d_real	pionfput_mod.F90	/^  integer function put_var_vdesc_0d_real /;"	f
+put_var_vdesc_0d_text	pionfput_mod.F90	/^  integer function put_var_vdesc_0d_text /;"	f
+put_var_vdesc_1d_double	pionfput_mod.F90	/^  integer function put_var_vdesc_1d_double /;"	f
+put_var_vdesc_1d_int	pionfput_mod.F90	/^  integer function put_var_vdesc_1d_int /;"	f
+put_var_vdesc_1d_real	pionfput_mod.F90	/^  integer function put_var_vdesc_1d_real /;"	f
+put_var_vdesc_1d_text	pionfput_mod.F90	/^  integer function put_var_vdesc_1d_text /;"	f
+put_var_vdesc_2d_double	pionfput_mod.F90	/^  integer function put_var_vdesc_2d_double /;"	f
+put_var_vdesc_2d_int	pionfput_mod.F90	/^  integer function put_var_vdesc_2d_int /;"	f
+put_var_vdesc_2d_real	pionfput_mod.F90	/^  integer function put_var_vdesc_2d_real /;"	f
+put_var_vdesc_2d_text	pionfput_mod.F90	/^  integer function put_var_vdesc_2d_text /;"	f
+put_var_vdesc_3d_double	pionfput_mod.F90	/^  integer function put_var_vdesc_3d_double /;"	f
+put_var_vdesc_3d_int	pionfput_mod.F90	/^  integer function put_var_vdesc_3d_int /;"	f
+put_var_vdesc_3d_real	pionfput_mod.F90	/^  integer function put_var_vdesc_3d_real /;"	f
+put_var_vdesc_3d_text	pionfput_mod.F90	/^  integer function put_var_vdesc_3d_text /;"	f
+put_var_vdesc_4d_double	pionfput_mod.F90	/^  integer function put_var_vdesc_4d_double /;"	f
+put_var_vdesc_4d_int	pionfput_mod.F90	/^  integer function put_var_vdesc_4d_int /;"	f
+put_var_vdesc_4d_real	pionfput_mod.F90	/^  integer function put_var_vdesc_4d_real /;"	f
+put_var_vdesc_4d_text	pionfput_mod.F90	/^  integer function put_var_vdesc_4d_text /;"	f
+put_var_vdesc_5d_double	pionfput_mod.F90	/^  integer function put_var_vdesc_5d_double /;"	f
+put_var_vdesc_5d_int	pionfput_mod.F90	/^  integer function put_var_vdesc_5d_int /;"	f
+put_var_vdesc_5d_real	pionfput_mod.F90	/^  integer function put_var_vdesc_5d_real /;"	f
+put_var_vdesc_5d_text	pionfput_mod.F90	/^  integer function put_var_vdesc_5d_text /;"	f
+put_vara_1d_double	pionfput_mod.F90	/^  integer function put_vara_1d_double /;"	f
+put_vara_1d_int	pionfput_mod.F90	/^  integer function put_vara_1d_int /;"	f
+put_vara_1d_real	pionfput_mod.F90	/^  integer function put_vara_1d_real /;"	f
+put_vara_1d_text	pionfput_mod.F90	/^  integer function put_vara_1d_text /;"	f
+put_vara_2d_double	pionfput_mod.F90	/^  integer function put_vara_2d_double /;"	f
+put_vara_2d_int	pionfput_mod.F90	/^  integer function put_vara_2d_int /;"	f
+put_vara_2d_real	pionfput_mod.F90	/^  integer function put_vara_2d_real /;"	f
+put_vara_2d_text	pionfput_mod.F90	/^  integer function put_vara_2d_text /;"	f
+put_vara_3d_double	pionfput_mod.F90	/^  integer function put_vara_3d_double /;"	f
+put_vara_3d_int	pionfput_mod.F90	/^  integer function put_vara_3d_int /;"	f
+put_vara_3d_real	pionfput_mod.F90	/^  integer function put_vara_3d_real /;"	f
+put_vara_3d_text	pionfput_mod.F90	/^  integer function put_vara_3d_text /;"	f
+put_vara_4d_double	pionfput_mod.F90	/^  integer function put_vara_4d_double /;"	f
+put_vara_4d_int	pionfput_mod.F90	/^  integer function put_vara_4d_int /;"	f
+put_vara_4d_real	pionfput_mod.F90	/^  integer function put_vara_4d_real /;"	f
+put_vara_4d_text	pionfput_mod.F90	/^  integer function put_vara_4d_text /;"	f
+put_vara_5d_double	pionfput_mod.F90	/^  integer function put_vara_5d_double /;"	f
+put_vara_5d_int	pionfput_mod.F90	/^  integer function put_vara_5d_int /;"	f
+put_vara_5d_real	pionfput_mod.F90	/^  integer function put_vara_5d_real /;"	f
+put_vara_5d_text	pionfput_mod.F90	/^  integer function put_vara_5d_text /;"	f
+put_vara_vdesc_1d_double	pionfput_mod.F90	/^  integer function put_vara_vdesc_1d_double /;"	f
+put_vara_vdesc_1d_int	pionfput_mod.F90	/^  integer function put_vara_vdesc_1d_int /;"	f
+put_vara_vdesc_1d_real	pionfput_mod.F90	/^  integer function put_vara_vdesc_1d_real /;"	f
+put_vara_vdesc_1d_text	pionfput_mod.F90	/^  integer function put_vara_vdesc_1d_text /;"	f
+put_vara_vdesc_2d_double	pionfput_mod.F90	/^  integer function put_vara_vdesc_2d_double /;"	f
+put_vara_vdesc_2d_int	pionfput_mod.F90	/^  integer function put_vara_vdesc_2d_int /;"	f
+put_vara_vdesc_2d_real	pionfput_mod.F90	/^  integer function put_vara_vdesc_2d_real /;"	f
+put_vara_vdesc_2d_text	pionfput_mod.F90	/^  integer function put_vara_vdesc_2d_text /;"	f
+put_vara_vdesc_3d_double	pionfput_mod.F90	/^  integer function put_vara_vdesc_3d_double /;"	f
+put_vara_vdesc_3d_int	pionfput_mod.F90	/^  integer function put_vara_vdesc_3d_int /;"	f
+put_vara_vdesc_3d_real	pionfput_mod.F90	/^  integer function put_vara_vdesc_3d_real /;"	f
+put_vara_vdesc_3d_text	pionfput_mod.F90	/^  integer function put_vara_vdesc_3d_text /;"	f
+put_vara_vdesc_4d_double	pionfput_mod.F90	/^  integer function put_vara_vdesc_4d_double /;"	f
+put_vara_vdesc_4d_int	pionfput_mod.F90	/^  integer function put_vara_vdesc_4d_int /;"	f
+put_vara_vdesc_4d_real	pionfput_mod.F90	/^  integer function put_vara_vdesc_4d_real /;"	f
+put_vara_vdesc_4d_text	pionfput_mod.F90	/^  integer function put_vara_vdesc_4d_text /;"	f
+put_vara_vdesc_5d_double	pionfput_mod.F90	/^  integer function put_vara_vdesc_5d_double /;"	f
+put_vara_vdesc_5d_int	pionfput_mod.F90	/^  integer function put_vara_vdesc_5d_int /;"	f
+put_vara_vdesc_5d_real	pionfput_mod.F90	/^  integer function put_vara_vdesc_5d_real /;"	f
+put_vara_vdesc_5d_text	pionfput_mod.F90	/^  integer function put_vara_vdesc_5d_text /;"	f
+r4	pio_kinds.F90	/^      i8        = selected_int_kind(13)  ,&$/;"	v	module:pio_kinds
+r8	pio_kinds.F90	/^      r4        = selected_real_kind(6)  ,&$/;"	v	module:pio_kinds
+rank	topology.c	/^int rank;$/;"	v
+read_ascii	piolib_mod.F90	/^  subroutine read_ascii(/;"	s
+read_darray_1d_double	piodarray.F90	/^  subroutine read_darray_1d_double /;"	s
+read_darray_1d_int	piodarray.F90	/^  subroutine read_darray_1d_int /;"	s
+read_darray_1d_real	piodarray.F90	/^  subroutine read_darray_1d_real /;"	s
+read_darray_2d_double	piodarray.F90	/^  subroutine read_darray_2d_double /;"	s
+read_darray_2d_int	piodarray.F90	/^  subroutine read_darray_2d_int /;"	s
+read_darray_2d_real	piodarray.F90	/^  subroutine read_darray_2d_real /;"	s
+read_darray_3d_double	piodarray.F90	/^  subroutine read_darray_3d_double /;"	s
+read_darray_3d_int	piodarray.F90	/^  subroutine read_darray_3d_int /;"	s
+read_darray_3d_real	piodarray.F90	/^  subroutine read_darray_3d_real /;"	s
+read_darray_4d_double	piodarray.F90	/^  subroutine read_darray_4d_double /;"	s
+read_darray_4d_int	piodarray.F90	/^  subroutine read_darray_4d_int /;"	s
+read_darray_4d_real	piodarray.F90	/^  subroutine read_darray_4d_real /;"	s
+read_darray_5d_double	piodarray.F90	/^  subroutine read_darray_5d_double /;"	s
+read_darray_5d_int	piodarray.F90	/^  subroutine read_darray_5d_int /;"	s
+read_darray_5d_real	piodarray.F90	/^  subroutine read_darray_5d_real /;"	s
+read_darray_6d_double	piodarray.F90	/^  subroutine read_darray_6d_double /;"	s
+read_darray_6d_int	piodarray.F90	/^  subroutine read_darray_6d_int /;"	s
+read_darray_6d_real	piodarray.F90	/^  subroutine read_darray_6d_real /;"	s
+read_darray_7d_double	piodarray.F90	/^  subroutine read_darray_7d_double /;"	s
+read_darray_7d_int	piodarray.F90	/^  subroutine read_darray_7d_int /;"	s
+read_darray_7d_real	piodarray.F90	/^  subroutine read_darray_7d_real /;"	s
+read_darray_bin_double	piodarray.F90	/^  subroutine read_darray_bin_double /;"	s
+read_darray_bin_int	piodarray.F90	/^  subroutine read_darray_bin_int /;"	s
+read_darray_bin_real	piodarray.F90	/^  subroutine read_darray_bin_real /;"	s
+read_darray_nf_double	piodarray.F90	/^  subroutine read_darray_nf_double /;"	s
+read_darray_nf_int	piodarray.F90	/^  subroutine read_darray_nf_int /;"	s
+read_darray_nf_real	piodarray.F90	/^  subroutine read_darray_nf_real /;"	s
+read_mpiio_double	iompi_mod.F90	/^ integer function read_mpiio_double /;"	f	module:iompi_mod
+read_mpiio_int	iompi_mod.F90	/^ integer function read_mpiio_int /;"	f	module:iompi_mod
+read_mpiio_real	iompi_mod.F90	/^ integer function read_mpiio_real /;"	f	module:iompi_mod
+read_nfdarray_double	pionfread_mod.F90	/^  integer function read_nfdarray_double /;"	f	module:pionfread_mod
+read_nfdarray_int	pionfread_mod.F90	/^  integer function read_nfdarray_int /;"	f	module:pionfread_mod
+read_nfdarray_real	pionfread_mod.F90	/^  integer function read_nfdarray_real /;"	f	module:pionfread_mod
+read_vdc2_real	piodarray.F90	/^subroutine read_vdc2_real(/;"	s
+readdarray_handler	pio_msg_callbacks.F90	/^subroutine readdarray_handler(/;"	s
+rearr	pio_types.F90	/^        integer(i4)              :: rearr /;"	k	type:IOSystem_desc_t
+rearrange	rearrange.F90	/^module rearrange$/;"	m
+rearrange_comp2io_double	rearrange.F90	/^  subroutine rearrange_comp2io_double(/;"	s	module:rearrange
+rearrange_comp2io_int	rearrange.F90	/^  subroutine rearrange_comp2io_int(/;"	s	module:rearrange
+rearrange_comp2io_real	rearrange.F90	/^  subroutine rearrange_comp2io_real(/;"	s	module:rearrange
+rearrange_create_box_	rearrange.F90	/^  subroutine rearrange_create_box_(/;"	s	module:rearrange
+rearrange_free_	rearrange.F90	/^  subroutine rearrange_free_(/;"	s	module:rearrange
+rearrange_init_	rearrange.F90	/^  subroutine rearrange_init_(/;"	s	module:rearrange
+rearrange_io2comp_double	rearrange.F90	/^  subroutine rearrange_io2comp_double /;"	s	module:rearrange
+rearrange_io2comp_int	rearrange.F90	/^  subroutine rearrange_io2comp_int /;"	s	module:rearrange
+rearrange_io2comp_real	rearrange.F90	/^  subroutine rearrange_io2comp_real /;"	s	module:rearrange
+rec	pio_types.F90	/^        integer(i4)     :: rec /;"	k	type:Var_desc_t
+request	pio_types.F90	/^       integer :: request$/;"	k	type:io_data_list
+rfrom	pio_types.F90	/^        integer,pointer :: rfrom(/;"	k	type:io_desc_t
+rss	box_rearrange.F90	/^integer :: msize, rss,/;"	v	module:box_rearrange
+rss	piodarray.F90	/^integer :: msize, rss,/;"	v
+rtype	pio_types.F90	/^        integer,pointer :: rtype(/;"	k	type:io_desc_t
+sandctest	calcdecomp.F90	/^program sandctest$/;"	p
+scount	pio_types.F90	/^        integer,pointer :: scount(/;"	k	type:io_desc_t
+setdebuglevel	piolib_mod.F90	/^  subroutine setdebuglevel(/;"	s
+seterrorhandling_handler	pio_msg_callbacks.F90	/^subroutine seterrorhandling_handler(/;"	s
+seterrorhandlingf	piolib_mod.F90	/^  subroutine seterrorhandlingf(/;"	s
+seterrorhandlingi	piolib_mod.F90	/^  subroutine seterrorhandlingi(/;"	s
+setframe	piolib_mod.F90	/^  subroutine setframe(/;"	s
+setframe_pio2	piolib_mod.F90	/^  subroutine setframe_pio2(/;"	s
+setiotype	piolib_mod.F90	/^  subroutine setiotype(/;"	s
+start	calcdecomp.F90	/^  integer(kind=pio_offset) :: start(/;"	v	program:sandctest
+start	pio_types.F90	/^	integer(kind=PIO_Offset), pointer :: start(/;"	k	type:io_desc_t
+string_handler_for_att	pio_msg_callbacks.F90	/^subroutine string_handler_for_att(/;"	s
+string_handler_for_var1	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_var1(/;"	s
+string_handler_for_var_0d	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_var_0d(/;"	s
+string_handler_for_var_1d	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_var_1d /;"	s
+string_handler_for_var_2d	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_var_2d /;"	s
+string_handler_for_var_3d	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_var_3d /;"	s
+string_handler_for_var_4d	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_var_4d /;"	s
+string_handler_for_var_5d	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_var_5d /;"	s
+string_handler_for_vara_1d	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_vara_1d /;"	s
+string_handler_for_vara_2d	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_vara_2d /;"	s
+string_handler_for_vara_3d	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_vara_3d /;"	s
+string_handler_for_vara_4d	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_vara_4d /;"	s
+string_handler_for_vara_5d	pio_msg_getput_callbacks.F90	/^subroutine string_handler_for_vara_5d /;"	s
+stype	pio_types.F90	/^        integer,pointer :: stype(/;"	k	type:io_desc_t
+sync_nf	ionf_mod.F90	/^  integer function sync_nf(/;"	f
+syncfile	piolib_mod.F90	/^  subroutine syncfile(/;"	s
+this_iosystem	pio_types.F90	/^       type(iosystem_desc_t), pointer :: this_iosystem /;"	k	type:iosystem_list_t
+top_file	pio_msg_mod.F90	/^   type(file_desc_list), target, save :: top_file$/;"	v
+top_iodesc	pio_msg_mod.F90	/^   type(io_desc_list), target, save :: top_iodesc$/;"	v
+total_buffsize	piodarray.F90	/^  integer :: total_buffsize=/;"	v
+tpsize	calcdecomp.F90	/^  integer :: iorank, numaiotasks, tpsize$/;"	v	program:sandctest
+type	pio_types.F90	/^	integer(i4)     :: type$/;"	k	type:Var_desc_t
+union_comm	pio_types.F90	/^        integer(i4)              :: union_comm=/;"	k	type:IOSystem_desc_t
+union_rank	pio_types.F90	/^        integer(i4)              :: union_rank$/;"	k	type:IOSystem_desc_t
+var1_handler	pio_msg_getput_callbacks.F90	/^subroutine var1_handler(/;"	s
+varID	pio_types.F90	/^        integer(i4)     :: varID$/;"	k	type:Var_desc_t
+var_0d_handler	pio_msg_getput_callbacks.F90	/^subroutine var_0d_handler /;"	s
+var_1d_handler	pio_msg_getput_callbacks.F90	/^subroutine var_1d_handler /;"	s
+var_2d_handler	pio_msg_getput_callbacks.F90	/^subroutine var_2d_handler /;"	s
+var_3d_handler	pio_msg_getput_callbacks.F90	/^subroutine var_3d_handler /;"	s
+var_4d_handler	pio_msg_getput_callbacks.F90	/^subroutine var_4d_handler /;"	s
+var_5d_handler	pio_msg_getput_callbacks.F90	/^subroutine var_5d_handler /;"	s
+vara_1d_handler	pio_msg_getput_callbacks.F90	/^subroutine vara_1d_handler(/;"	s
+vara_2d_handler	pio_msg_getput_callbacks.F90	/^subroutine vara_2d_handler(/;"	s
+vara_3d_handler	pio_msg_getput_callbacks.F90	/^subroutine vara_3d_handler(/;"	s
+vara_4d_handler	pio_msg_getput_callbacks.F90	/^subroutine vara_4d_handler(/;"	s
+vara_5d_handler	pio_msg_getput_callbacks.F90	/^subroutine vara_5d_handler(/;"	s
+vdc_bsize	piovdc.F90	/^  integer (i4)	:: vdc_dims(3), vdc_bsize(/;"	v	module:piovdc
+vdc_dims	piovdc.F90	/^  integer (i4)	:: vdc_dims(/;"	v	module:piovdc
+vdc_iocount	piovdc.F90	/^  integer (kind=PIO_OFFSET)  :: vdc_iostart(3), vdc_iocount(/;"	v	module:piovdc
+vdc_iostart	piovdc.F90	/^  integer (kind=PIO_OFFSET)  :: vdc_iostart(/;"	v	module:piovdc
+vdc_ts	piovdc.F90	/^  integer (i4)	:: vdc_dims(3), vdc_bsize(3), vdc_ts$/;"	v	module:piovdc
+write_darray_1d_double	piodarray.F90	/^  subroutine write_darray_1d_double /;"	s
+write_darray_1d_int	piodarray.F90	/^  subroutine write_darray_1d_int /;"	s
+write_darray_1d_real	piodarray.F90	/^  subroutine write_darray_1d_real /;"	s
+write_darray_2d_double	piodarray.F90	/^  subroutine write_darray_2d_double /;"	s
+write_darray_2d_int	piodarray.F90	/^  subroutine write_darray_2d_int /;"	s
+write_darray_2d_real	piodarray.F90	/^  subroutine write_darray_2d_real /;"	s
+write_darray_3d_double	piodarray.F90	/^  subroutine write_darray_3d_double /;"	s
+write_darray_3d_int	piodarray.F90	/^  subroutine write_darray_3d_int /;"	s
+write_darray_3d_real	piodarray.F90	/^  subroutine write_darray_3d_real /;"	s
+write_darray_4d_double	piodarray.F90	/^  subroutine write_darray_4d_double /;"	s
+write_darray_4d_int	piodarray.F90	/^  subroutine write_darray_4d_int /;"	s
+write_darray_4d_real	piodarray.F90	/^  subroutine write_darray_4d_real /;"	s
+write_darray_5d_double	piodarray.F90	/^  subroutine write_darray_5d_double /;"	s
+write_darray_5d_int	piodarray.F90	/^  subroutine write_darray_5d_int /;"	s
+write_darray_5d_real	piodarray.F90	/^  subroutine write_darray_5d_real /;"	s
+write_darray_6d_double	piodarray.F90	/^  subroutine write_darray_6d_double /;"	s
+write_darray_6d_int	piodarray.F90	/^  subroutine write_darray_6d_int /;"	s
+write_darray_6d_real	piodarray.F90	/^  subroutine write_darray_6d_real /;"	s
+write_darray_7d_double	piodarray.F90	/^  subroutine write_darray_7d_double /;"	s
+write_darray_7d_int	piodarray.F90	/^  subroutine write_darray_7d_int /;"	s
+write_darray_7d_real	piodarray.F90	/^  subroutine write_darray_7d_real /;"	s
+write_darray_bin_double	piodarray.F90	/^  subroutine write_darray_bin_double(/;"	s
+write_darray_bin_int	piodarray.F90	/^  subroutine write_darray_bin_int(/;"	s
+write_darray_bin_real	piodarray.F90	/^  subroutine write_darray_bin_real(/;"	s
+write_darray_nf_double	piodarray.F90	/^  subroutine write_darray_nf_double /;"	s
+write_darray_nf_int	piodarray.F90	/^  subroutine write_darray_nf_int /;"	s
+write_darray_nf_real	piodarray.F90	/^  subroutine write_darray_nf_real /;"	s
+write_mpiio_double	iompi_mod.F90	/^ integer function write_mpiio_double /;"	f	module:iompi_mod
+write_mpiio_int	iompi_mod.F90	/^ integer function write_mpiio_int /;"	f	module:iompi_mod
+write_mpiio_real	iompi_mod.F90	/^ integer function write_mpiio_real /;"	f	module:iompi_mod
+write_nfdarray_double	pionfwrite_mod.F90	/^  integer function write_nfdarray_double /;"	f	module:pionfwrite_mod
+write_nfdarray_int	pionfwrite_mod.F90	/^  integer function write_nfdarray_int /;"	f	module:pionfwrite_mod
+write_nfdarray_real	pionfwrite_mod.F90	/^  integer function write_nfdarray_real /;"	f	module:pionfwrite_mod
+write_vdc2_real	piodarray.F90	/^ subroutine write_vdc2_real(/;"	s
+writedarray_handler	pio_msg_callbacks.F90	/^subroutine writedarray_handler(/;"	s
+xxx_sizeof_data	iompi_mod.F90	/^  character, private :: xxx_sizeof_data(/;"	v	module:iompi_mod

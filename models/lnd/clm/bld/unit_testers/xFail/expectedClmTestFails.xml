@@ -1,0 +1,117 @@
+<?xml version= "1.0"?>
+
+<expectedFails>
+   <namelistTest> 
+      <yellowstone>
+         <INTEL>
+            <compare>
+            </compare>
+            <generate>
+            </generate>
+         </INTEL>
+      </yellowstone>
+      <goldbach>
+         <INTEL>
+            <compare>
+            </compare>
+            <generate>
+            </generate>
+         </INTEL>
+      </goldbach>
+   </namelistTest>
+
+   <cesm> 
+      <auxShortTests>
+         <yellowstone>
+            <INTEL>
+            </INTEL>
+            <PGI>
+            </PGI>
+         </yellowstone>
+         <goldbach>
+            <INTEL>
+               <entry testId="PET_P15x2_D.f10_f10.I1850CLM45BGC.goldbach_intel.clm-ciso" failType="FAIL" bugz="2027" >Balance check error/problem</entry>
+            </INTEL>
+            <NAG>
+               <entry testId="PET_P15x2_D.f10_f10.I1850CLM45BGC.goldbach_nag.clm-ciso" failType="CFAIL" bugz="2027" >Problem building mct</entry>
+               <entry testId="ERI.f19_g16.ICLM45BGC.goldbach_nag.clm-reduceOutput"
+failType="FAIL"  >multi-node nag issues</entry>
+               <entry testId="ERS.f10_f10.I20TRCLM45BGC.goldbach_nag.clm-reduceOutput"
+failType="RUN"  >multi-node nag issues</entry>
+               <entry testId="SMS.f09_g16.ICRUCLM45.goldbach_nag.clm-af_bias_v5"
+failType="FAIL"  >multi-node nag issues</entry>
+            </NAG>
+            <PGI>
+               <entry testId="PET_P16x2_D.f10_f10.I1850CLM45BGC.goldbach_pgi.clm-ciso"
+failType="FAIL" bugz="2027" >get_clump_bounds ERROR: Calling from inside a non-threaded region</entry>
+            </PGI>
+         </goldbach>
+      </auxShortTests>
+      <auxTests>
+         <edison>
+            <INTEL>
+               <entry testId="ERH_D.f19_g16.I1850CLM45CN.edison_intel.clm-default"               failType="FAIL" >See (ERH_D.f19_g16.I1850CLM45CN.yellowstone_pgi.clm-default</entry>
+               <entry testId="ERI_D.ne30_g16.ICLM45BGC.edison_intel.clm-vrtlay"                  failType="FAIL" >Seg fault while writing h1 file</entry>
+               <entry testId="ERS_Ld211_D_P144x1.f10_f10.ICNCROP.edison_intel.clm-crop"          failType="FAIL" bugz="1696" >See ERS_Ld211_D_P112x1.f10_f10.ICNCROP in yellowstone intel list</entry>
+            </INTEL>
+         </edison>
+         <yellowstone>
+            <INTEL>
+               <entry testId="ERS_D_Mmpi-serial.1x1_brazil.ICLM45CNED.yellowstone_intel.clm-edTest"          failType="RUN"   bugz="2070" >problem writing restart file</entry>
+            </INTEL>
+            <GNU>
+               <entry testId="SMS.f19_g16.ICLM45CNED.yellowstone_gnu.clm-edTest"                             failType="FAIL"  bugz="2070" >error writing h0 file? looks like gnu is croaking on what looks like an implicit cast to double</entry>
+            </GNU>
+            <PGI>
+               <entry testId="PET_P15x2_Ly3.f10_f10.ICLM45BGCCROP.yellowstone_pgi.clm-irrig_o3_reduceOutput" failType="FAIL" bugz="2094" >compiler bug in PGI's handling of polymorphism</entry>
+            </PGI>
+         </yellowstone>
+         <goldbach>
+            <INTEL>
+            </INTEL>
+            <NAG>
+               <entry testId="PET_P15x2_D.f10_f10.I1850CLM45BGC.goldbach_nag.clm-ciso" failType="CFAIL" bugz="2027" >Problem building mct</entry>
+               <entry testId="SMS_D.f10_f10.ICRUCLM45.goldbach_nag.clm-af_bias_v5"                           failType="FAIL"  bugz="2071" >datm_comp_mod.F90, line 905: Subscript 1 of AVSTRM%RATTR (value 0) is out of range (1:7)</entry>
+            </NAG>
+            <PGI>
+            </PGI>
+         </goldbach>
+     </auxTests>
+   </cesm>
+
+   <tools_test_driver>
+         <yellowstone>
+            <INTEL>
+            </INTEL>
+         </yellowstone>
+         <goldbach>
+            <INTEL>
+               <entry testId="sm684" failType="FAIL">goldbach not recognized</entry>
+               <entry testId="smf84" failType="FAIL">goldbach not recognized</entry>
+               <entry testId="smfc4" failType="FAIL">goldbach not recognized</entry>
+            </INTEL>
+         </goldbach>
+   </tools_test_driver>
+
+   <PTCLM>
+         <yellowstone>
+            <INTEL>
+               <entry testId="no_towerdata.-d+/glade/p/cesmdata/cseg/inputdata++-s+RF-Bra+--debug+--pftgrid+--soilgrid."
+                      failType="FAIL">Doesn't check for valid values</entry>
+            </INTEL>
+         </yellowstone>
+         <goldbach>
+            <PGI>
+            </PGI>
+         </goldbach>
+   </PTCLM>
+
+   <unit_tests>
+         <yellowstone>
+            <INTEL>
+                <entry failType="CFAIL">Internal compiler error</entry>
+            </INTEL>
+         </yellowstone>
+   </unit_tests>
+
+</expectedFails> 

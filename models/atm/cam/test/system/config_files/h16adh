@@ -1,0 +1,6 @@
+-smp -spmd
+-dyn se
+-res ne16np4
+-phys adiabatic
+-debug
+-s

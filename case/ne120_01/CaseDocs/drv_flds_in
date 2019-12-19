@@ -1,0 +1,8 @@
+&drydep_inparm
+ drydep_list		= 'H2O2','H2SO4','SO2'
+ drydep_method		= 'xactive_lnd'
+/
+&megan_emis_nl
+/
+&carma_inparm
+/

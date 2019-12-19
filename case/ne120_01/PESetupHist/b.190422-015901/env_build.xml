@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+
+<config_definition>
+
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--       These variables SHOULD NOT be changed once the model has been built. -->
+<!--       Currently, these variables are not cached.                           -->
+<!--                                                                            -->
+<!--       Note1: users SHOULD NOT modify BUILD_COMPETE below                   -->
+<!--              this is done automatically by the scripts                     -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+
+
+<!--"operating system - DO NOT EDIT UNLESS for userdefined machine - ignored once Macros has been created   (char) " -->
+<entry id="OS"   value="LINUX"  />    
+
+<!--"machine compiler (must match one the supported compilers) - ignored once Macros has been created (char) " -->
+<entry id="COMPILERS"   value="swcc,sw5c"  />    
+
+<!--"Machine compiler (must match one the supported compilers) (char) " -->
+<entry id="COMPILER"   value="sw5c"  />    
+
+<!--"supported mpi libraries for target machine - set in config_machines.xml - (DO NOT EDIT) (char) " -->
+<entry id="MPILIBS"   value="mpi"  />    
+
+<!--"mpi library (must match one of the supported libraries) - ignored once Macros has been created (char) " -->
+<entry id="MPILIB"   value="mpi"  />    
+
+<!--"PIO configure options, see PIO configure utility for details (char) " -->
+<entry id="PIO_CONFIG_OPTS"   value=" "  />    
+
+<!-- ====================================== -->
+
+<!--"scratch root directory for each machine.  For now, primarily used for shared library builds (char) " -->
+<entry id="CESMSCRATCHROOT"   value="UNSET"  />    
+
+<!--"case executable root directory (executable is $EXEROOT/cesm.exe, component libraries are in $EXEROOT/bld) (char) " -->
+<entry id="EXEROOT"   value="$CCSMROOT/cases/bld/$CASE"  />    
+
+<!--"email address of person (or group) that supports the build and port for this machine (do not edit) (char) " -->
+<entry id="SUPPORTED_BY"   value="chenyuhu@qnlm"  />    
+
+<!--"calendar type, valid values: NO_LEAP,GREGORIAN (char) " -->
+<entry id="CALENDAR"   value="NO_LEAP"  />    
+
+<!--"use MCT or ESMF component interfaces, valid values: MCT,ESMF (char) " -->
+<entry id="COMP_INTERFACE"   value="MCT"  />    
+
+<!--"TRUE implies using the ESMF library specified by ESMF_LIBDIR or ESMFMKFILE, valid values: TRUE,FALSE (char) " -->
+<entry id="USE_ESMF_LIB"   value="FALSE"  />    
+
+<!--"TRUE implies turning on run and compile time debugging, valid values: TRUE,FALSE (logical) " -->
+<entry id="DEBUG"   value="FALSE"  />    
+
+<!--"TRUE implies always build model for openmp capability, valid values: TRUE,FALSE (logical) " -->
+<entry id="BUILD_THREADED"   value="FALSE"  />    
+
+<!--"TRUE implies linking to the trilinos library - set automatically by XXX_USE_TRILINOS options (do not edit), valid values: TRUE,FALSE (logical) " -->
+<entry id="USE_TRILINOS"   value="FALSE"  />    
+
+<!--"GNU make command (char) " -->
+<entry id="GMAKE"   value="gmake"  />    
+
+<!--"Number of processors for gmake (integer) " -->
+<entry id="GMAKE_J"   value="32"  />    
+
+<!-- ====================================== -->
+
+<!--"CAM configure options, see CAM configure utility for details (char) " -->
+<entry id="CAM_CONFIG_OPTS"   value="-phys cam5"  />    
+
+<!--"CAM dynamical core, valid values: eul,fv,se (char) " -->
+<entry id="CAM_DYCORE"   value="se"  />    
+
+
+<!--"CLM configure options (char) " -->
+<entry id="CLM_CONFIG_OPTS"   value="-phys clm4_0"  />    
+
+
+<!--"Optional ocean submodel option.  Any one of: moby (char) " -->
+<entry id="OCN_SUBMODEL"   value=""  />    
+
+<!--"Optional ocean tracers.  Valid values are Any combination of: iage cfc ecosys (char) " -->
+<entry id="OCN_TRACER_MODULES"   value=" iage"  />    
+
+<!--"Optional ocean tracers option.  Any one of: darwin quota mono (char) " -->
+<entry id="OCN_TRACER_MODULES_OPT"   value=""  />    
+
+<!--"If TRUE then time-averaged history files from POP2 will contain double precision output, valid values: TRUE,FALSE (char) " -->
+<entry id="POP_TAVG_R8"   value="FALSE"  />    
+
+<!--"if false, user must set the POP decomp, otherwise cesm_setup script sets it, valid values: true,false (logical) " -->
+<entry id="POP_AUTO_DECOMP"   value="false"  />    
+
+<!--"Size of pop block in first horiz dimension (do not edit if POP_AUTO_DECOMP is true) (integer) " -->
+<entry id="POP_BLCKX"   value="18"  />    
+
+<!--"Size of pop block in second horiz dimension (do not edit if POP_AUTO_DECOMP is true) (integer) " -->
+<entry id="POP_BLCKY"   value="20"  />    
+
+<!--"Number of pop blocks in first horiz dimension (do not edit if POP_AUTO_DECOMP is true) (integer) " -->
+<entry id="POP_NX_BLOCKS"   value="200"  />    
+
+<!--"Number of pop blocks in second horiz dimension (do not edit if POP_AUTO_DECOMP is true) (integer) " -->
+<entry id="POP_NY_BLOCKS"   value="120"  />    
+
+<!--"Max number of pop blocks per processor (do not edit if POP_AUTO_DECOMP is true) (integer) " -->
+<entry id="POP_MXBLCKS"   value="1"  />    
+
+<!--"pop block distribution type (do not edit if POP_AUTO_DECOMP is true) (char) " -->
+<entry id="POP_DECOMPTYPE"   value="spacecurve"  />    
+
+
+<!--"Option to the CICE configure utility for the -mode argument (default is prognostic), valid values: prognostic,prescribed,thermo_only (char) " -->
+<entry id="CICE_MODE"   value="prognostic"  />    
+
+<!--"CICE configure options, see CICE configure utility for details (char) " -->
+<entry id="CICE_CONFIG_OPTS"   value=" "  />    
+
+<!--"if false, user must set the CICE decomp, otherwise cesm_setup script sets it, valid values: true,false (logical) " -->
+<entry id="CICE_AUTO_DECOMP"   value="true"  />    
+
+<!--"Size of cice block in first horiz dimension (do not edit if CICE_AUTO_DECOMP is true) (integer) " -->
+<entry id="CICE_BLCKX"   value="12"  />    
+
+<!--"Size of cice block in second horiz dimension (do not edit if CICE_AUTO_DECOMP is true) (integer) " -->
+<entry id="CICE_BLCKY"   value="12"  />    
+
+<!--"Max number of cice blocks per processor (do not edit if CICE_AUTO_DECOMP is true) (integer) " -->
+<entry id="CICE_MXBLCKS"   value="7"  />    
+
+<!--"cice block distribution type (do not edit if CICE_AUTO_DECOMP is true) (char) " -->
+<entry id="CICE_DECOMPTYPE"   value="spacecurve"  />    
+
+<!--"cice decomp setting for decomp type (do not edit if CICE_AUTO_DECOMP is true) (char) " -->
+<entry id="CICE_DECOMPSETTING"   value="null"  />    
+
+
+
+<!--"mode for rtm model, NULL means rtm is turned off, valid values: ACTIVE,NULL (char) " -->
+<entry id="RTM_MODE"   value="ACTIVE"  />    
+
+<!--"mode for rtm flood feature, NULL means rtm flood is turned off, valid values: ACTIVE,NULL (char) " -->
+<entry id="RTM_FLOOD_MODE"   value="NULL"  />    
+
+
+
+<!--"Status output: if TRUE, models have been built successfully. (DO NOT EDIT), valid values: TRUE,FALSE (logical) " -->
+<entry id="BUILD_COMPLETE"   value="FALSE"  />    
+
+<!--"Status: smp status of previous build, coded string. (DO NOT EDIT) (char) " -->
+<entry id="SMP_BUILD"   value="0"  />    
+
+<!--"Status: smp status of current case, coded string (DO NOT EDIT) (char) " -->
+<entry id="SMP_VALUE"   value="a0l0r0i0o0g0w0c0"  />    
+
+<!--"Status: ninst status of previous build, coded string. (DO NOT EDIT) (char) " -->
+<entry id="NINST_BUILD"   value="0"  />    
+
+<!--"Status: ninst status of current case, coded string (DO NOT EDIT) (char) " -->
+<entry id="NINST_VALUE"   value="a1l1r1i1o1g1w1"  />    
+
+<!--"Status: of prior build. (DO NOT EDIT) (integer) " -->
+<entry id="BUILD_STATUS"   value="0"  />    
+
+<!-- ====================================== -->
+
+<!--"CESM grid - DO NOT EDIT (for experts only) (char) " -->
+<entry id="GRID"   value="a%ne120np4_l%ne120np4_oi%tx0.1v2_r%r05_m%tx0.1v2_g%null_w%null"  />    
+
+<!--"atmosphere grid - DO NOT EDIT (for experts only) (char) " -->
+<entry id="ATM_GRID"   value="ne120np4"  />    
+
+<!--"number of atmosphere cells in i direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="ATM_NX"   value="777602"  />    
+
+<!--"number of atmosphere cells in j direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="ATM_NY"   value="1"  />    
+
+<!--"land grid - DO NOT EDIT (for experts only) (char) " -->
+<entry id="LND_GRID"   value="ne120np4"  />    
+
+<!--"number of land cells in i direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="LND_NX"   value="777602"  />    
+
+<!--"number of land cells in j direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="LND_NY"   value="1"  />    
+
+<!--"ocn grid - DO NOT EDIT (for experts only) (char) " -->
+<entry id="OCN_GRID"   value="tx0.1v2"  />    
+
+<!--"number of ocn cells in i direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="OCN_NX"   value="3600"  />    
+
+<!--"number of ocn cells in j direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="OCN_NY"   value="2400"  />    
+
+<!--"ice grid (must equal ocn grid) - DO NOT EDIT (for experts only) (char) " -->
+<entry id="ICE_GRID"   value="tx0.1v2"  />    
+
+<!--"number of ice cells in i direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="ICE_NX"   value="3600"  />    
+
+<!--"number of ice cells in j direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="ICE_NY"   value="2400"  />    
+
+<!--"river runoff (rof) grid (char) " -->
+<entry id="ROF_GRID"   value="r05"  />    
+
+<!--"number of rof cells in i direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="ROF_NX"   value="720"  />    
+
+<!--"number of rof cells in j direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="ROF_NY"   value="360"  />    
+
+<!--"river runoff (glc) grid (char) " -->
+<entry id="GLC_GRID"   value="ne120np4"  />    
+
+<!--"number of glc cells in i direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="GLC_NX"   value="777602"  />    
+
+<!--"number of glc cells in j direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="GLC_NY"   value="1"  />    
+
+<!--"wave model (wav) grid (char) " -->
+<entry id="WAV_GRID"   value="null"  />    
+
+<!--"number of wav cells in i direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="WAV_NX"   value="0"  />    
+
+<!--"number of wav cells in j direction - DO NOT EDIT (for experts only) (integer) " -->
+<entry id="WAV_NY"   value="0"  />    
+
+<!--"grid mask - DO NOT EDIT (for experts only) (char) " -->
+<entry id="MASK_GRID"   value="tx0.1v2"  />    
+
+<!-- ====================================== -->
+
+<!--"case build directory (set automatically to $EXEROOT, - DO NOT EDIT) (char) " -->
+<entry id="OBJROOT"   value="$EXEROOT"  />    
+
+<!--"case lib directory (set automatically to $EXEROOT/lib - DO NOT EDIT) (char) " -->
+<entry id="LIBROOT"   value="$EXEROOT/lib"  />    
+
+<!--"case lib include directory (set automatically to $EXEROOT/lib/include - DO NOT EDIT) (char) " -->
+<entry id="INCROOT"   value="$EXEROOT/lib/include"  />    
+
+<!--"Shared library root, (set automatically to $EXEROOT - DO NOT EDIT) (char) " -->
+<entry id="SHAREDLIBROOT"   value="$EXEROOT"  />    
+
+<!--"Shared library root directory, neeed for cleaning shared builds (set automatically to $EXEROOT - DO NOT EDIT) (char) " -->
+<entry id="SHAREDLIBROOTDIR"   value="$EXEROOT"  />    
+
+<!-- ====================================== -->
+</config_definition>

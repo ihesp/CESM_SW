@@ -1,0 +1,6 @@
+&pop2_inparm 
+
+tavg_freq_opt = 'nmonth' 'never'
+clinic_distribution_type = 'spacecurve'
+tropic_distribution_type = 'spacecurve'
+/ 

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<namelist_defaults>
+
+<gas_wetdep_method>NEU</gas_wetdep_method>
+
+<flbc_file>atm/waccm/lb/LBC_1765-2500_1.9x2.5_CMIP5_RCP45_za_c120204.nc</flbc_file>
+
+<co2vmr>0.000001e-6</co2vmr>
+
+<lght_no_prd_factor hgrid="1.9x2.5">3.0</lght_no_prd_factor>
+ 
+</namelist_defaults>

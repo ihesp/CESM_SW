@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<config_definition>
+
+<commandline>
+/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/models/ice/cice/bld/configure -hgrid tx0.1v2 -nx 3600 -ny 2400 -comp_intf MCT -cice_mode prognostic -nodecomp
+</commandline>
+<entry id="cice_bld" value="/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/test100_95ocn190515/Buildconf/ciceconf" list="" valid_values="">
+CICE build directory; contains .o and .mod files.
+</entry>
+<entry id="cice_decomptype" value="" list="" valid_values="cartesian,rake,spacecurve,roundrobin,blkrobin,blkcart,DECOMPTYPE">
+Type of cice decomposition.
+</entry>
+<entry id="cice_mode" value="prognostic" list="" valid_values="thermo_only,prescribed,prognostic">
+Mode of cice 
+</entry>
+<entry id="cice_root" value="/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts" list="" valid_values="">
+Root directory of CICE source distribution.
+</entry>
+<entry id="comp_intf" value="MCT" list="" valid_values="MCT,ESMF">
+CICE build directory; contains .o and .mod files.
+</entry>
+<entry id="hgrid" value="tx0.1v2" list="" valid_values="">
+Horizontal grid specifier.  
+</entry>
+<entry id="nlat" value="2400" list="" valid_values="">
+Number of unique latitude points in rectangular lat/lon grid.
+</entry>
+<entry id="nlon" value="3600" list="" valid_values="">
+Number of unique longitude points in rectangular lat/lon grid.
+</entry>
+<entry id="ntasks" value="" list="" valid_values="">
+Number of MPI tasks.  This is used to determine default grid
+decompositions.  Currently only used by CICE.
+</entry>
+<entry id="nthreads" value="" list="" valid_values="">
+Number of OMP threads.  This is used to determine default grid
+decompositions.  Currently only used by CICE.
+</entry>
+<entry id="ntr_aero" value="3" list="" valid_values="0,1,2,3,4,5,6">
+Number of aerosol tracers
+</entry>
+<entry id="scam" value="0" list="" valid_values="0,1">
+Configure CICE for single column mode: 0=off, 1=on.  This option is
+dictated by running in prescribed mode with CICE.
+</entry>
+
+</config_definition>

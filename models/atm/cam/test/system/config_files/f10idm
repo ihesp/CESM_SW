@@ -1,0 +1,6 @@
+-spmd -nosmp
+-dyn fv
+-res 10x15
+-phys ideal
+-debug
+-s

@@ -1,0 +1,13 @@
+&drydep_inparm
+/
+&megan_emis_nl
+ megan_factors_file = '/home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart/emis/megan21_emis_factors_c20120313.nc'
+ megan_specifier = 'ISOP = isoprene', 'C10H16 = pinene_a + carene_3 + thujene_a', 'CH3OH = methanol', 'C2H5OH = ethanol',
+         'CH2O = formaldehyde', 'CH3CHO = acetaldehyde', 'CH3COOH = acetic_acid', 'CH3COCH3 = acetone'
+/
+#!--------------------------------------------------------------------------------------------------------------------------
+#! drv_flds_in:: Comment:
+#! This namelist was created using the following command-line:
+#!     /home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/models/lnd/clm/bld/CLM build-namelist -infile /home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/test100_95ocn190515/Buildconf/clmconf/cesm_namelist -csmdata /home/export/online1/xwan/cesm/inputdata -inputdata /home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/test100_95ocn190515/Buildconf/clm.input_data_list -ignore_ic_year -namelist &clm_inparm start_ymd = 00010101  / -use_case 1850_control -res ne120np4 -clm_start_type default -envxml_dir /home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/test100_95ocn190515 -l_ncpl 96 -lnd_frac /home/export/online1/xwan/cesm/inputdata/share/domains/domain.lnd.ne120np4_tx01v2.120412.nc -glc_nec 0 -co2_ppmv 284.7 -co2_type diagnostic -config /home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/test100_95ocn190515/Buildconf/clmconf/config_cache.xml
+#! For help on options use: /home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/models/lnd/clm/bld/CLM build-namelist -help
+#!--------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,55 @@
+ifeq ($(strip $(USE_ESMF_LIB)), TRUE)
+   ESMFDIR = esmf
+else
+   ESMFDIR = noesmf
+endif
+INCLUDES=-I$(EXEROOT)/atm/obj -I$(EXEROOT)/ice/obj -I$(EXEROOT)/ocn/obj -I$(EXEROOT)/glc/obj -I$(EXEROOT)/rof/obj -I$(EXEROOT)/wav/obj -I$(SHAREDPATH)/$(COMP_INTERFACE)/$(ESMFDIR)/$(NINST_VALUE)/csm_share -I$(SHAREDPATH)/$(lib)
+
+CC=/home/export/online1/cesm06/dxh/workspace/fcc/sw5c.py -slave
+CFLAGS=-msimd -O2 -ffast-math -pjump_static
+FC=/home/export/online1/cesm06/dxh/workspace/fcc/sw5c.py -slave
+FFLAGS=-msimd -O2 -mp -ffast-math -J$(SHAREDPATH)/$(lib) $(INCLUDES) -pjump_static 
+CPPFLAGS=-cpp
+DEP=cpp
+DEPFLAGS=-MM
+lib=cpe
+VPATH +=: $(SRCROOT):$(OBJROOT):$(OBJROOT_CPE)
+
+C_SRC=$(patsubst $(SRCROOT)/%.c,%.c,$(wildcard $(SRCROOT)/*.c))
+F90_SRC=$(patsubst $(SRCROOT)/%.f90,%.f90,$(wildcard $(SRCROOT)/*.f90))
+F90PP_SRC=$(patsubst $(SRCROOT)/%.F90,%.F90,$(wildcard $(SRCROOT)/*.F90))
+#MKDIR:=$(shell if [ ! -d build ]; then mkdir build; fi; if [ ! -d dep ]; then mkdir dep; fi)
+OBJS=$(patsubst %.c, %.o, $(C_SRC)) $(patsubst %.F90, %.o, $(F90PP_SRC)) $(patsubst %.f90, %.o, $(F90_SRC))
+SRCROOT=$(CASEROOT)/SourceMods/src.cpe
+OBJROOT_CPE=$(SHAREDPATH)/$(lib)
+
+all: libcpe.a
+Filepath:
+	readlink -f $(SRCROOT) > $@
+Deppath: Filepath
+	cp $< $@
+Srcfiles: Filepath
+	cd $(OBJROOT_CPE) && $(CASEROOT)/Tools/mkSrcfiles
+Depends: Deppath Srcfiles
+	$(CASEROOT)/Tools/mkDepends $^ > $@
+-include Depends
+libcpe.a: $(OBJS)
+	if [ -e $@ ]; then rm $@ ; fi
+	ar cr $@ $^
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.F90
+	$(FC) $(FFLAGS) $(CPPFLAGS) -c $< -o $@
+%.o: %.f90
+	$(FC) $(FFLAGS) -c $< -o $@
+
+# %.d: %.c
+# 	$(DEP) $(DEPFLAGS) -MT $(patsubst %.d, %.o, $@) $< -o $@
+# %.d: %.F90
+# 	$(DEP) $(DEPFLAGS) -MT $(patsubst %.d, %.o, $@) $< -o $@
+install: libcpe.a
+	cp libcpe.a $(SHAREDPATH)/lib
+-include $(DEPS)
+.PHONY: clean
+clean:
+	rm *.o *.mod dep/*

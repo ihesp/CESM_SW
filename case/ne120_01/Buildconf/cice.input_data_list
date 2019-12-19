@@ -1,0 +1,3 @@
+ice_ic = /home/export/online1/xwan/cesm/inputdata/ice/cice/g.e12.G.T62_t12.003.cice.r.0016-01-01-00000.nc
+grid_file = /home/export/online1/xwan/cesm/inputdata/ocn/pop/tx0.1v2/grid/horiz_grid_200709.ieeer8
+kmt_file = /home/export/online1/xwan/cesm/inputdata/ocn/pop/tx0.1v2/grid/topography_km62_201209.ieeei4

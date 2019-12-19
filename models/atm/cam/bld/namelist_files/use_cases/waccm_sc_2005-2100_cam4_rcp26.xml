@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+
+<namelist_defaults>
+
+<!-- Solar data from Lean (via Caspar Ammann) -->
+<solar_data_file>atm/cam/solar/spectral_irradiance_Lean_1950-2140_daily_c100804.nc</solar_data_file>
+
+<!-- Prescribed BAM data is from Jean-Francois Lamarque -->
+<prescribed_aero_datapath>atm/cam/chem/trop_mozart_aero/aero</prescribed_aero_datapath>
+<prescribed_aero_file>aero_rcp26_v1_1.9x2.5_L26_1995-2105_c100316.nc</prescribed_aero_file>
+<prescribed_aero_type>INTERP_MISSING_MONTHS</prescribed_aero_type>
+
+<start_ymd>20050101</start_ymd>
+<restart_option> yearly </restart_option>
+
+<!-- aerosol deposition -->
+<aerodep_flx_datapath>atm/cam/chem/trop_mozart_aero/aero</aerodep_flx_datapath>
+<aerodep_flx_file>'aerosoldep_rcp2.6_monthly_1849-2104_1.9x2.5_c100402.nc'</aerodep_flx_file>
+<aerodep_flx_type>'SERIAL'</aerodep_flx_type>
+
+<!-- cloud tuning factor -->
+<cldfrc_rhminl>0.90D0</cldfrc_rhminl>
+
+<!--Species IC -->
+<ncdata dyn="fv"  hgrid="1.9x2.5" >atm/waccm/ic/b40.20th.track1.2deg.wcm.007.cam2.i.1955-01-01-00000.nc</ncdata>
+<ncdata dyn="fv"  hgrid="4x5"     >atm/waccm/ic/b40.20th.track1.4deg.wcm.007.cam2.i.1955-01-01-00000.nc</ncdata>
+
+<!-- Specified chemistry forcing file; note that the same file is used for ozone. -->
+
+<waccm_forcing_datapath>atm/waccm/ub</waccm_forcing_datapath>
+<waccm_forcing_file>ghg_forcing_RCP26_2005-2099_CMIP5_EnsMean.c140411.nc</waccm_forcing_file>
+<waccm_forcing_type>SERIAL</waccm_forcing_type>
+
+<prescribed_ozone_datapath>atm/waccm/ub</prescribed_ozone_datapath>
+<prescribed_ozone_file>ghg_forcing_RCP26_2005-2099_CMIP5_EnsMean.c140411.nc</prescribed_ozone_file>
+<prescribed_ozone_name>O3</prescribed_ozone_name>
+<prescribed_ozone_type>SERIAL</prescribed_ozone_type>
+
+<!-- Deposition Velocities : DEFAULTS okay -->
+
+<!-- Emissions DEFAULTS OKAY for: airpl_emis_file,ch2o_emis_file,co_emis_file,nox_emis_file-->
+
+<!-- LBC, UBC Files -->
+<flbc_file>atm/waccm/lb/LBC_1765-2500_1.9x2.5_CMIP5_RCP3PD_za_091214.nc</flbc_file>
+<flbc_type>'SERIAL'</flbc_type>
+
+<!-- QBO settings -->
+<qbo_cyclic>.false.</qbo_cyclic>
+<qbo_forcing_file>atm/waccm/qbo/qbocoefficients_c091230.nc'</qbo_forcing_file>
+<qbo_use_forcing>.true.</qbo_use_forcing>
+
+<!-- Photolysis Inputs DEFAULTS okay for: rsf_file,xs_long_file,xs_short_file -->
+
+<!-- Extraterestrial Flux and MLT inputs DEFAULTS okay for:  -->
+<!-- efield_hflux_file, efield_lflux_file, efield_wei96_file -->
+<!-- electron_file,euvac_file,euvacdat_file,photon_file,neckel_file,woods_etf_file,xs_coef_file -->
+
+<!-- Kp Ap indices -->
+<solar_parms_file>atm/waccm/solar/wasolar_1948-2140_daily_c120306.nc</solar_parms_file>
+
+<!-- History Files -->
+<!-- Use default: Monthly mean for h0, nothing else. -->
+
+<!-- Monthly -->
+<fincl1>
+  'CH4', 'H2O', 'N2O', 'CFC11', 'CFC12',
+  'WFRC_O', 'WFRC_O3', 'WFRC_NO', 'WFRC_CO2'
+</fincl1>
+
+<!-- Reduce output size by removing some variables. -->
+<fexcl1>
+  'BTAUN', 'BTAUS', 'BTAUE', 'BTAUW', 'BTAUNET',
+  'BUTEND1', 'BUTEND2', 'BUTEND3', 'BUTEND4', 'BUTEND5',
+  'BUTGWSPEC', 'BVTGWSPEC',
+  'MAXQ0', 'HDEPTH', 'NETDT',
+  'TAUN', 'TAUS', 'TAUE', 'TAUW', 'TAUGWX', 'TAUGWY',
+  'UTEND1', 'UTEND2', 'UTEND3', 'UTEND4', 'UTEND5',
+  'UTGWSPEC', 'VTGWSPEC',
+  'FRONTGF', 'FRONTGFA',
+  'EKGW',
+  'UTGWORO', 'VTGWORO',
+  'QNO', 'QRLNLTE', 'QRL_TOT',
+  'DUV', 'DVV', 'TTPXMLC',
+  'QBOTEND', 'QBO_U0'
+</fexcl1>
+
+<fexcl2>
+  'PS', 'QRS_TOT', 'T'
+</fexcl2>
+
+<!-- sim_year used for CLM datasets and SSTs forcings -->
+<sim_year>1850-2000</sim_year>
+
+</namelist_defaults>

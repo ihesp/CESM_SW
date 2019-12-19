@@ -1,0 +1,67 @@
+#
+# Makefile Macros generated from /home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/scripts/ccsm_utils/Machines/config_compilers.xml using
+# COMPILER=sw5c
+# OS=LINUX
+# MACH=sunway
+#
+CPPDEFS+= -DFORTRANUNDERSCORE -DNO_R16 -DCPRSWLH -DNO_MPIMOD -DLINUX -DCPRSW5C 
+
+LDFLAGS+= -pjump_static
+
+SLIBS+= -L$(NETCDF_PATH)/lib -lnetcdff -lnetcdf -L$(HDF5_PATH)/lib -lhdf5_hl -lhdf5 -ldl -lz  $(LDM_MATH)/ACOS.o $(LDM_MATH)/ASIN.o $(LDM_MATH)/COS.o $(LDM_MATH)/EXP.o $(LDM_MATH)/LOG10.o $(LDM_MATH)/LOG.o $(LDM_MATH)/math_data.o $(LDM_MATH)/POW.o $(LDM_MATH)/SIN.o -lm -lm_slave  -L/usr/sw-mpp/swacc/swacc-2.0.0-1457/lib/sw5 -lswacc_host -lswacc_slave 
+
+CFLAGS:= -O3 -msimd -OPT:IEEE_arith=2
+
+CXX_LDFLAGS:= -cxxlib 
+
+CXX_LINKER:=FORTRAN
+
+FC_AUTO_R8:= -r8 
+
+FFLAGS:= -O3 -msimd -convert big_endian -assume byterecl -ftz -OPT:IEEE_arith=1 -DNO_MPIMOD -D__SWACC__ -cpp -OPT:IEEE_arith=2
+
+FFLAGS_NOOPT:= -O1 -OPT:IEEE_arith=2 -ftz
+
+FIXEDFLAGS:= #-fixed -132 
+
+FREEFLAGS:= -freeform 
+
+HDF5_PATH:=/home/export/online1/cesm06/hdf5-sw
+
+LDM_MATH:=/home/export/online1/cesm06/dxh/workspace/ldm_math/
+
+MPICC:= /home/export/online1/cesm06/dxh/workspace/fcc/sw5c.py 
+
+MPICXX:= /home/export/online1/cesm06/dxh/workspace/fcc/sw5c.py 
+
+MPIFC:= /home/export/online1/cesm06/dxh/workspace/fcc/sw5c.py 
+
+NETCDF_PATH:=/home/export/online1/cesm06/netcdf-sw-412
+
+PNETCDF_PATH:=/home/export/base/nsccwuxi_qnlm/cesm06/dxh/pnetcdf-sw-160
+
+SCC:= /home/export/online1/cesm06/dxh/workspace/fcc/sw5c.py 
+
+SCXX:= /home/export/online1/cesm06/dxh/workspace/fcc/sw5c.py 
+
+SFC:= /home/export/online1/cesm06/dxh/workspace/fcc/sw5c.py 
+
+SUPPORTS_CXX:=TRUE
+
+ifeq ($(DEBUG), TRUE) 
+   FFLAGS += -g -DNDEBUG
+endif
+
+ifeq ($(MODEL), pop2) 
+   CPPDEFS += -D_USE_FLOW_CONTROL 
+endif
+
+ifeq ($(MODEL), driver) 
+   # SLIBS +=-L/home/export/online1/swmore/opensource/swlu/lib -lswlu_mpi $(LINK_SPC) /home/export/online1/cesm06/jflfy/memleak_checker.o -Wl,--wrap=malloc,--wrap=free,--wrap=realloc,--wrap=calloc
+   # SLIBS +=-L/home/export/online1/swmore/opensource/swlu/lib -lswlu_mpi $(LINK_SPC) -Wl,--wrap=malloc,--wrap=free,--wrap=realloc,--wrap=calloc -Wl,--wrap=MPI_Init -Wl,--wrap=MPI_Send  -Wl,--wrap=MPI_Recv -Wl,--wrap=MPI_Sendrecv -Wl,--wrap=MPI_Sendrecv_replace -Wl,--wrap=MPI_Isend -Wl,--wrap=MPI_Irecv  -Wl,--wrap=MPI_Wait -Wl,--wrap=MPI_Waitany -Wl,--wrap=MPI_Waitsome -Wl,--wrap=MPI_Waitall -Wl,--wrap=MPI_Barrier -Wl,--wrap=MPI_Bcast -Wl,--wrap=MPI_Gather -Wl,--wrap=MPI_Gatherv -Wl,--wrap=MPI_Scatter -Wl,--wrap=MPI_Scatterv -Wl,--wrap=MPI_Allgather -Wl,--wrap=MPI_Allgatherv -Wl,--wrap=MPI_Alltoall -Wl,--wrap=MPI_Alltoallv -Wl,--wrap=MPI_Alltoallw -Wl,--wrap=MPI_Reduce -Wl,--wrap=MPI_Allreduce -Wl,--wrap=MPI_Reduce_scatter -Wl,--wrap=MPI_Reduce_scatter_block  -Wl,--wrap=MPI_Finalize
+   SLIBS +=-L/home/export/online1/swmore/opensource/swlu/lib -lswlu_mpi $(LINK_SPC) -Wl,--wrap=malloc,--wrap=free,--wrap=realloc,--wrap=calloc,--wrap=valloc,--wrap=posix_memalign
+   # SLIBS +=-L/home/export/online1/swmore/opensource/swlu/lib -lswlu_mpi $(LINK_SPC) -Wl,--wrap=malloc,--wrap=free,--wrap=realloc,--wrap=calloc
+   # SLIBS +=-L/home/export/online1/swmore/opensource/swlu/lib -lswlu_mpi $(LINK_SPC) -Wl,--wrap=malloc
+   # SLIBS +=-L/home/export/online1/swmore/opensource/swlu/lib -lswlu_mpi $(LINK_SPC)
+endif
+

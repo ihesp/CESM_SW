@@ -1,0 +1,9 @@
+#!/bin/csh -f
+setenv CASEROOT /home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/wt27_cp92_extenddyn
+if ($#argv == 1) then
+    setenv LID $1
+else
+    setenv LID `ls -t submissions | head -n 1`
+endif
+bpeek -f `cat submissions/$LID`
+

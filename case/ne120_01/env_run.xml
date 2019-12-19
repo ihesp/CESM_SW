@@ -1,0 +1,620 @@
+<?xml version="1.0"?>
+
+<config_definition>
+
+<!-- ========================================================================== -->
+<!--                                                                            -->
+<!--       These variables MAY BE CHANGED ANYTIME during a run.                 -->
+<!--       Additional machine speific variables that can be changed             -->
+<!--       during a run are contained in the env_mach_specific file             -->
+<!--                                                                            -->
+<!--       Note1: users SHOULD NOT modify BUILD_COMPETE in env_build.xml        -->
+<!--              this is done automatically by the scripts                     -->
+<!--                                                                            -->
+<!-- ========================================================================== -->
+
+
+
+<!--"case run directory (by default will be set to $EXEROOT/../run) (char) " -->
+<entry id="RUNDIR"   value="$CCSMROOT/cases/run/$CASE"  />    
+
+<!--"CCSM tag (char) " -->
+<entry id="CCSM_REPOTAG"   value="cesm1_3_beta17"  />    
+
+<!--"case description (char) " -->
+<entry id="CASESTR"   value="UNSET"  />    
+
+<!--"directory where log files should be copied (char) " -->
+<entry id="LOGDIR"   value="$CASEROOT/logs"  />    
+
+<!-- ====================================== -->
+
+<!--"Run initialization type, valid values: startup,hybrid,branch (char) " -->
+<entry id="RUN_TYPE"   value="startup"  />    
+
+<!--"Run start date (yyyy-mm-dd). Only used for startup or hybrid runs (char) " -->
+<entry id="RUN_STARTDATE"   value="0001-01-01"  />    
+
+<!--"start time-of-day (integer) " -->
+<entry id="START_TOD"   value="0"  />    
+
+<!--"Reference case for hybrid or branch runs (char*256) " -->
+<entry id="RUN_REFCASE"   value="case.std"  />    
+
+<!--"Reference date for hybrid or branch runs (yyyy-mm-dd) (char*10) " -->
+<entry id="RUN_REFDATE"   value="0001-01-01"  />    
+
+<!--"Reference time of day (seconds) for hybrid or branch runs (sssss) (char) " -->
+<entry id="RUN_REFTOD"   value="00000"  />    
+
+<!--"allow same branch casename as reference casename, valid values: TRUE,FALSE (logical) " -->
+<entry id="BRNCH_RETAIN_CASENAME"   value="FALSE"  />    
+
+<!--"flag for automatically prestaging the refcase restart dataset, valid values: TRUE,FALSE (logical) " -->
+<entry id="GET_REFCASE"   value="FALSE"  />    
+
+<!-- ====================================== -->
+
+<!--"sets the run length with STOP_N and STOP_DATE (must be nyear(s) for _GLC compsets for restarts to work properly), valid values: none,never,nsteps,nstep,nseconds,nsecond,nminutes,nminute,nhours,nhour,ndays,nday,nmonths,nmonth,nyears,nyear,date,ifdays0,end (char) " -->
+<entry id="STOP_OPTION"   value="ndays"  />    
+
+<!--"sets the run length with STOP_OPTION and STOP_DATE (integer) " -->
+<entry id="STOP_N"   value="3"  />    
+
+<!--"date in yyyymmdd format, sets the run length with STOP_OPTION and STOP_N (integer) " -->
+<entry id="STOP_DATE"   value="-999"  />    
+
+<!-- ====================================== -->
+
+<!--"sets frequency of model restart writes (same options as STOP_OPTION) (must be nyear(s) for _GLC compsets) (char) " -->
+<entry id="REST_OPTION"   value="never"  />    
+
+<!--"sets model restart writes with REST_OPTION and REST_DATE (char) " -->
+<entry id="REST_N"   value="2"  />    
+
+<!--"date in yyyymmdd format, sets model restart write date with REST_OPTION and REST_N (char) " -->
+<entry id="REST_DATE"   value="$STOP_DATE"  />    
+
+<!--"A setting of TRUE implies a continuation run, valid values: TRUE,FALSE (logical) " -->
+<entry id="CONTINUE_RUN"   value="FALSE"  />    
+
+<!--"If RESUBMIT is greater than 0, then case will automatically resubmit (integer) " -->
+<entry id="RESUBMIT"   value="0"  />    
+
+<!-- ====================================== -->
+
+<!--"base period associated with NCPL coupling frequency, valid values: hour,day,year,decade (char) " -->
+<entry id="NCPL_BASE_PERIOD"   value="day"  />    
+
+<!--"number of atm coupling intervals per NCPL_BASE_PERIOD (integer) (char) " -->
+<entry id="ATM_NCPL"   value="96"  />    
+
+<!--"number of land coupling intervals per NCPL_BASE_PERIOD (integer) (char) " -->
+<entry id="LND_NCPL"   value="$ATM_NCPL"  />    
+
+<!--"number of ice coupling intervals per NCPL_BASE_PERIOD (integer) (char) " -->
+<entry id="ICE_NCPL"   value="$ATM_NCPL"  />    
+
+<!--"number of ocn coupling intervals per NCPL_BASE_PERIOD (integer) (char) " -->
+<entry id="OCN_NCPL"   value="48"  />    
+
+<!--"number of glc coupling intervals per NCPL_BASE_PERIOD (integer) (char) " -->
+<entry id="GLC_NCPL"   value="1"  />    
+
+<!--"number of rof coupling intervals per NCPL_BASE_PERIOD (integer) (char) " -->
+<entry id="ROF_NCPL"   value="8"  />    
+
+<!--"number of wav coupling intervals per NCPL_BASE_PERIOD (integer) (char) " -->
+<entry id="WAV_NCPL"   value="$ATM_NCPL"  />    
+
+<!--"coupler sequencing option, valid values: CESM1_ORIG,CESM!_ORIG_TIGHT,CESM1_MOD,CESM1_MOD_TIGHT,RASM_OPTION1,RASM_OPTION2 (char) " -->
+<entry id="CPL_SEQ_OPTION"   value="CESM1_MOD"  />    
+
+<!-- ====================================== -->
+
+<!--"mpi run command (char) " -->
+<entry id="MPI_RUN_COMMAND"   value="UNSET"  />    
+
+<!-- ====================================== -->
+
+<!--"TRUE implies perform asynchronous i/o, valid values: TRUE,FALSE (logical) " -->
+<entry id="PIO_ASYNC_INTERFACE"   value="FALSE"  />    
+
+<!--"mpi task stride between io tasks (integer) " -->
+<entry id="PIO_STRIDE"   value="256"  />    
+
+<!--"pio root processor (integer) " -->
+<entry id="PIO_ROOT"   value="4"  />    
+
+<!--"pio number of io tasks (integer) " -->
+<entry id="PIO_NUMTASKS"   value="-1"  />    
+
+<!--"pio io type, valid values: netcdf,pnetcdf,netcdf4p,netcdf4c,default (char) " -->
+<entry id="PIO_TYPENAME"   value="pnetcdf"  />    
+
+<!--"pio debug level, valid values: 0,1,2,3,4,5,6 (integer) " -->
+<entry id="PIO_DEBUG_LEVEL"   value="0"  />    
+
+<!--"pio blocksize (integer) " -->
+<entry id="PIO_BLOCKSIZE"   value="-1"  />    
+
+<!--"pio buffer size limit (integer) " -->
+<entry id="PIO_BUFFER_SIZE_LIMIT"   value="-1"  />    
+
+<!--"pio stride (integer) " -->
+<entry id="OCN_PIO_STRIDE"   value="-99"  />    
+
+<!--"pio root processor (integer) " -->
+<entry id="OCN_PIO_ROOT"   value="-99"  />    
+
+<!--"pio number of io tasks (integer) " -->
+<entry id="OCN_PIO_NUMTASKS"   value="-1"  />    
+
+<!--"pio io type, valid values: nothing,netcdf,pnetcdf,netcdf4p,netcdf4c (char) " -->
+<entry id="OCN_PIO_TYPENAME"   value="nothing"  />    
+
+<!--"pio stride (integer) " -->
+<entry id="LND_PIO_STRIDE"   value="-99"  />    
+
+<!--"pio root processor (integer) " -->
+<entry id="LND_PIO_ROOT"   value="-99"  />    
+
+<!--"pio number of io tasks (integer) " -->
+<entry id="LND_PIO_NUMTASKS"   value="-1"  />    
+
+<!--"pio io type, valid values: nothing,netcdf,pnetcdf,netcdf4p,netcdf4c (char) " -->
+<entry id="LND_PIO_TYPENAME"   value="nothing"  />    
+
+<!--"pio stride (integer) " -->
+<entry id="ROF_PIO_STRIDE"   value="-99"  />    
+
+<!--"pio root processor (integer) " -->
+<entry id="ROF_PIO_ROOT"   value="-99"  />    
+
+<!--"pio number of io tasks (integer) " -->
+<entry id="ROF_PIO_NUMTASKS"   value="-1"  />    
+
+<!--"pio io type, valid values: nothing,netcdf,pnetcdf,netcdf4p,netcdf4c (char) " -->
+<entry id="ROF_PIO_TYPENAME"   value="nothing"  />    
+
+<!--"pio stride (integer) " -->
+<entry id="ICE_PIO_STRIDE"   value="-99"  />    
+
+<!--"pio root processor (integer) " -->
+<entry id="ICE_PIO_ROOT"   value="-99"  />    
+
+<!--"pio number of io tasks (integer) " -->
+<entry id="ICE_PIO_NUMTASKS"   value="-1"  />    
+
+<!--"pio io type, valid values: nothing,netcdf,pnetcdf,netcdf4p,netcdf4c (char) " -->
+<entry id="ICE_PIO_TYPENAME"   value="nothing"  />    
+
+<!--"pio stride (integer) " -->
+<entry id="ATM_PIO_STRIDE"   value="-99"  />    
+
+<!--"pio root processor (integer) " -->
+<entry id="ATM_PIO_ROOT"   value="-99"  />    
+
+<!--"pio number of io tasks (integer) " -->
+<entry id="ATM_PIO_NUMTASKS"   value="-1"  />    
+
+<!--"pio io type, valid values: nothing,netcdf,pnetcdf,netcdf4p,netcdf4c (char) " -->
+<entry id="ATM_PIO_TYPENAME"   value="nothing"  />    
+
+<!--"pio stride (integer) " -->
+<entry id="CPL_PIO_STRIDE"   value="-99"  />    
+
+<!--"pio root processor (integer) " -->
+<entry id="CPL_PIO_ROOT"   value="-99"  />    
+
+<!--"pio number of io tasks (integer) " -->
+<entry id="CPL_PIO_NUMTASKS"   value="-1"  />    
+
+<!--"pio io type, valid values: nothing,netcdf,pnetcdf,netcdf4p,netcdf4c (char) " -->
+<entry id="CPL_PIO_TYPENAME"   value="nothing"  />    
+
+<!--"pio stride (integer) " -->
+<entry id="GLC_PIO_STRIDE"   value="-99"  />    
+
+<!--"pio root processor (integer) " -->
+<entry id="GLC_PIO_ROOT"   value="-99"  />    
+
+<!--"pio number of io tasks (integer) " -->
+<entry id="GLC_PIO_NUMTASKS"   value="-1"  />    
+
+<!--"pio io type, valid values: nothing,netcdf,pnetcdf,netcdf4p,netcdf4c (char) " -->
+<entry id="GLC_PIO_TYPENAME"   value="nothing"  />    
+
+<!--"pio stride (integer) " -->
+<entry id="WAV_PIO_STRIDE"   value="-99"  />    
+
+<!--"pio root processor (integer) " -->
+<entry id="WAV_PIO_ROOT"   value="-99"  />    
+
+<!--"pio number of io tasks (integer) " -->
+<entry id="WAV_PIO_NUMTASKS"   value="-1"  />    
+
+<!--"pio io type, valid values: nothing,netcdf,pnetcdf,netcdf4p,netcdf4c (char) " -->
+<entry id="WAV_PIO_TYPENAME"   value="nothing"  />    
+
+<!-- ====================================== -->
+
+<!--"logical that turns on diagnostic budgets, valid values: TRUE,FALSE (logical) " -->
+<entry id="BUDGETS"   value="TRUE"  />    
+
+<!--"Turns on component varying thread control in the driver, valid values: TRUE,FALSE (logical) " -->
+<entry id="DRV_THREADING"   value="FALSE"  />    
+
+<!--"Turns on component barriers for component timing, valid values: TRUE,FALSE (logical) " -->
+<entry id="COMP_RUN_BARRIERS"   value="FALSE"  />    
+
+<!--"turns on bit-for-bit reproducibility with varying pe counts in coupler, valid values: TRUE,FALSE (logical) " -->
+<entry id="BFBFLAG"   value="FALSE"  />    
+
+<!--"level of debug output, 0=minimum, 1=normal, 2=more, 3=too much, valid values: 0,1,2,3 (integer) " -->
+<entry id="INFO_DBUG"   value="0"  />    
+
+<!--"timer output depth (integer) " -->
+<entry id="TIMER_LEVEL"   value="12"  />    
+
+<!--"cpl decomp option, valid values: 0,1,2,3,4,5,6 (integer) " -->
+<entry id="CPL_DECOMP"   value="0"  />    
+
+<!--"logical to diagnose model timing at the end of the run, valid values: TRUE,FALSE (logical) " -->
+<entry id="CHECK_TIMING"   value="TRUE"  />    
+
+<!--"logical to save timing files in rundir, valid values: TRUE,FALSE (logical) " -->
+<entry id="SAVE_TIMING"   value="TRUE"  />    
+
+<!-- ====================================== -->
+
+<!--"sets coupler snapshot history file frequency (like REST_OPTION) (char) " -->
+<entry id="HIST_OPTION"   value="never"  />    
+
+<!--"sets coupler snapshot history file frequency (like REST_N) (char) " -->
+<entry id="HIST_N"   value="-999"  />    
+
+<!--"yyyymmdd format, sets coupler snapshot history date (like REST_DATE) (integer) " -->
+<entry id="HIST_DATE"   value="-999"  />    
+
+<!--"sets coupler average history file frequency (like REST_OPTION) (char) " -->
+<entry id="AVGHIST_OPTION"   value="never"  />    
+
+<!--"sets coupler average history file frequency (like REST_N) (char) " -->
+<entry id="AVGHIST_N"   value="-999"  />    
+
+<!--"yyyymmdd format, sets coupler average history date (like REST_DATE) (integer) " -->
+<entry id="AVGHIST_DATE"   value="-999"  />    
+
+<!-- ====================================== -->
+
+<!--"command used to query batch system (char) " -->
+<entry id="BATCHQUERY"   value="bjobs"  />    
+
+<!--"command used to submit to batch system (char) " -->
+<entry id="BATCHSUBMIT"   value="bsub"  />    
+
+<!-- ====================================== -->
+
+<!--"local inputdata directory for CCSM prestaged data (char) " -->
+<entry id="DIN_LOC_ROOT"   value="/home/export/online1/xwan/cesm/inputdata"  />    
+
+<!--"general ccsm inputdata directory for CLM datm forcing (char) " -->
+<entry id="DIN_LOC_ROOT_CLMFORC"   value="/home/export/online1/xwan/cesm/inputdata/atm/cam"  />    
+
+<!-- ====================================== -->
+
+<!--"logical to turn on short term archiving, valid values: TRUE,FALSE (logical) " -->
+<entry id="DOUT_S"   value="FALSE"  />    
+
+<!--"local short term archiving root directory (char) " -->
+<entry id="DOUT_S_ROOT"   value="/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31/scripts/$CASE/"  />    
+
+<!--"logical to archive all interim restart files, not just those at eor, valid values: TRUE,FALSE (logical) " -->
+<entry id="DOUT_S_SAVE_INTERIM_RESTART_FILES"   value="FALSE"  />    
+
+<!--"Save every Nth set of restart files and delete all others (integer) " -->
+<entry id="DOUT_S_SAVE_EVERY_NTH_RESTART_FILE_SET"   value="0"  />    
+
+<!--"logical to save contents of the short term archive on disk, valid values: TRUE,FALSE (logical) " -->
+<entry id="DOUT_S_SAVE_ALL_ON_DISK"   value="TRUE"  />    
+
+<!--"logical to generate time-series files from the history time-slice files, valid values: TRUE,FALSE (logical) " -->
+<entry id="DOUT_S_GENERATE_TSERIES"   value="FALSE"  />    
+
+<!--"logical to save history time slice files after the variable time series have been generated, valid values: TRUE,FALSE (logical) " -->
+<entry id="DOUT_S_SAVE_HISTORY_FILES"   value="FALSE"  />    
+
+<!--"logical to turn on long term archiving (if DOUT_S is also TRUE), valid values: TRUE,FALSE (logical) " -->
+<entry id="DOUT_L_MS"   value="FALSE"  />    
+
+<!--"local long term archiving root directory (char) " -->
+<entry id="DOUT_L_MSROOT"   value="USERDEFINED_optional_run"  />    
+
+<!--"hpss account number (char) " -->
+<entry id="DOUT_L_HPSS_ACCNT"   value="00000000"  />    
+
+<!--"logical to tar up long term archiver history files, valid values: TRUE,FALSE (logical) " -->
+<entry id="DOUT_L_HTAR"   value="FALSE"  />    
+
+<!--"logical to save contents of the short term archive on disk after
+the long term archiver has successfully completed, valid values: TRUE,FALSE (logical) " -->
+<entry id="DOUT_L_SAVE_ALL_ON_DISK"   value="TRUE"  />    
+
+<!--"logical to call the OMWG diagnostics plotting packages as part
+of the CESM run script after the successful completion of the short term 
+archiver, valid values: TRUE,FALSE (logical) " -->
+<entry id="OMWG_POSTPROC_DIAGS"   value="FALSE"  />    
+
+<!--"logical to call the AMWG diagnostics plotting packages as part
+of the CESM run script after the successful completion of the short term 
+archiver, valid values: TRUE,FALSE (logical) " -->
+<entry id="AMWG_POSTPROC_DIAGS"   value="FALSE"  />    
+
+<!--"logical to call the LMWG diagnostics plotting packages as part
+of the CESM run script after the successful completion of the short term 
+archiver, valid values: TRUE,FALSE (logical) " -->
+<entry id="LMWG_POSTPROC_DIAGS"   value="FALSE"  />    
+
+<!--"logical to call the PCWG diagnostics plotting packages as part
+of the CESM run script after the successful completion of the short term 
+archiver, valid values: TRUE,FALSE (logical) " -->
+<entry id="PCWG_POSTPROC_DIAGS"   value="FALSE"  />    
+
+<!-- ====================================== -->
+
+<!--"CAM namelist use_case (char) " -->
+<entry id="CAM_NML_USE_CASE"   value="1850_cam5"  />    
+
+<!--"CAM specific namelist settings for -namelist option (char) " -->
+<entry id="CAM_NAMELIST_OPTS"   value=""  />    
+
+<!-- ====================================== -->
+
+<!--"CLM build-namelist options (char) " -->
+<entry id="CLM_BLDNML_OPTS"   value=""  />    
+
+<!--"CLM namelist use_case (char) " -->
+<entry id="CLM_NML_USE_CASE"   value="1850_control"  />    
+
+<!--"CLM specific namelist settings (char) " -->
+<entry id="CLM_NAMELIST_OPTS"   value=""  />    
+
+<!--"clm co2 type, valid values: constant,diagnostic,prognostic (char) " -->
+<entry id="CLM_CO2_TYPE"   value="diagnostic"  />    
+
+<!--"Force CLM model to do a cold-start, valid values: on,off (char) " -->
+<entry id="CLM_FORCE_COLDSTART"   value="off"  />    
+
+<!--"My Data ID (char) " -->
+<entry id="CLM_USRDAT_NAME"   value="UNSET"  />    
+
+<!-- ====================================== -->
+
+<!--"surface heat and freshwater forcing, partial is consistent with coupling to a data atm model, valid values: full,partial (char) " -->
+<entry id="OCN_COUPLING"   value="full"  />    
+
+<!--"under ice forcing, inactive is consistent with coupling to a data ice model, valid values: active,inactive (char) " -->
+<entry id="OCN_ICE_FORCING"   value="active"  />    
+
+<!--"provenance of surface Chl for radiative penetration computations, valid values: diagnostic,prognostic (char) " -->
+<entry id="OCN_CHL_TYPE"   value="diagnostic"  />    
+
+<!--"provenance of atmospheric CO2 for gas flux computation, valid values: constant,prognostic,diagnostic (char) " -->
+<entry id="OCN_CO2_TYPE"   value="constant"  />    
+
+<!--"TRUE implies using fix to pH scale of carbon thermodynamic constants, valid values: TRUE,FALSE (char) " -->
+<entry id="OCN_CO2_FLUX_OCMIP_BUG_FIX"   value="TRUE"  />    
+
+<!--"specification of transient forcing datasets, valid values: unset,1850-2000,rcp4.5,rcp8.5 (char) " -->
+<entry id="OCN_TRANSIENT"   value="unset"  />    
+
+<!--"tavg output control for tracer-budget terms, valid values: TRUE,FALSE (char) " -->
+<entry id="OCN_TAVG_TRACER_BUDGET"   value="FALSE"  />    
+
+<!--"tavg output control for high-frequency output, valid values: TRUE,FALSE (char) " -->
+<entry id="OCN_TAVG_HIFREQ"   value="FALSE"  />    
+
+<!--"TRUE turns off all horizontal motion in POP2, valid values: TRUE,FALSE (char) " -->
+<entry id="OCN_ONEDIM"   value="FALSE"  />    
+
+<!-- ====================================== -->
+
+<!--"CICE specific namelist settings for -namelist option (char) " -->
+<entry id="CICE_NAMELIST_OPTS"   value=""  />    
+
+<!-- ====================================== -->
+
+<!-- ====================================== -->
+
+<!--"RTM build-namelist options (char) " -->
+<entry id="RTM_BLDNML_OPTS"   value="-simyr 1850"  />    
+
+<!--"RTM specific namelist settings (char) " -->
+<entry id="RTM_NAMELIST_OPTS"   value=""  />    
+
+<!-- ====================================== -->
+
+<!-- ====================================== -->
+
+<!--"Prescribed SST and ice coverage stream name. (char) " -->
+<entry id="SSTICE_STREAM"   value="UNSET"  />    
+
+<!--"Prescribed SST and ice coverage data file name. (char) " -->
+<entry id="SSTICE_DATA_FILENAME"   value="UNSET"  />    
+
+<!--"Prescribed SST and ice coverage grid file name. (char) " -->
+<entry id="SSTICE_GRID_FILENAME"   value="UNSET"  />    
+
+<!--"The model year that corresponds to SSTICE_YEAR_START on the data file. (integer) " -->
+<entry id="SSTICE_YEAR_ALIGN"   value="-999"  />    
+
+<!--"The first year of data to use from SSTICE_DATA_FILENAME. (integer) " -->
+<entry id="SSTICE_YEAR_START"   value="-999"  />    
+
+<!--"The last year of data to use from SSTICE_DATA_FILENAME. (integer) " -->
+<entry id="SSTICE_YEAR_END"   value="-999"  />    
+
+<!-- ====================================== -->
+
+<!--"Only used for C,G compsets: if ocn, ocn provides EP balance factor for precip, valid values: off,ocn (char) " -->
+<entry id="CPL_EPBAL"   value="off"  />    
+
+<!--"Only used for C,G compsets: if true, compute albedos to work with daily avg SW down, valid values: true,false (logical) " -->
+<entry id="CPL_ALBAV"   value="false"  />    
+
+<!--"BGC flag, valid values: none,CO2A,CO2B,CO2C,CO2_DMSA (char) " -->
+<entry id="CCSM_BGC"   value="CO2A"  />    
+
+<!--"Glacier model number of elevation classes, 0 implies no glacier land unit in clm, valid values: 0,1,3,5,10,36 (integer) " -->
+<entry id="GLC_NEC"   value="0"  />    
+
+<!--"Whether the glacier component feeds back to the rest of the system, valid values: TRUE,FALSE (logical) " -->
+<entry id="GLC_TWO_WAY_COUPLING"   value="FALSE"  />    
+
+<!--"CO2 ppmv (real) " -->
+<entry id="CCSM_CO2_PPMV"   value="284.7"  />    
+
+<!--"enable papi hardware counters, valid values: TRUE,FALSE (logical) " -->
+<entry id="PROFILE_PAPI_ENABLE"   value="FALSE"  />    
+
+<!-- ====================================== -->
+
+<!--"atm domain file (char) " -->
+<entry id="ATM_DOMAIN_FILE"   value="domain.lnd.ne120np4_tx01v2.120412.nc"  />    
+
+<!--"path of atm domain file (char) " -->
+<entry id="ATM_DOMAIN_PATH"   value="$DIN_LOC_ROOT/share/domains"  />    
+
+<!--"lnd domain file (char) " -->
+<entry id="LND_DOMAIN_FILE"   value="domain.lnd.ne120np4_tx01v2.120412.nc"  />    
+
+<!--"path of lnd domain file (char) " -->
+<entry id="LND_DOMAIN_PATH"   value="$DIN_LOC_ROOT/share/domains"  />    
+
+<!--"rof domain file (char) " -->
+<entry id="ROF_DOMAIN_FILE"   value="UNSET"  />    
+
+<!--"path of rof domain file (char) " -->
+<entry id="ROF_DOMAIN_PATH"   value="$DIN_LOC_ROOT/share/domains"  />    
+
+<!--"wav domain file (char) " -->
+<entry id="WAV_DOMAIN_FILE"   value="UNSET"  />    
+
+<!--"path of wav domain file (char) " -->
+<entry id="WAV_DOMAIN_PATH"   value="$DIN_LOC_ROOT/share/domains"  />    
+
+<!--"ice domain file (char) " -->
+<entry id="ICE_DOMAIN_FILE"   value="domain.ocn.tx0.1v2_090218.nc"  />    
+
+<!--"path of ice domain file (char) " -->
+<entry id="ICE_DOMAIN_PATH"   value="$DIN_LOC_ROOT/share/domains"  />    
+
+<!--"ocn domain file (char) " -->
+<entry id="OCN_DOMAIN_FILE"   value="domain.ocn.tx0.1v2_090218.nc"  />    
+
+<!--"path of ocn domain file (char) " -->
+<entry id="OCN_DOMAIN_PATH"   value="$DIN_LOC_ROOT/share/domains"  />    
+
+<!--"glc domain file (char) " -->
+<entry id="GLC_DOMAIN_FILE"   value="UNSET"  />    
+
+<!--"path of glc domain file (char) " -->
+<entry id="GLC_DOMAIN_PATH"   value="$DIN_LOC_ROOT/share/domains"  />    
+
+<!--"atm2ocn flux mapping file (char) " -->
+<entry id="ATM2OCN_FMAPNAME"   value="cpl/gridmaps/ne120np4/map_ne120np4_to_tx0.1v2_aave_110331.nc"  />    
+
+<!--"atm2ocn state mapping file (char) " -->
+<entry id="ATM2OCN_SMAPNAME"   value="cpl/gridmaps/ne120np4/map_ne120np4_to_tx0.1v2_090127_bilin_110331.nc"  />    
+
+<!--"atm2ocn vector mapping file (char) " -->
+<entry id="ATM2OCN_VMAPNAME"   value="cpl/gridmaps/ne120np4/map_ne120np4_to_tx0.1v2_090127_bilin_110331.nc"  />    
+
+<!--"ocn2atm flux mapping file (char) " -->
+<entry id="OCN2ATM_FMAPNAME"   value="cpl/gridmaps/tx0.1v2/map_tx0.1v2_to_ne120np4_aave_110331.nc"  />    
+
+<!--"ocn2atm state mapping file (char) " -->
+<entry id="OCN2ATM_SMAPNAME"   value="cpl/gridmaps/tx0.1v2/map_tx0.1v2_to_ne120np4_aave_110331.nc"  />    
+
+<!--"atm2lnd flux mapping file (char) " -->
+<entry id="ATM2LND_FMAPNAME"   value="idmap"  />    
+
+<!--"atm2lnd state mapping file (char) " -->
+<entry id="ATM2LND_SMAPNAME"   value="idmap"  />    
+
+<!--"lnd2atm flux mapping file (char) " -->
+<entry id="LND2ATM_FMAPNAME"   value="idmap"  />    
+
+<!--"lnd2atm state mapping file (char) " -->
+<entry id="LND2ATM_SMAPNAME"   value="idmap"  />    
+
+<!--"rof2lnd flux mapping file (char) " -->
+<entry id="ROF2LND_FMAPNAME"   value="lnd/clm2/mappingdata/maps/ne120np4/map_0.5x0.5_nomask_to_ne120np4_nomask_aave_da_c121019.nc"  />    
+
+<!--"lnd2rof flux mapping file (char) " -->
+<entry id="LND2ROF_FMAPNAME"   value="lnd/clm2/mappingdata/maps/ne120np4/map_ne120np4_to_0.5x0.5rtm_aave_da_110320.nc"  />    
+
+<!--"rof2ocn flux mapping file (char) " -->
+<entry id="ROF2OCN_FMAPNAME"   value="idmap"  />    
+
+<!--"rof2ocn runoff mapping file (char) " -->
+<entry id="ROF2OCN_RMAPNAME"   value="cpl/cpl6/map_r05_to_tx0.1v2_r500e1000_080620.nc"  />    
+
+<!--"glc2ocn runoff mapping file (char) " -->
+<entry id="GLC2OCN_RMAPNAME"   value="idmap"  />    
+
+<!--"glc2ice runoff mapping file (char) " -->
+<entry id="GLC2ICE_RMAPNAME"   value="idmap"  />    
+
+<!--"atm2wav state mapping file (char) " -->
+<entry id="ATM2WAV_SMAPNAME"   value="idmap"  />    
+
+<!--"ocn2wav state mapping file (char) " -->
+<entry id="OCN2WAV_SMAPNAME"   value="idmap"  />    
+
+<!--"ice2wav state mapping file (char) " -->
+<entry id="ICE2WAV_SMAPNAME"   value="idmap"  />    
+
+<!--"wav2ocn state mapping file (char) " -->
+<entry id="WAV2OCN_SMAPNAME"   value="idmap"  />    
+
+<!--"vector mapping option, valid values: none,npfix,cart3d,cart3d_diag,cart3d_uvw,cart3d_uvw_diag (char) " -->
+<entry id="VECT_MAP"   value="cart3d"  />    
+
+<!--"Error tolerance for differences in fractions in domain checking (char) " -->
+<entry id="EPS_FRAC"   value="1.0e-02"  />    
+
+<!--"Error tolerance for differences in atm/land areas in domain checking (real) " -->
+<entry id="EPS_AAREA"   value="9.0e-07"  />    
+
+<!--"Error tolerance for differences in atm/land masks in domain checking (real) " -->
+<entry id="EPS_AMASK"   value="1.0e-13"  />    
+
+<!--"Error tolerance for differences in atm/land lat/lon in domain checking (real) " -->
+<entry id="EPS_AGRID"   value="1.0e-12"  />    
+
+<!--"Error tolerance for differences in ocean/ice lon/lat in domain checking (real) " -->
+<entry id="EPS_OAREA"   value="1.0e-01"  />    
+
+<!--"Error tolerance for differences in ocean/ice lon/lat in domain checking (real) " -->
+<entry id="EPS_OMASK"   value="1.0e-06"  />    
+
+<!--"Error tolerance for differences in ocean/ice lon/lat in domain checking (real) " -->
+<entry id="EPS_OGRID"   value="1.0e-02"  />    
+
+<!-- ====================================== -->
+
+<!-- ====================================== -->
+
+<!--"Operate on only a single point of the global grid  - DO NOT EDIT (for experts only), valid values: TRUE,FALSE (logical) " -->
+<entry id="PTS_MODE"   value="FALSE"  />    
+
+<!--"Latitude to find nearest points for points mode (only used if PTS_MODE is TRUE) (real(1)) " -->
+<entry id="PTS_LAT"   value="-999.99"  />    
+
+<!--"Longitude to find nearest points for points mode (only used if PTS_MODE is TRUE) (real(1)) " -->
+<entry id="PTS_LON"   value="-999.99"  />    
+
+<!-- ====================================== -->
+</config_definition>

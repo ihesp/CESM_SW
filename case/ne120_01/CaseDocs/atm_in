@@ -1,0 +1,266 @@
+&aerosol_nl
+ aer_drydep_list		= 'bc_a1', 'dst_a1', 'dst_a3', 'ncl_a1', 'ncl_a2', 'ncl_a3', 'num_a1', 'num_a2', 'num_a3', 'pom_a1', 'so4_a1',
+         'so4_a2', 'so4_a3', 'soa_a1', 'soa_a2'
+ aer_wetdep_list		= 'bc_a1', 'dst_a1', 'dst_a3', 'ncl_a1', 'ncl_a2', 'ncl_a3', 'num_a1', 'num_a2', 'num_a3', 'pom_a1', 'so4_a1',
+         'so4_a2', 'so4_a3', 'soa_a1', 'soa_a2'
+ sol_factb_interstitial		= 0.1D0
+ sol_facti_cloud_borne		= 1.0D0
+ sol_factic_interstitial		= 0.4D0
+/
+&analysis_nl
+ interp_gridtype		=  1 
+ interp_nlat		=  0 
+ interp_nlon		=  0 
+ interp_type		=  1 
+ interpolate_analysis		=  .false. 
+/
+&cam_inparm
+ bnd_topo		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/topo/USGS-gtopo30_ne120np4_16xdel2-PFC-consistentSGH.nc'
+ dtime		= 900
+ ncdata		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/inic/homme/cami-mam3_0000-01-ne120np4_L30_c110928.nc'
+ phys_loadbalance		= -1
+ print_energy_errors		= .false.
+/
+&carma_nl
+ carma_model		= 'none'
+/
+&chem_inparm
+ clim_soilw_file		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart/dvel/clim_soilw.nc'
+ depvel_file		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart/dvel/depvel_monthly.nc'
+ depvel_lnd_file		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart/dvel/regrid_vegetation.nc'
+ drydep_srf_file		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mam/atmsrf_ne120np4_110920.nc'
+ exo_coldens_file		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart/phot/exo_coldens.nc'
+ ext_frc_cycle_yr		= 0
+ ext_frc_specifier		= 'SO2         -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so2_elev_1850_c090726.nc',
+         'bc_a1       -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_bc_elev_1850_c090726.nc',
+         'num_a1      -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_num_a1_elev_1850_c090726.nc',
+         'num_a2      -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_num_a2_elev_1850_c090726.nc',
+         'pom_a1      -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_pom_elev_1850_c130423.nc',
+         'so4_a1      -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so4_a1_elev_1850_c090726.nc',
+         'so4_a2      -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so4_a2_elev_1850_c090726.nc'
+ ext_frc_type		= 'CYCLICAL'
+ fstrat_list		= ' '
+ rsf_file		= '/home/export/online1/xwan/cesm/inputdata/atm/waccm/phot/RSF_GT200nm_v3.0_c080416.nc'
+ season_wes_file		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart/dvel/season_wes.nc'
+ srf_emis_cycle_yr		= 0
+ srf_emis_specifier		= 'DMS       -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/aerocom_mam3_dms_surf_2000_c090129.nc',
+         'SO2       -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so2_surf_1850_c090726.nc',
+         'SOAG      -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_soag_1.5_surf_1850_c130423.nc',
+         'bc_a1     -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_bc_surf_1850_c090726.nc',
+         'num_a1    -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_num_a1_surf_1850_c090726.nc',
+         'num_a2    -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_num_a2_surf_1850_c090726.nc',
+         'pom_a1    -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_pom_surf_1850_c130423.nc',
+         'so4_a1    -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so4_a1_surf_1850_c090726.nc',
+         'so4_a2    -> /home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/emis/ar5_mam3_so4_a2_surf_1850_c090726.nc'
+ srf_emis_type		= 'CYCLICAL'
+ tracer_cnst_cycle_yr		= 1850
+ tracer_cnst_datapath		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart_aero/oxid'
+ tracer_cnst_file		= 'oxid_1.9x2.5_L26_1850clim_c091123.nc'
+ tracer_cnst_filelist		= 'oxid_1.9x2.5_L26_clim_list.c090805.txt'
+ tracer_cnst_specifier		= 'O3','OH','NO3','HO2'
+ tracer_cnst_type		= 'CYCLICAL'
+ xactive_prates		= .false.
+ xs_long_file		= '/home/export/online1/xwan/cesm/inputdata/atm/waccm/phot/temp_prs_GT200nm_JPL10_c140624.nc'
+/
+&chem_surfvals_nl
+ ch4vmr		= 791.6e-9
+ co2vmr		= 284.7e-6
+ f11vmr		= 12.48e-12
+ f12vmr		= 0.0
+ flbc_list		= ' '
+ n2ovmr		= 275.68e-9
+/
+&cldfrc2m_nl
+ cldfrc2m_rhmaxi		=   1.1D0  
+ cldfrc2m_rhmini		=   0.80D0  
+/
+&cldfrc_nl
+ cldfrc_dp1		=  0.10D0 
+ cldfrc_dp2		=  500.0D0 
+ cldfrc_freeze_dry		= .true.
+ cldfrc_ice		= .true.
+ cldfrc_icecrit		=  0.93D0 
+ cldfrc_iceopt		=  5 
+ cldfrc_premib		=  700.0D2 
+ cldfrc_premit		=  40000.0D0 
+ cldfrc_rhminh		=  0.800D0 
+ cldfrc_rhminl		=  0.950D0   
+ cldfrc_rhminl_adj_land		=  0.100D0 
+ cldfrc_sh1		=  0.04D0 
+ cldfrc_sh2		=  500.0D0 
+/
+&cldsed_nl
+ cldsed_ice_stokes_fac		=  1.0D0 
+/
+&cldwat_nl
+ cldwat_conke		=   5.0e-6  
+ cldwat_icritc		=  18.0e-6  
+ cldwat_icritw		=   2.0e-4  
+ cldwat_r3lcrit		=   10.0e-6  
+/
+&conv_water_nl
+ conv_water_frac_limit		=  0.01d0  
+ conv_water_in_rad		=  1 
+/
+&ctl_nl
+ hypervis_order		=      2 
+ hypervis_subcycle		=   4 
+ hypervis_subcycle_q		=  1 
+ integration		= "explicit"
+ nu		=   1.0e13 
+ nu_div		=   2.5e13 
+ nu_p		=   1.0e13 
+ nu_q		=  -1.0 
+ nu_top		=  2.5e5 
+ qsplit		=  1 
+ rsplit		=   3 
+ se_ftype		=  0 
+ se_limiter_option		=  8 
+ se_ne		= 120
+ se_nsplit		=   4 
+ se_partmethod		= 4
+ se_phys_tscale		=  0 
+ se_topology		= "cube"
+ statefreq		= 10000
+ tstep_type		=  5 
+ vert_remap_q_alg		=  1 
+/
+&dust_nl
+ dust_emis_fact		=  1.05D0 
+ soil_erod_file		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/dst/dst_1.9x2.5_c090203.nc'
+/
+&gw_drag_nl
+ effgw_oro		= 0.125D0
+ fcrit2		= 1.0
+ gw_dc		= 0.D0
+ gw_dc_long		= 0.D0
+ pgwv		= 0
+ pgwv_long		= 0
+ tau_0_ubc		= .false.
+/
+&hkconv_nl
+ hkconv_c0		=   1.0e-4 
+ hkconv_cmftau		=  1800.0D0 
+/
+&micro_mg_nl
+ micro_mg_berg_eff_factor		=   1.0D0    
+ micro_mg_dcs		=  600.D-6 
+ micro_mg_num_steps		=     1          
+ micro_mg_precip_frac_method		= 'max_overlap'
+ micro_mg_sub_version		=     0          
+ micro_mg_version		=     1          
+ microp_uniform		= .false.
+/
+&modal_aer_opt_nl
+ water_refindex_file		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/water_refindex_rrtmg_c080910.nc'
+/
+&nucleate_ice_nl
+ nucleate_ice_subgrid		= 1.2D0
+/
+&phys_ctl_nl
+ cam_chempkg		= 'trop_mam3'
+ cam_physpkg		= 'cam5'
+ cld_macmic_num_steps		=                                1 
+ deep_scheme		= 'ZM'
+ do_clubb_sgs		=  .false. 
+ do_tms		=  .true.  
+ eddy_scheme		= 'diag_TKE'
+ history_aero_optics		=           .false.  
+ history_aerosol		=               .false.  
+ history_amwg		=                  .true.   
+ history_budget		=                .false.  
+ history_carma		=       .true.   
+ history_chemistry		=   .true.   
+ history_clubb		=       .true.   
+ history_eddy		=                  .false.  
+ history_vdiag		=                 .false.  
+ history_waccm		=                 .false.  
+ history_waccmx		=      .false.  
+ macrop_scheme		= 'park'
+ micro_do_icesupersat		=  .false. 
+ microp_scheme		= 'MG'
+ radiation_scheme		= 'rrtmg'
+ shallow_scheme		= 'UW'
+ srf_flux_avg		= 0
+ state_debug_checks		= .false.
+ use_gw_convect_dp		= .false.
+ use_gw_convect_sh		= .false.
+ use_gw_front		= .false.
+ use_gw_front_igw		= .false.
+ use_gw_oro		= .true.
+ use_subcol_microp		= .false.
+ waccmx_opt		= 'off'
+/
+&physconst_nl
+ tms_orocnst		=  1.0D0   
+ tms_z0fac		=  0.075D0 
+/
+&prescribed_ozone_nl
+ prescribed_ozone_cycle_yr		= 1850
+ prescribed_ozone_datapath		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/ozone'
+ prescribed_ozone_file		= 'ozone_1.9x2.5_L26_1850clim_c090420.nc'
+ prescribed_ozone_name		= 'O3'
+ prescribed_ozone_type		= 'CYCLICAL'
+/
+&rad_cnst_nl
+ icecldoptics		= 'mitchell'
+ iceopticsfile		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/iceoptics_c080917.nc'
+ liqcldoptics		= 'gammadist'
+ liqopticsfile		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/F_nwvl200_mu20_lam50_res64_t298_c080428.nc'
+ mode_defs		= 'mam3_mode1:accum:=', 'A:num_a1:N:num_c1:num_mr:+',
+         'A:so4_a1:N:so4_c1:sulfate:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/sulfate_rrtmg_c080918.nc:+', 'A:pom_a1:N:pom_c1:p-organic:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/ocpho_rrtmg_c101112.nc:+',
+         'A:soa_a1:N:soa_c1:s-organic:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/ocphi_rrtmg_c100508.nc:+', 'A:bc_a1:N:bc_c1:black-c:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/bcpho_rrtmg_c100508.nc:+',
+         'A:dst_a1:N:dst_c1:dust:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/dust4_rrtmg_c090521.nc:+', 'A:ncl_a1:N:ncl_c1:seasalt:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/ssam_rrtmg_c100508.nc',
+         'mam3_mode2:aitken:=', 'A:num_a2:N:num_c2:num_mr:+',
+         'A:so4_a2:N:so4_c2:sulfate:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/sulfate_rrtmg_c080918.nc:+', 'A:soa_a2:N:soa_c2:s-organic:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/ocphi_rrtmg_c100508.nc:+',
+         'A:ncl_a2:N:ncl_c2:seasalt:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/ssam_rrtmg_c100508.nc', 'mam3_mode3:coarse:=',
+         'A:num_a3:N:num_c3:num_mr:+', 'A:dst_a3:N:dst_c3:dust:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/dust4_rrtmg_c090521.nc:+',
+         'A:ncl_a3:N:ncl_c3:seasalt:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/ssam_rrtmg_c100508.nc:+', 'A:so4_a3:N:so4_c3:sulfate:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/sulfate_rrtmg_c080918.nc'
+ rad_climate		= 'A:Q:H2O', 'N:O2:O2', 'N:CO2:CO2',
+         'N:ozone:O3', 'N:N2O:N2O', 'N:CH4:CH4',
+         'N:CFC11:CFC11', 'N:CFC12:CFC12', 'M:mam3_mode1:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/mam3_mode1_rrtmg_c110318.nc',
+         'M:mam3_mode2:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/mam3_mode2_rrtmg_c110318.nc', 'M:mam3_mode3:/home/export/online1/xwan/cesm/inputdata/atm/cam/physprops/mam3_mode3_rrtmg_c110318.nc'
+/
+&ref_pres_nl
+ clim_modal_aero_top_press		=  1.D-4 
+ do_molec_press		=  0.1D0 
+ molec_diff_bot_press		=  50.D0 
+ trop_cloud_top_press		=       1.D2 
+/
+&solar_inparm
+ solar_data_file		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/solar/SOLAR_SPECTRAL_Lean_1610-2008_annual_c090324.nc'
+ solar_data_type		= 'FIXED'
+ solar_data_ymd		= 18500101
+ solar_htng_spctrl_scl		= .true.
+/
+&subcol_nl
+ subcol_scheme		= 'off'
+/
+&tropopause_nl
+ tropopause_climo_file		= '/home/export/online1/xwan/cesm/inputdata/atm/cam/chem/trop_mozart/ub/clim_p_trop.nc'
+/
+&uwshcu_nl
+ uwshcu_rpen		=    5.0 
+/
+&vert_diff_nl
+ diff_cnsrv_mass_check		=  .false. 
+ do_iss		=  .true.  
+ eddy_lbulk_max		= 40.D3
+ eddy_leng_max		= 40.D3
+ eddy_max_bot_pressure		= 100.D3
+ eddy_moist_entrain_a2l		= 30.D0
+ kv_freetrop_scale		= 1.D0
+ kv_top_pressure		= 0.D0
+ kv_top_scale		= 1.D0
+/
+&wetdep_inparm
+ gas_wetdep_list		= 'H2O2','H2SO4','SO2'
+ gas_wetdep_method		= 'NEU'
+/
+&zmconv_nl
+ zmconv_c0_lnd		=  0.0059D0  
+ zmconv_c0_ocn		=  0.0450D0  
+ zmconv_ke		=  1.0E-6 
+ zmconv_ke_lnd		=  3.0E-6 
+ zmconv_org		=  .false. 
+/

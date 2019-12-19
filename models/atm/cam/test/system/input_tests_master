@@ -1,0 +1,792 @@
+<id>  <run command>
+r8001 TR8.sh
+
+fm001 TFM.sh
+
+cb010 TCB.sh f4c5portdh
+cb011 TCB.sh f4c5portdm
+
+cb111 TCB.sh e8c5t5mdm
+cb112 TCB.sh e8c5dm
+cb113 TCB.sh e8c5paqdm
+cb114 TCB.sh e8c5dm
+cb115 TCB.sh e8idm
+
+cb137 TCB.sh e48c5h
+
+cb157 TCB.sh e64c5m
+cb158 TCB.sh e64c5paqm
+cb159 TCB.sh e64am
+
+cb200 TCB.sh f10c4wtsmltdm
+cb201 TCB.sh f4c4wtsmltdh
+cb202 TCB.sh f4c4wtsmltdh
+cb203 TCB.sh fsd1.9c4wtsmlth
+cb204 TCB.sh f4c4wmdh
+cb205 TCB.sh f4c4wmdh
+cb206 TCB.sh fsd1.9c4wmdh
+cb207 TCB.sh f4c4wtssoadh
+cb208 TCB.sh f4c4wtssoadh
+cb209 TCB.sh fsd1.9c4wtssoah
+cb210 TCB.sh f4c4wtssoadh
+cb211 TCB.sh f4c4wtssoadm
+cb212 TCB.sh f4c4wmdh
+
+cb311 TCB.sh f10c5t5mdm
+cb312 TCB.sh f2.5c5dm
+cb313 TCB.sh f10c3aqdm
+cb314 TCB.sh f10c4wscdm
+cb315 TCB.sh f10c3dm
+cb316 TCB.sh f10c5paqdm
+cb317 TCB.sh f10c5cdm
+cb318 TCB.sh f10c4cdm
+cb319 TCB.sh f10c5nonedm
+cb320 TCB.sh f10c5nonedm
+cb321 TCB.sh f10c5cdm
+
+cb351 TCB.sh f0.9c4m
+
+cb371 TCB.sh f1.9c5dm
+cb372 TCB.sh f1.9c5m
+cb375 TCB.sh f1.9c5m
+cb378 TCB.sh f1.9c4mozm
+cb390 TCB.sh f1.9c4wmxh
+
+cb400 TCB.sh f4c5fstmam3dm
+cb401 TCB.sh f4c4fastdm
+cb402 TCB.sh f1.9c5fstmam3dh
+cb403 TCB.sh f1.9c4fastdh
+cb410 TCB.sh f1.9c4tssoadh
+cb414 TCB.sh f4c5tsmam3dm
+cb415 TCB.sh f1.9c5tsmam3dh
+cb416 TCB.sh f1.9c5tsmam7h
+cb417 TCB.sh f4c5tsmam7dm
+cb418 TCB.sh f1.9c5mam7dh
+cb420 TCB.sh f4c5mam7dm
+cb421 TCB.sh f1.9c5mam4dh
+cb422 TCB.sh f4c5mam4dm
+
+cb430 TCB.sh f1.9c5mzmam3dh
+cb431 TCB.sh f4c5mzmam3dm
+cb440 TCB.sh f1.9c4soadh
+cb441 TCB.sh f4c4soadm
+
+cb460 TCB.sh f1.9c4carmsuldh
+cb469 TCB.sh f4c4prgspcdm
+
+cb383 TCB.sh f1.9c4bamm
+cb384 TCB.sh f1.9c4ghgdm
+cb386 TCB.sh f1.9c4wmm
+cb388 TCB.sh f1.9c4m
+
+cb734 TCB.sh h16c5naqdm
+cb735 TCB.sh h16c5aqdm
+cb736 TCB.sh h16adh
+
+sm010 TSM.sh f4c5portdh outfrq24h_port 2d
+sm011 TSM.sh f4c5portdm outfrq24h_port 2d
+
+sm111 TSM.sh e8c5t5mdm ttrac 9s
+sm112 TSM.sh e8c5dm ghgrmp 9s
+sm113 TSM.sh e8c5paqdm aqpgro+aquaplanet_cam5 3s 
+sm114 TSM.sh e8c5dm co2rmp 9s
+sm115 TSM.sh e8idm idphys 9s
+
+sm131 TSM.sh e48dh co2rmp 9s
+sm132 TSM.sh e48c4dh ghgrmp+1850_cam4 9s
+sm133 TSM.sh e48c4paqdm aqpgro+aquaplanet_cam4 3s
+sm134 TSM.sh e48adh adia 9s
+sm135 TSM.sh e48idh idphys 9s
+sm136 TSM.sh e48c5m outfrq24h 2d
+sm137 TSM.sh e48c5h outfrq24h 2d
+
+
+sm157 TSM.sh e64c5m ghgrmp 9s
+sm158 TSM.sh e64c5paqm aqpgro+aquaplanet_cam5 3s
+sm159 TSM.sh e64am adia 9s
+
+sm200 TSM.sh f10c4wtsmltdm outfrq3s_neu 9s
+sm201 TSM.sh f4c4wtsmltdh outfrq3s+1950-2010_ccmi_refc1_waccm_tsmlt 9s
+sm202 TSM.sh f4c4wtsmltdh outfrq3s+1950-2100_ccmi_refc2_waccm_tsmlt 9s
+sm203 TSM.sh fsd1.9c4wtsmlth outfrq3s_sd+sd_1975-2010_ccmi_refc1_waccm_tsmlt 9s
+sm204 TSM.sh f4c4wmdh outfrq3s+1950-2010_ccmi_refc1_waccm_ma 9s
+sm205 TSM.sh f4c4wmdh outfrq3s+1950-2100_ccmi_refc2_waccm_ma 9s
+sm206 TSM.sh fsd1.9c4wmdh outfrq3s_sd+sd_1975-2010_ccmi_refc1_waccm_ma 9s
+sm207 TSM.sh f4c4wtssoadh outfrq3s+1950-2010_ccmi_refc1_trop_strat_soa 9s
+sm208 TSM.sh f4c4wtssoadh outfrq3s+1950-2100_ccmi_refc2_trop_strat_soa 9s
+sm209 TSM.sh fsd1.9c4wtssoah outfrq3s_sd+sd_1975-2010_ccmi_refc1_trop_strat_soa 9s
+sm210 TSM.sh f4c4wtssoadh outfrq3s_sd+2004-2100_ccmi_refc2_rcp45_trop_strat_soa 9s
+sm211 TSM.sh f4c4wtssoadm outfrq3s_sd+1950-2010_ccmi_refc1_trop_strat_soa 9s
+sm212 TSM.sh f4c4wmdh outfrq3s+1950-2100_ccmi_refc2_rcp85_waccm_ma 9s
+
+sm311 TSM.sh f10c5t5mdm ttrac 9s
+sm312 TSM.sh f2.5c5dm ghgrmp 9s
+sm313 TSM.sh f10c3aqdm outfrq3s+aquaplanet_cam3 3s 
+sm314 TSM.sh f10c4wscdm outfrq3s 9s
+sm315 TSM.sh f10c3dm outfrq3s+cam3 9s
+sm316 TSM.sh f10c5paqdm aqpgro+aquaplanet_cam5 3s 
+sm317 TSM.sh f10c5cdm outfrq3s 9s
+sm318 TSM.sh f10c4cdm sat_hist 9s
+sm319 TSM.sh f10c5nonedm outfrq3s_bam 9s
+sm320 TSM.sh f10c5nonedm rad_diag 9s
+
+sm321 TSM.sh f10c5cdm atrain 9s
+sm322 TSM.sh f1.9c5nonedh outfrq3s_lb0 9s
+sm323 TSM.sh f4c4wscdm outfrq3s+waccm_sc_2000_cam4 9s
+sm324 TSM.sh f4c4rrtmgdm outfrq3s 9s
+sm325 TSM.sh f10c5t5mdmsc outfrq3s_subcol 9s
+sm326 TSM.sh f1.9c4wscdm outfrq3s_2005+waccm_sc_2005-2100_cam4_rcp45 9s
+sm327 TSM.sh f4c4wscdm outfrq3s_gw_sh+waccm_sc_2000_cam4 9s
+sm328 TSM.sh f4c4wscdm outfrq3s_gw_igw+waccm_sc_2000_cam4 9s
+sm329 TSM.sh f1.9c4wscdh outfrq3s 9s
+
+sm330 TSM.sh f4c5paqdh aqpgro+aquaplanet_cam5 3s
+sm331 TSM.sh f4c4dh co2rmp+1850_cam4 9s
+sm332 TSM.sh f4c5dm ghgrmp+1850_cam5 9s
+sm333 TSM.sh f4c4paqdh aqpgro+aquaplanet_cam4 3s
+sm334 TSM.sh f4adh fv2d_8tsk 9s
+sm335 TSM.sh f10idm idphys 9s
+sm336 TSM.sh f4c4wmdh outfrq3s+waccm_1850_cam4 9s
+sm337 TSM.sh f4c5dh fv2d_8tsk 9s
+sm340 TSM.sh f4c5dm fv2d_8tsk 9s
+
+sm500 TSM.sh f4c4wmdh outfrq3s+waccm_2000_cam4 9s
+er500 TER.sh f4c4wmdh outfrq3s+waccm_2000_cam4 4+5s
+br500 TBR.sh f4c4wmdh outfrq3s+waccm_2000_cam4 6+3s
+bl500 TBL.sh f4c4wmdh outfrq3s+waccm_2000_cam4 9s
+
+sm501 TSM.sh fsd1.9c4wmdh outfrq3s_2005+sd_waccm_geos5 9s
+er501 TER.sh fsd1.9c4wmdh outfrq3s_2005+sd_waccm_geos5 4+5s
+br501 TBR.sh fsd1.9c4wmdh outfrq3s_2005+sd_waccm_geos5 6+3s
+bl501 TBL.sh fsd1.9c4wmdh outfrq3s_2005+sd_waccm_geos5 9s
+
+sm351 TSM.sh f0.9c4m outfrq24h+1850-2005_cam4 2d
+sm352 TSM.sh f0.9c4m outfrq24h+1850_cam4 2d
+
+sm360 TSM.sh f1.9c5carmdusdm outfrq3s_carma 9s
+sm361 TSM.sh f1.9c5mg1_5dm outfrq3s 9s
+sm366 TSM.sh f1.9c5clbdh outfrq3s_clubb 9s
+sm367 TSM.sh f1.9c5mg2dm outfrq3s 9s
+sm368 TSM.sh f1.9c5mg2dm outfrq3s_macmic2_classnuc 9s
+
+sm370 TSM.sh fsd1.9c4mozdh off1.9x2.5 9s
+sm371 TSM.sh f1.9c5dm fvvp_lb2 9s
+sm372 TSM.sh f1.9c5m fvvp_lb2 9s
+sm373 TSM.sh f1.9c4mozdh outfrq3s+2000_cam4_trop_chem 9s
+sm374 TSM.sh f1.9c4fastdh outfrq3s+1850-2005_cam4_super_fast_llnl 9s
+sm375 TSM.sh f1.9c5m volc+1850-2005_cam5 2d
+sm376 TSM.sh f1.9c4mozdh+testmech outfrq3s 9s
+sm377 TSM.sh f1.9c5m outfrq24h 2d
+sm378 TSM.sh f1.9c4mozm outfrq3s 9s
+sm379 TSM.sh f1.9c4wmh outfrq24h+waccm_2005-2100_cam4_rcp45 2d
+sm380 TSM.sh f1.9c5wmam3dh outfrq3s+waccm_2000_cam5 9s
+
+sm381 TSM.sh f1.9c4cm outfrq3s+1850-2005_cam4 9s
+sm382 TSM.sh f1.9c5cm outfrq3s+1850-2005_cam5 9s
+sm383 TSM.sh f1.9c4bamm outfrq3s+1850_cam4_trop_bam 9s
+sm384 TSM.sh f1.9c4ghgdm outfrq3s+1850_cam4 9s
+sm385 TSM.sh f1.9c4m outfrq1m+1850-2005_cam4 2m
+sm386 TSM.sh f1.9c4wmm outfrq1m+waccm_1850-2005_cam4 2m
+sm387 TSM.sh f1.9c4dm outfrq3s+1850-2005_cam4 9s
+sm388 TSM.sh f1.9c4m outfrq24h+1850_cam4 2d
+sm389 TSM.sh f1.9c4wmm outfrq24h+waccm_1850_cam4 2d
+sm390 TSM.sh f1.9c4wmxh outfrq3s+waccmx_2000_cam4 9s
+
+sm391 TSM.sh f1.9c5carmcirm outfrq24h_carma 2d
+sm392 TSM.sh fsd1.9c4wcarmsuldm outfrq3s_carma+sd_waccm_sulfur 9s
+sm393 TSM.sh f1.9c5carmseam outfrq24h_carma 2d
+sm394 TSM.sh f1.9c5carmpmcm outfrq24h_carma 2d
+sm395 TSM.sh f1.9c5carmmetm outfrq24h_carma 2d
+sm396 TSM.sh f1.9c4wcarmbc_m outfrq24h_carma+waccm_carma_bc_2013_cam4 2d
+sm397 TSM.sh f1.9c4cm outfrq3s_cosp+1850-2005_cam4 9s
+sm398 TSM.sh f1.9c5cm outfrq3s_cosp+1850-2005_cam5 9s
+sm399 TSM.sh f1.9c4wmxdh outfrq3s+waccmx_1996_cam4 9s
+
+sm400 TSM.sh f4c5fstmam3dm outfrq3s 9s
+sm401 TSM.sh f4c4fastdm outfrq3s 9s
+sm402 TSM.sh f1.9c5fstmam3dh outfrq3s 9s
+sm403 TSM.sh f1.9c4fastdh outfrq3s 9s
+sm410 TSM.sh f1.9c4tssoadh outfrq3s+2000_cam4_trop_strat_soa 9s
+sm414 TSM.sh f4c5tsmam3dm outfrq3s 9s
+sm415 TSM.sh f1.9c5tsmam3dh outfrq3s+2000_cam5_trop_strat_mam3 9s
+sm416 TSM.sh f1.9c5tsmam7h outfrq3s+2000_cam5_trop_strat_mam7 9s
+sm417 TSM.sh f4c5tsmam7dm outfrq3s 9s
+sm418 TSM.sh f1.9c5mam7dh outfrq3s 9s
+sm420 TSM.sh f4c5mam7dm outfrq3s 9s
+sm421 TSM.sh f1.9c5mam4dh outfrq3s 9s
+sm422 TSM.sh f4c5mam4dm outfrq3s 9s
+
+sm424 TSM.sh f10c4wmxdm outfrq3s 9s
+
+sm430 TSM.sh f1.9c5mzmam3dh outfrq3s_NEUwetdep 9s
+sm431 TSM.sh f4c5mzmam3dm outfrq3s_NEUwetdep 9s
+sm440 TSM.sh f1.9c4soadh outfrq3s+soa_chem_megan_emis 9s
+sm441 TSM.sh f4c4soadm outfrq3s+soa_chem_megan_emis 9s
+
+sm460 TSM.sh f1.9c4carmsuldh outfrq3s_carma2000 9s
+sm462 TSM.sh f1.9c4carmwtsuldh outfrq3s_carma2000 9s
+sm463 TSM.sh f10c4carmwtsuldm outfrq3s_carma2000 9s
+sm469 TSM.sh f4c4prgspcdm outfrq3s 9s
+
+sm471 TSM.sh f10c5wmam3dm outfrq3s_modalstrat 9s
+sm472 TSM.sh f1.9c5wtmam3dh outfrq3s+1850-2005_waccm_tsmlt_cam5 9s
+sm473 TSM.sh f10c5wtmam3dm outfrq3s_modalstrat 9s
+sm474 TSM.sh f1.9c5wtmam3h outfrq3s+1850_waccm_tsmlt_cam5 9s
+
+sm476 TSM.sh f1.9c5wmam3h outfrq3s+waccm_1850_cam5 9s
+sm477 TSM.sh f1.9c5wmam3h outfrq3s+waccm_1955-2005_cam5 9s
+sm478 TSM.sh f1.9c5wmam3h outfrq3s+waccm_2000_cam5 9s
+
+sm480 TSM.sh f1.9c5wscmam3dh outfrq3s 9s
+sm482 TSM.sh f1.9c5wscmam3dh outfrq3s_2005+waccm_sc_1955-2005_cam5 9s
+sm483 TSM.sh f10c5wscmam3dm outfrq3s 9s
+sm484 TSM.sh f1.9c5wscmam3dm outfrq3s 9s
+
+sm511 TSM.sh s8c5t5mdm ttrac 9s
+sm512 TSM.sh s8c5dm ghgrmp 9s
+sm513 TSM.sh s8c5paqdm aqpgro+aquaplanet_cam5 3s
+
+sm531 TSM.sh s32c5dh co2rmp 9s
+sm532 TSM.sh s32c5dh ghgrmp 9s
+sm533 TSM.sh s32c5paqdh aqpgro+aquaplanet_cam5 3s
+sm534 TSM.sh s32adh adia 9s
+sm535 TSM.sh s32idh idphys 9s
+
+sm551 TSM.sh s64c5h outfrq24h 2d
+sm553 TSM.sh s64c5m outfrq24h 2d
+sm554 TSM.sh s64c5dh co2rmp 9s
+sm555 TSM.sh s64c5dh ghgrmp 9s
+sm556 TSM.sh s64c5paqdh aqpgro+aquaplanet_cam5 3s
+sm557 TSM.sh s64adh adia 9s
+sm558 TSM.sh s64idh idphys 9s
+
+sm723 TSM.sh h30c4wscdm outfrq3s_wse+waccm_sc_2000_cam4 9s
+
+sm731 TSM.sh h16c3aqdh aqua+aquaplanet_cam3 9s
+sm734 TSM.sh h16c5naqdm outfrq3s_bam+aquaplanet_cam5 9s
+sm735 TSM.sh h16c5aqdm outfrq3s+aquaplanet_cam5 9s
+sm736 TSM.sh h16adh adia 9s
+
+sm740 TSM.sh h30c5h outfrq3s_lb0 9s
+
+sm751 TSM.sh h30c4aqdm outfrq3s+aquaplanet_cam4 9s
+
+er111 TER.sh e8c5t5mdm ttrac 4+5s
+er112 TER.sh e8c5dm ghgrmp 4+5s
+er114 TER.sh e8c5dm co2rmp 4+5s
+er115 TER.sh e8idm idphys 4+5s
+
+er131 TER.sh e48dh co2rmp 4+5s
+er132 TER.sh e48c4dh ghgrmp+1850_cam4 4+5s
+er134 TER.sh e48adh adia 4+5s
+er135 TER.sh e48idh idphys 4+5s
+er137 TER.sh e48c5h outfrq24h 1+1d
+
+er157 TER.sh e64c5m ghgrmp 4+5s
+er159 TER.sh e64am adia 4+5s
+
+er200 TER.sh f10c4wtsmltdm outfrq3s_neu 4+5s
+er201 TER.sh f4c4wtsmltdh outfrq3s+1950-2010_ccmi_refc1_waccm_tsmlt 4+5s
+er202 TER.sh f4c4wtsmltdh outfrq3s+1950-2100_ccmi_refc2_waccm_tsmlt 4+5s
+er203 TER.sh fsd1.9c4wtsmlth outfrq3s_sd+sd_1975-2010_ccmi_refc1_waccm_tsmlt 4+5s
+er204 TER.sh f4c4wmdh outfrq3s+1950-2010_ccmi_refc1_waccm_ma 4+5s
+er205 TER.sh f4c4wmdh outfrq3s+1950-2100_ccmi_refc2_waccm_ma 4+5s
+er206 TER.sh fsd1.9c4wmdh outfrq3s_sd+sd_1975-2010_ccmi_refc1_waccm_ma 4+5s
+er207 TER.sh f4c4wtssoadh outfrq3s+1950-2010_ccmi_refc1_trop_strat_soa 4+5s
+er208 TER.sh f4c4wtssoadh outfrq3s+1950-2100_ccmi_refc2_trop_strat_soa 4+5s
+er209 TER.sh fsd1.9c4wtssoah outfrq3s_sd+sd_1975-2010_ccmi_refc1_trop_strat_soa 4+5s
+er210 TER.sh f4c4wtssoadh outfrq3s_sd+2004-2100_ccmi_refc2_rcp45_trop_strat_soa 4+5s
+er211 TER.sh f4c4wtssoadm outfrq3s_sd+1950-2010_ccmi_refc1_trop_strat_soa 4+5s
+er212 TER.sh f4c4wmdh outfrq3s+1950-2100_ccmi_refc2_rcp85_waccm_ma 4+5s
+
+er311 TER.sh f10c5t5mdm ttrac 4+5s
+er312 TER.sh f2.5c5dm ghgrmp 4+5s
+er314 TER.sh f10c4wscdm outfrq3s 4+5s
+er315 TER.sh f10c3dm outfrq3s+cam3 4+5s
+er317 TER.sh f10c5cdm outfrq3s 4+5s
+er318 TER.sh f10c4cdm sat_hist 4+5s
+er319 TER.sh f10c5nonedm outfrq3s_bam 4+5s
+er320 TER.sh f10c5nonedm rad_diag 4+5s
+
+er321 TER.sh f10c5cdm atrain 4+5s
+er322 TER.sh f1.9c5nonedh outfrq3s_lb0 4+5s
+er323 TER.sh f4c4wscdm outfrq3s+waccm_sc_2000_cam4 4+5s
+er324 TER.sh f4c4rrtmgdm outfrq3s 4+5s
+er325 TER.sh f10c5t5mdmsc outfrq3s_subcol 4+5s
+er326 TER.sh f1.9c4wscdm outfrq3s_2005+waccm_sc_2005-2100_cam4_rcp45 4+5s
+er327 TER.sh f4c4wscdm outfrq3s_gw_sh+waccm_sc_2000_cam4 4+5s
+er328 TER.sh f4c4wscdm outfrq3s_gw_igw+waccm_sc_2000_cam4 4+5s
+er329 TER.sh f1.9c4wscdh outfrq3s 4+5s
+
+er331 TER.sh f4c4dh co2rmp+1850_cam4 4+5s
+er332 TER.sh f4c5dm ghgrmp+1850_cam5 4+5s
+er334 TER.sh f4adh fv2d_8tsk 4+5s
+er335 TER.sh f10idm idphys 4+5s
+er336 TER.sh f4c4wmdh outfrq3s+waccm_1850_cam4 4+5s
+er337 TER.sh f4c5dh fv2d_8tsk 4+5s
+er340 TER.sh f4c5dm fv2d_8tsk 4+5s
+
+er351 TER.sh f0.9c4m outfrq24h+1850-2005_cam4 1+1d
+er352 TER.sh f0.9c4m outfrq24h+1850_cam4 1+1d
+
+er360 TER.sh f1.9c5carmdusdm outfrq3s_carma 4+5s
+er361 TER.sh f1.9c5mg1_5dm outfrq3s 4+5s
+er366 TER.sh f1.9c5clbdh outfrq3s_clubb 4+5s
+er367 TER.sh f1.9c5mg2dm outfrq3s 4+5s
+er368 TER.sh f1.9c5mg2dm outfrq3s_macmic2_classnuc 4+5s
+
+er370 TER.sh fsd1.9c4mozdh off1.9x2.5 4+5s
+er371 TER.sh f1.9c5dm fvvp_lb2 4+5s
+er372 TER.sh f1.9c5m fvvp_lb2 4+5s
+er373 TER.sh f1.9c4mozdh outfrq3s+2000_cam4_trop_chem 4+5s
+er374 TER.sh f1.9c4fastdh outfrq3s+1850-2005_cam4_super_fast_llnl 4+5s
+er375 TER.sh f1.9c5m volc+1850-2005_cam5 1+1d
+er378 TER.sh f1.9c4mozm outfrq3s 4+5s
+er379 TER.sh f1.9c4wmh outfrq24h+waccm_2005-2100_cam4_rcp45 1+1d
+er380 TER.sh f1.9c5wmam3dh outfrq3s+waccm_2000_cam5 4+5s
+
+er381 TER.sh f1.9c4cdm outfrq3s+1850-2005_cam4 4+5s
+er382 TER.sh f1.9c5cdm outfrq3s+1850-2005_cam5 4+5s
+er383 TER.sh f1.9c4bamm outfrq3s+1850_cam4_trop_bam 4+5s
+er384 TER.sh f1.9c4ghgdm outfrq3s+1850_cam4 4+5s
+er387 TER.sh f1.9c4dm outfrq3s+1850-2005_cam4 4+5s
+er388 TER.sh f1.9c4m outfrq24h+1850_cam4 1+1d
+er389 TER.sh f1.9c4wmm outfrq24h+waccm_1850_cam4 1+1d
+er390 TER.sh f1.9c4wmxh outfrq3s+waccmx_2000_cam4 4+5s
+
+er391 TER.sh f1.9c5carmcirm outfrq24h_carma 1+1d
+er392 TER.sh fsd1.9c4wcarmsuldm outfrq3s_carma+sd_waccm_sulfur 4+5s
+er393 TER.sh f1.9c5carmseam outfrq24h_carma 1+1d
+er394 TER.sh f1.9c5carmpmcm outfrq24h_carma 1+1d
+er395 TER.sh f1.9c5carmmetm outfrq24h_carma 1+1d
+er396 TER.sh f1.9c4wcarmbc_m outfrq24h_carma+waccm_carma_bc_2013_cam4 1+1d
+er397 TER.sh f1.9c4cm outfrq3s_cosp+1850-2005_cam4 4+5s
+er398 TER.sh f1.9c5cm outfrq3s_cosp+1850-2005_cam5 4+5s
+er399 TER.sh f1.9c4wmxdh outfrq3s+waccmx_1996_cam4 4+5s
+
+er400 TER.sh f4c5fstmam3dm outfrq3s 4+5s
+er401 TER.sh f4c4fastdm outfrq3s 4+5s
+er402 TER.sh f1.9c5fstmam3dh outfrq3s 4+5s
+er403 TER.sh f1.9c4fastdh outfrq3s 4+5s
+er410 TER.sh f1.9c4tssoadh outfrq3s+2000_cam4_trop_strat_soa 4+5s
+er414 TER.sh f4c5tsmam3dm outfrq3s 4+5s
+er415 TER.sh f1.9c5tsmam3dh outfrq3s+2000_cam5_trop_strat_mam3 4+5s
+er416 TER.sh f1.9c5tsmam7h outfrq3s+2000_cam5_trop_strat_mam7 4+5s
+er417 TER.sh f4c5tsmam7dm outfrq3s 4+5s
+er418 TER.sh f1.9c5mam7dh outfrq3s 4+5s
+er420 TER.sh f4c5mam7dm outfrq3s 4+5s
+er421 TER.sh f1.9c5mam4dh outfrq3s 4+5s
+er422 TER.sh f4c5mam4dm outfrq3s 4+5s
+
+er424 TER.sh f10c4wmxdm outfrq3s 4+5s
+
+er430 TER.sh f1.9c5mzmam3dh outfrq3s_NEUwetdep 4+5s
+er431 TER.sh f4c5mzmam3dm outfrq3s_NEUwetdep 4+5s
+er440 TER.sh f1.9c4soadh outfrq3s+soa_chem_megan_emis 4+5s
+er441 TER.sh f4c4soadm outfrq3s+soa_chem_megan_emis 4+5s
+
+er460 TER.sh f1.9c4carmsuldh outfrq3s_carma2000 4+5s
+er462 TER.sh f1.9c4carmwtsuldh outfrq3s_carma2000 4+5s
+er463 TER.sh f10c4carmwtsuldm outfrq3s_carma2000 4+5s
+er469 TER.sh f4c4prgspcdm outfrq3s 4+5s
+
+er471 TER.sh f10c5wmam3dm outfrq3s_modalstrat 4+5s
+er472 TER.sh f1.9c5wtmam3dh outfrq3s+1850-2005_waccm_tsmlt_cam5 4+5s
+er473 TER.sh f10c5wtmam3dm outfrq3s_modalstrat 4+5s
+er474 TER.sh f1.9c5wtmam3h outfrq3s+1850_waccm_tsmlt_cam5 4+5s
+
+er476 TER.sh f1.9c5wmam3h outfrq3s+waccm_1850_cam5 4+5s
+er477 TER.sh f1.9c5wmam3h outfrq3s+waccm_1955-2005_cam5 4+5s
+er478 TER.sh f1.9c5wmam3h outfrq3s+waccm_2000_cam5 4+5s
+
+er480 TER.sh f1.9c5wscmam3dh outfrq3s 4+5s
+er482 TER.sh f1.9c5wscmam3dh outfrq3s_2005+waccm_sc_1955-2005_cam5 4+5s
+er483 TER.sh f10c5wscmam3dm outfrq3s 4+5s
+er484 TSM.sh f1.9c5wscmam3dm outfrq3s 4+5s
+
+er511 TER.sh s8c5t5mdm ttrac 4+5s
+er512 TER.sh s8c5dm ghgrmp 4+5s
+
+er531 TER.sh s32c5dh co2rmp 4+5s
+er532 TER.sh s32c5dh ghgrmp 4+5s
+er534 TER.sh s32adh adia 4+5s
+er535 TER.sh s32idh idphys 4+5s
+
+er554 TER.sh s64c5dh co2rmp 4+5s
+er555 TER.sh s64c5dh ghgrmp 4+5s
+er557 TER.sh s64adh adia 4+5s
+er558 TER.sh s64idh idphys 4+5s
+
+er723 TER.sh h30c4wscdm outfrq3s_wse+waccm_sc_2000_cam4 4+5s
+
+er731 TER.sh h16c3aqdh aqua+aquaplanet_cam3 4+5s
+er734 TER.sh h16c5naqdm outfrq3s_bam+aquaplanet_cam5 4+5s
+er735 TER.sh h16c5aqdm outfrq3s+aquaplanet_cam5 4+5s
+er736 TSM.sh h16adh adia 9s
+
+er740 TER.sh h30c5h outfrq3s_lb0 4+5s
+
+er751 TER.sh h30c4aqdm outfrq3s+aquaplanet_cam4 4+5s
+
+bl010 TBL.sh f4c5portdh outfrq24h_port 2d 
+bl011 TBL.sh f4c5portdm outfrq24h_port 2d 
+
+br111 TBR.sh e8c5t5mdm ttrac 6+3s
+br114 TBR.sh e8c5dm co2rmp 6+3s
+
+br131 TBR.sh e48dh co2rmp 6+3s
+br132 TBR.sh e48c4dh ghgrmp+1850_cam4 6+3s
+
+br157 TBR.sh e64c5m ghgrmp 6+3s
+
+br200 TBR.sh f10c4wtsmltdm outfrq3s_neu 6+3s
+br201 TBR.sh f4c4wtsmltdh outfrq3s+1950-2010_ccmi_refc1_waccm_tsmlt 6+3s
+br202 TBR.sh f4c4wtsmltdh outfrq3s+1950-2100_ccmi_refc2_waccm_tsmlt 6+3s
+br203 TBR.sh fsd1.9c4wtsmlth outfrq3s_sd+sd_1975-2010_ccmi_refc1_waccm_tsmlt 6+3s
+br204 TBR.sh f4c4wmdh outfrq3s+1950-2010_ccmi_refc1_waccm_ma 6+3s
+br205 TBR.sh f4c4wmdh outfrq3s+1950-2100_ccmi_refc2_waccm_ma 6+3s
+br206 TBR.sh fsd1.9c4wmdh outfrq3s_sd+sd_1975-2010_ccmi_refc1_waccm_ma 6+3s
+br207 TBR.sh f4c4wtssoadh outfrq3s+1950-2010_ccmi_refc1_trop_strat_soa 6+3s
+br208 TBR.sh f4c4wtssoadh outfrq3s+1950-2100_ccmi_refc2_trop_strat_soa 6+3s
+br209 TBR.sh fsd1.9c4wtssoah outfrq3s_sd+sd_1975-2010_ccmi_refc1_trop_strat_soa 6+3s
+br210 TBR.sh f4c4wtssoadh outfrq3s_sd+2004-2100_ccmi_refc2_rcp45_trop_strat_soa 6+3s
+br211 TBR.sh f4c4wtssoadm outfrq3s_sd+1950-2010_ccmi_refc1_trop_strat_soa 6+3s
+br212 TBR.sh f4c4wmdh outfrq3s+1950-2100_ccmi_refc2_rcp85_waccm_ma 6+3s
+
+br311 TBR.sh f10c5t5mdm ttrac 6+3s
+
+br322 TBR.sh f1.9c5nonedh outfrq3s_lb0 6+3s
+br327 TBR.sh f4c4wscdm outfrq3s_gw_sh+waccm_sc_2000_cam4 6+3s
+
+br331 TBR.sh f4c4dh co2rmp+1850_cam4 6+3s
+br332 TBR.sh f4c5dm ghgrmp+1850_cam5 6+3s
+br336 TBR.sh f4c4wmdh outfrq3s+waccm_1850_cam4 6+3s
+
+br373 TBR.sh f1.9c4mozdh outfrq3s+2000_cam4_trop_chem 6+3s
+br374 TBR.sh f1.9c4fastdh outfrq3s+1850-2005_cam4_super_fast_llnl 6+3s
+
+br381 TBR.sh f1.9c4cdm outfrq3s+1850-2005_cam4 6+3s
+br382 TBR.sh f1.9c5cdm outfrq3s+1850-2005_cam5 6+3s
+br383 TBR.sh f1.9c4bamm outfrq3s+1850_cam4_trop_bam 6+3s
+br384 TBR.sh f1.9c4ghgdm outfrq3s+1850_cam4 6+3s
+br387 TBR.sh f1.9c4dm outfrq3s+1850-2005_cam4 6+3s
+br390 TBR.sh f1.9c4wmxh outfrq3s+waccmx_2000_cam4 6+3s
+
+br397 TBR.sh f1.9c4cm outfrq3s_cosp+1850-2005_cam4 6+3s
+br398 TBR.sh f1.9c5cm outfrq3s_cosp+1850-2005_cam5 6+3s
+br399 TBR.sh f1.9c4wmxdh outfrq3s+waccmx_1996_cam4 6+3s
+
+br400 TBR.sh f4c5fstmam3dm outfrq3s 6+3s
+br401 TBR.sh f4c4fastdm outfrq3s 6+3s
+br402 TBR.sh f1.9c5fstmam3dh outfrq3s 6+3s
+br403 TBR.sh f1.9c4fastdh outfrq3s 6+3s
+br410 TBR.sh f1.9c4tssoadh outfrq3s+2000_cam4_trop_strat_soa 6+3s
+br414 TBR.sh f4c5tsmam3dm outfrq3s 6+3s
+br415 TBR.sh f1.9c5tsmam3dh outfrq3s+2000_cam5_trop_strat_mam3 6+3s
+br416 TBR.sh f1.9c5tsmam7h outfrq3s+2000_cam5_trop_strat_mam7 6+3s
+br417 TBR.sh f4c5tsmam7dm outfrq3s 6+3s
+br418 TBR.sh f1.9c5mam7dh outfrq3s 6+3s
+br420 TBR.sh f4c5mam7dm outfrq3s 6+3s
+br421 TBR.sh f1.9c5mam4dh outfrq3s 6+3s
+br422 TBR.sh f4c5mam4dm outfrq3s 6+3s
+
+br424 TBR.sh f10c4wmxdm outfrq3s 6+3s
+
+br430 TBR.sh f1.9c5mzmam3dh outfrq3s_NEUwetdep 6+3s
+br431 TBR.sh f4c5mzmam3dm outfrq3s_NEUwetdep 6+3s
+br440 TBR.sh f1.9c4soadh outfrq3s+soa_chem_megan_emis 6+3s
+br441 TBR.sh f4c4soadm outfrq3s+soa_chem_megan_emis 6+3s
+
+br460 TBR.sh f1.9c4carmsuldh outfrq3s_carma2000 6+3s
+br462 TBR.sh f1.9c4carmwtsuldh outfrq3s_carma2000 6+3s
+br463 TBR.sh f10c4carmwtsuldm outfrq3s_carma2000 6+3s
+br469 TBR.sh f4c4prgspcdm outfrq3s 6+3s
+
+br471 TBR.sh f10c5wmam3dm outfrq3s_modalstrat 6+3s
+br472 TBR.sh f1.9c5wtmam3dh outfrq3s+1850-2005_waccm_tsmlt_cam5 6+3s
+br473 TBR.sh f10c5wtmam3dm outfrq3s_modalstrat 6+3s
+br474 TBR.sh f1.9c5wtmam3h outfrq3s+1850_waccm_tsmlt_cam5 6+3s
+
+br476 TBR.sh f1.9c5wmam3h outfrq3s+waccm_1850_cam5 6+3s
+br477 TBR.sh f1.9c5wmam3h outfrq3s+waccm_1955-2005_cam5 6+3s
+br478 TBR.sh f1.9c5wmam3h outfrq3s+waccm_2000_cam5 6+3s
+
+br482 TBR.sh f1.9c5wscmam3dh outfrq3s_2005+waccm_sc_1955-2005_cam5 6+3s
+
+br511 TBR.sh s8c5t5mdm ttrac 6+3s
+
+br531 TBR.sh s32c5dh co2rmp 6+3s
+br532 TBR.sh s32c5dh ghgrmp 6+3s
+
+br554 TBR.sh s64c5dh co2rmp 6+3s
+br555 TBR.sh s64c5dh ghgrmp 6+3s
+
+bl111 TBL.sh e8c5t5mdm ttrac 9s
+bl112 TBL.sh e8c5dm ghgrmp 9s
+bl113 TBL.sh e8c5paqdm aqpgro+aquaplanet_cam5 3s
+bl114 TBL.sh e8c5dm co2rmp 9s
+bl115 TBL.sh e8idm idphys 9s
+
+bl131 TBL.sh e48dh co2rmp 9s
+bl132 TBL.sh e48c4dh ghgrmp+1850_cam4 9s
+bl133 TBL.sh e48c4paqdm aqpgro+aquaplanet_cam4 3s
+bl134 TBL.sh e48adh adia 9s
+bl135 TBL.sh e48idh idphys 9s
+bl136 TBL.sh e48c5m outfrq24h 2d 
+bl137 TBL.sh e48c5h outfrq24h 2d
+
+bl157 TBL.sh e64c5m ghgrmp 9s
+bl158 TBL.sh e64c5paqm aqpgro+aquaplanet_cam5 3s
+bl159 TBL.sh e64am adia 9s
+
+bl200 TBL.sh f10c4wtsmltdm outfrq3s_neu 9s
+bl201 TBL.sh f4c4wtsmltdh outfrq3s+1950-2010_ccmi_refc1_waccm_tsmlt 9s
+bl202 TBL.sh f4c4wtsmltdh outfrq3s+1950-2100_ccmi_refc2_waccm_tsmlt 9s
+bl203 TBL.sh fsd1.9c4wtsmlth outfrq3s_sd+sd_1975-2010_ccmi_refc1_waccm_tsmlt 9s
+bl204 TBL.sh f4c4wmdh outfrq3s+1950-2010_ccmi_refc1_waccm_ma 9s
+bl205 TBL.sh f4c4wmdh outfrq3s+1950-2100_ccmi_refc2_waccm_ma 9s
+bl206 TBL.sh fsd1.9c4wmdh outfrq3s_sd+sd_1975-2010_ccmi_refc1_waccm_ma 9s
+bl207 TBL.sh f4c4wtssoadh outfrq3s+1950-2010_ccmi_refc1_trop_strat_soa 9s
+bl208 TBL.sh f4c4wtssoadh outfrq3s+1950-2100_ccmi_refc2_trop_strat_soa 9s
+bl209 TBL.sh fsd1.9c4wtssoah outfrq3s_sd+sd_1975-2010_ccmi_refc1_trop_strat_soa 9s
+bl210 TBL.sh f4c4wtssoadh outfrq3s_sd+2004-2100_ccmi_refc2_rcp45_trop_strat_soa 9s
+bl211 TBL.sh f4c4wtssoadm outfrq3s_sd+1950-2010_ccmi_refc1_trop_strat_soa 9s
+bl212 TBL.sh f4c4wmdh outfrq3s+1950-2100_ccmi_refc2_rcp85_waccm_ma 9s
+
+bl311 TBL.sh f10c5t5mdm ttrac 9s
+bl312 TBL.sh f2.5c5dm ghgrmp 9s
+bl313 TBL.sh f10c3aqdm outfrq3s+aquaplanet_cam3 3s
+bl314 TBL.sh f10c4wscdm outfrq3s 9s
+bl315 TBL.sh f10c3dm outfrq3s+cam3 9s
+bl316 TBL.sh f10c5paqdm aqpgro+aquaplanet_cam5 3s 
+bl317 TBL.sh f10c5cdm outfrq3s 9s
+bl318 TBL.sh f10c4cdm sat_hist 9s
+bl319 TBL.sh f10c5nonedm outfrq3s_bam 9s
+bl320 TBL.sh f10c5nonedm rad_diag 9s
+
+bl321 TBL.sh f10c5cdm atrain 9s
+bl322 TBL.sh f1.9c5nonedh outfrq3s_lb0 9s
+bl323 TBL.sh f4c4wscdm outfrq3s+waccm_sc_2000_cam4 9s
+bl324 TBL.sh f4c4rrtmgdm outfrq3s 9s
+bl325 TBL.sh f10c5t5mdmsc outfrq3s_subcol 9s
+bl326 TBL.sh f1.9c4wscdm outfrq3s_2005+waccm_sc_2005-2100_cam4_rcp45 9s
+bl327 TBL.sh f4c4wscdm outfrq3s_gw_sh+waccm_sc_2000_cam4 9s
+bl328 TBL.sh f4c4wscdm outfrq3s_gw_igw+waccm_sc_2000_cam4 9s
+bl329 TSM.sh f1.9c4wscdh outfrq3s 9s
+
+bl330 TBL.sh f4c5paqdh aqpgro+aquaplanet_cam5 3s
+bl331 TBL.sh f4c4dh co2rmp+1850_cam4 9s
+bl332 TBL.sh f4c5dm ghgrmp+1850_cam5 9s
+bl333 TBL.sh f4c4paqdh aqpgro+aquaplanet_cam4 3s
+bl334 TBL.sh f4adh fv2d_8tsk 9s
+bl335 TBL.sh f10idm idphys 9s
+bl336 TBL.sh f4c4wmdh outfrq3s+waccm_1850_cam4 9s
+bl337 TBL.sh f4c5dh fv2d_8tsk 9s
+bl340 TBL.sh f4c5dm fv2d_8tsk 9s
+
+bl351 TBL.sh f0.9c4m outfrq24h+1850-2005_cam4 2d
+bl352 TBL.sh f0.9c4m outfrq24h+1850_cam4 2d
+
+bl360 TBL.sh f1.9c5carmdusdm outfrq3s_carma 9s
+bl361 TBL.sh f1.9c5mg1_5dm outfrq3s 9s
+bl366 TBL.sh f1.9c5clbdh outfrq3s_clubb 9s
+bl367 TBL.sh f1.9c5mg2dm outfrq3s 9s
+bl368 TBL.sh f1.9c5mg2dm outfrq3s_macmic2_classnuc 9s
+
+bl370 TBL.sh fsd1.9c4mozdh off1.9x2.5 9s
+bl371 TBL.sh f1.9c5dm fvvp_lb2 9s
+bl372 TBL.sh f1.9c5m fvvp_lb2 9s
+bl373 TBL.sh f1.9c4mozdh outfrq3s+2000_cam4_trop_chem 9s
+bl374 TBL.sh f1.9c4fastdh outfrq3s+1850-2005_cam4_super_fast_llnl 9s
+bl375 TBL.sh f1.9c5m volc+1850-2005_cam5 2d
+bl376 TBL.sh f1.9c4mozdh+testmech outfrq3s 9s
+bl377 TBL.sh f1.9c5m outfrq24h 2d
+bl378 TBL.sh f1.9c4mozm outfrq3s 9s
+bl379 TBL.sh f1.9c4wmh outfrq24h+waccm_2005-2100_cam4_rcp45 2d
+bl380 TBL.sh f1.9c5wmam3dh outfrq3s+waccm_2000_cam5 9s
+
+bl381 TBL.sh f1.9c4cdm outfrq3s+1850-2005_cam4 9s
+bl382 TBL.sh f1.9c5cdm outfrq3s+1850-2005_cam5 9s
+bl383 TBL.sh f1.9c4bamm outfrq3s+1850_cam4_trop_bam 9s
+bl384 TBL.sh f1.9c4ghgdm outfrq3s+1850_cam4 9s
+bl385 TBL.sh f1.9c4m outfrq1m+1850-2005_cam4 2m
+bl386 TBL.sh f1.9c4wmm outfrq1m+waccm_1850-2005_cam4 2m
+bl387 TBL.sh f1.9c4dm outfrq3s+1850-2005_cam4 9s
+bl388 TBL.sh f1.9c4m outfrq24h+1850_cam4 2d
+bl389 TBL.sh f1.9c4wmm outfrq24h+waccm_1850_cam4 2d
+bl390 TBL.sh f1.9c4wmxh outfrq3s+waccmx_2000_cam4 9s
+
+bl391 TBL.sh f1.9c5carmcirm outfrq24h_carma 2d
+bl392 TBL.sh fsd1.9c4wcarmsuldm outfrq3s_carma+sd_waccm_sulfur 9s
+bl393 TBL.sh f1.9c5carmseam outfrq24h_carma 2d
+bl394 TBL.sh f1.9c5carmpmcm outfrq24h_carma 2d
+bl395 TBL.sh f1.9c5carmmetm outfrq24h_carma 2d
+bl396 TBL.sh f1.9c4wcarmbc_m outfrq24h_carma+waccm_carma_bc_2013_cam4 2d
+bl397 TBL.sh f1.9c4cm outfrq3s_cosp+1850-2005_cam4 9s
+bl398 TBL.sh f1.9c5cm outfrq3s_cosp+1850-2005_cam5 9s
+bl399 TBL.sh f1.9c4wmxdh outfrq3s+waccmx_1996_cam4 9s
+
+bl400 TBL.sh f4c5fstmam3dm outfrq3s 9s
+bl401 TBL.sh f4c4fastdm outfrq3s 9s
+bl402 TBL.sh f1.9c5fstmam3dh outfrq3s 9s
+bl403 TBL.sh f1.9c4fastdh outfrq3s 9s
+bl410 TBL.sh f1.9c4tssoadh outfrq3s+2000_cam4_trop_strat_soa 9s
+bl414 TBL.sh f4c5tsmam3dm outfrq3s 9s
+bl415 TBL.sh f1.9c5tsmam3dh outfrq3s+2000_cam5_trop_strat_mam3 9s
+bl416 TBL.sh f1.9c5tsmam7h outfrq3s+2000_cam5_trop_strat_mam7 9s
+bl417 TBL.sh f4c5tsmam7dm outfrq3s 9s
+bl418 TBL.sh f1.9c5mam7dh outfrq3s 9s
+bl420 TBL.sh f4c5mam7dm outfrq3s 9s
+bl421 TBL.sh f1.9c5mam4dh outfrq3s 9s
+bl422 TBL.sh f4c5mam4dm outfrq3s 9s
+
+bl424 TBL.sh f10c4wmxdm outfrq3s 9s
+
+bl430 TBL.sh f1.9c5mzmam3dh outfrq3s_NEUwetdep 9s
+bl431 TBL.sh f4c5mzmam3dm outfrq3s_NEUwetdep 9s
+bl440 TBL.sh f1.9c4soadh outfrq3s+soa_chem_megan_emis 9s
+bl441 TBL.sh f4c4soadm outfrq3s+soa_chem_megan_emis 9s
+
+bl460 TBL.sh f1.9c4carmsuldh outfrq3s_carma2000 9s
+bl462 TBL.sh f1.9c4carmwtsuldh outfrq3s_carma2000 9s
+bl463 TBL.sh f10c4carmwtsuldm outfrq3s_carma2000 9s
+bl469 TBL.sh f4c4prgspcdm outfrq3s 9s
+
+bl471 TBL.sh f10c5wmam3dm outfrq3s_modalstrat 9s
+bl472 TBL.sh f1.9c5wtmam3dh outfrq3s+1850-2005_waccm_tsmlt_cam5 9s
+bl473 TBL.sh f10c5wtmam3dm outfrq3s_modalstrat 9s
+bl474 TBL.sh f1.9c5wtmam3h outfrq3s+1850_waccm_tsmlt_cam5 9s
+
+bl476 TBL.sh f1.9c5wmam3h outfrq3s+waccm_1850_cam5 9s
+bl477 TBL.sh f1.9c5wmam3h outfrq3s+waccm_1955-2005_cam5 9s
+bl478 TBL.sh f1.9c5wmam3h outfrq3s+waccm_2000_cam5 9s
+
+bl480 TBL.sh f1.9c5wscmam3dh outfrq3s 9s
+bl482 TBL.sh f1.9c5wscmam3dh outfrq3s_2005+waccm_sc_1955-2005_cam5 9s
+bl483 TBL.sh f10c5wscmam3dm outfrq3s 9s
+bl484 TBL.sh f1.9c5wscmam3dm outfrq3s 9s
+
+bl511 TBL.sh s8c5t5mdm ttrac 9s
+bl512 TBL.sh s8c5dm ghgrmp 9s
+bl513 TBL.sh s8c5paqdm aqpgro+aquaplanet_cam5 3s
+
+bl531 TBL.sh s32c5dh co2rmp 9s
+bl532 TBL.sh s32c5dh ghgrmp 9s
+bl533 TBL.sh s32c5paqdh aqpgro+aquaplanet_cam5 3s
+bl534 TBL.sh s32adh adia 9s
+bl535 TBL.sh s32idh idphys 9s
+
+bl551 TBL.sh s64c5h outfrq24h 2d
+bl553 TBL.sh s64c5m outfrq24h 2d
+bl554 TBL.sh s64c5dh co2rmp 9s
+bl555 TBL.sh s64c5dh ghgrmp 9s
+bl556 TBL.sh s64c5paqdh aqpgro+aquaplanet_cam5 3s
+bl557 TBL.sh s64adh adia 9s
+bl558 TBL.sh s64idh idphys 9s
+
+bl723 TBL.sh h30c4wscdm outfrq3s_wse+waccm_sc_2000_cam4 9s
+
+bl731 TBL.sh h16c3aqdh aqua+aquaplanet_cam3 9s
+bl734 TBL.sh h16c5naqdm outfrq3s_bam+aquaplanet_cam5 9s
+bl735 TBL.sh h16c5aqdm outfrq3s+aquaplanet_cam5 9s
+bl736 TSM.sh h16adh adia 9s
+
+bl740 TBL.sh h30c5h outfrq3s_lb0 9s
+
+bl751 TBL.sh h30c4aqdm outfrq3s+aquaplanet_cam4 9s
+
+cb991 TCB_ccsm.sh f19_f19 F
+cb992 TCB_ccsm.sh f19_g16 ETEST
+cb993 TCB_ccsm.sh ne30_ne30 FC5
+cb994 TCB_ccsm.sh f19_f19 FAMIPC5
+cb995 TCB_ccsm.sh T42_T42 FC5
+cb996 TCB_ccsm.sh f45_f45 FMOZ+testmech
+cb997 TCB_ccsm.sh ne16_g37 FC5
+
+sm991 TSM_ccsm.sh f19_f19 F 9s
+sm992 TSM_ccsm.sh f19_g16 ETEST 9s
+sm993 TSM_ccsm.sh ne30_ne30 FC5 9s
+sm994 TSM_ccsm.sh f19_f19 FAMIPC5 2d
+sm995 TSM_ccsm.sh T42_T42 FC5 2d
+sm996 TSM_ccsm.sh f45_f45 FMOZ+testmech 2d
+sm997 TSM_ccsm.sh ne16_g37 FC5 2d
+
+er991 TER_ccsm.sh f19_f19 F 4+5s
+er992 TER_ccsm.sh f19_g16 ETEST 4+5s
+er993 TER_ccsm.sh ne30_ne30 FC5 4+5s
+er994 TER_ccsm.sh f19_f19 FAMIPC5 1+1d
+er995 TER_ccsm.sh T42_T42 FC5 1+1d
+er997 TER_ccsm.sh ne16_g37 FC5 1+1d
+
+bl991 TBL_ccsm.sh f19_f19 F 9s
+bl992 TBL_ccsm.sh f19_g16 ETEST 9s
+bl993 TBL_ccsm.sh ne30_ne30 FC5 9s
+bl994 TBL_ccsm.sh f19_f19 FAMIPC5 2d
+bl995 TBL_ccsm.sh T42_T42 FC5 2d
+bl996 TBL_ccsm.sh f45_f45 FMOZ+testmech 2d
+ne996 TNE_ccsm.sh f45_f45 FMOZ+testmech FMOZ 1s
+bl997 TBL_ccsm.sh ne16_g37 FC5 2d
+
+eq991 TEQ_ccsm.sh f19_f19 F f1.9c4m fcase 9s
+eq992 TEQ_ccsm.sh f19_f19 FC5 f1.9c5m fcase 9s
+eq993 TEQ_ccsm.sh ne30_ne30 FC5 h30c5h fcase 9s
+
+eq301 TEQ.sh f10c5t5mdm ttrac f10c5t5mdm ttrac_lb1 4s
+eq302 TEQ.sh f10c5t5mdm ttrac f10c5t5mdm ttrac_lb2 4s
+eq303 TEQ.sh f10c5t5mdm ttrac f10c5t5mdm ttrac_lb3 4s
+eq304 TEQ.sh f10c5t5mdm ttrac f10c5dm no_ttrac 4s
+
+eq322 TEQ.sh f1.9c5nonedh outfrq3s_lb0 f1.9c5nonedh outfrq3s_lb2 9s
+eq325 TEQ.sh f10c5t5mdmsc outfrq3s_subcol f10c5t5mdmsc outfrq3s 9s
+
+eq338 TEQ.sh f4adh fv2d_8tsk f4adh fv1d_8tsk 9s
+eq339 TEQ.sh f4c5dh fv2d_8tsk f4c5dh fv1d_8tsk 9s
+eq340 TEQ.sh f4c5dm fv2d_8tsk f4c5dm fv1d_8tsk 9s
+
+eq362 TEQ.sh f1.9c5dm fvvp_lb2 f1.9c5dm fv1d_lb2 9s
+eq363 TEQ.sh f1.9c5dm fvvp_lb2 f1.9c5dm fvvp_lb0 9s
+eq364 TEQ.sh f1.9c5m fvvp_lb2 f1.9c5m fv1d_lb2 9s
+eq365 TEQ.sh f1.9c5m fvvp_lb2 f1.9c5m fvvp_lb0 9s
+
+eq740 TEQ.sh h30c5h outfrq3s_lb0 h30c5h outfrq3s_lb2 9s
+
+sc001 TSC.sh e64c5bfbiop scm_prep scm64c5bfbiop scm_b4b_o1 7s
+sc002 TSC.sh e64c4bfbiop scm_prep scm64c4bfbiop scm_b4b_o1 7s
+sc003 TSM.sh scmc5armiop scmarm 7s
+
+mc111 TMC.sh e8c5t5mdm ttrac 9s
+mc311 TMC.sh f10c5t5mdm ttrac 9s
+mc511 TMC.sh s8c5t5mdm ttrac 9s
+
+pf385 TPF.sh f1.9c4m outfrq1m+1850-2005_cam4 2m
+pf386 TPF.sh f1.9c4wmm outfrq1m+waccm_1850-2005_cam4 2m
+
+dd111 TDD.sh e8c5t5mdm ttrac 9s
+
+sm800 TSM.sh f1.9c5carmc_ddm outfrq3s_carma 9s
+er800 TER.sh f1.9c5carmc_ddm outfrq3s_carma 4+5s
+bl800 TBL.sh f1.9c5carmc_ddm outfrq3s_carma 9s
+
+sm801 TSM.sh f4c5carmm_idm outfrq3s_carma_fractal 9s
+er801 TER.sh f4c5carmm_idm outfrq3s_carma_fractal 4+5s
+bl801 TBL.sh f4c5carmm_idm outfrq3s_carma_fractal 9s
+
+sm802 TSM.sh f4c5carmp_sdm outfrq3s_carma 9s
+er802 TER.sh f4c5carmp_sdm outfrq3s_carma 4+5s
+bl802 TBL.sh f4c5carmp_sdm outfrq3s_carma 9s
+
+sm803 TSM.sh f4c5carmthodm outfrq3s_carma 9s
+er803 TER.sh f4c5carmthodm outfrq3s_carma 4+5s
+bl803 TBL.sh f4c5carmthodm outfrq3s_carma 9s
+
+sm804 TSM.sh f4c5carmm_sdm outfrq3s_carma 9s
+er804 TER.sh f4c5carmm_sdm outfrq3s_carma 4+5s
+bl804 TBL.sh f4c5carmm_sdm outfrq3s_carma 9s
+
+sm805 TSM.sh f4c5carmtt1dm outfrq3s_carma 9s
+er805 TER.sh f4c5carmtt1dm outfrq3s_carma 4+5s
+bl805 TBL.sh f4c5carmtt1dm outfrq3s_carma 9s
+
+sm806 TSM.sh f4c5carmtt2dm outfrq3s_carma 9s
+er806 TER.sh f4c5carmtt2dm outfrq3s_carma 4+5s
+bl806 TBL.sh f4c5carmtt2dm outfrq3s_carma 9s

@@ -1,0 +1,955 @@
+Only in pio/pio: alloc_mod.F90
+Only in pio/pio: box_rearrange.F90
+diff -r pio/pio/box_rearrange.F90.in pio_chense31_xiugai/pio/box_rearrange.F90.in
+5,6c5,6
+< !! $Revision$
+< !! $LastChangedDate$
+---
+> !! $Revision: 819 $
+> !! $LastChangedDate: 2013-05-31 13:32:27 -0500 (Fri, 31 May 2013) $
+32,64c32
+< 
+< ! communication algorithm options
+< #define COLLECTIVE 0
+< #define POINT_TO_POINT 1
+< #define FLOW_CONTROL 2
+< #define DEF_P2P_HANDSHAKE .true.
+< #define DEF_P2P_ISEND .false.
+< #define DEF_P2P_MAXREQ 64
+< 
+< #ifndef _MPISERIAL
+< #ifndef _NO_FLOW_CONTROL
+< #define _USE_COMP2IO_FC 1
+< #define _USE_IO2COMP_FC 1
+< #endif  
+< #endif
+< !
+< ! The completely unreadable nature of the following lines is required by some compilers
+< !
+< #ifdef _USE_ALLTOALLW
+< #define DEF_COMP2IO_OPTION 0
+< #define DEF_IO2COMP_OPTION 0
+< #else
+< #ifdef _USE_COMP2IO_FC
+< #define DEF_COMP2IO_OPTION 2
+< #else
+< #define DEF_COMP2IO_OPTION 1
+< #endif
+< #ifdef _USE_IO2COMP_FC
+< #define DEF_IO2COMP_OPTION 2
+< #else
+< #define DEF_IO2COMP_OPTION 1
+< #endif
+< #endif
+---
+> #include "rearr_options.h"
+77c45
+<   use pio_types, only : io_desc_t, iosystem_desc_t
+---
+>   use pio_types
+84a53,55
+> #ifdef TIMING
+>   use perf_mod, only : t_startf, t_stopf  !_EXTERNAL
+> #endif
+215c186,203
+<   ! begin
+---
+>   ! FIXME: Ideally the iodesc should contain the rearr and
+>   ! the rearr_opts - however the current code sets the
+>   ! rearr and rearr_opts on the IOsystem
+> 
+>   ! The rearranger options in IODESC overrides the defaults
+>   if(IOsystem%rearr_opts%comm_type == PIO_rearr_comm_p2p) then
+>     if( (IOsystem%rearr_opts%comm_fc_opts%fcd == PIO_rearr_comm_fc_2d_disable) .or.&
+>         (IOsystem%rearr_opts%comm_fc_opts%fcd == PIO_rearr_comm_fc_1d_io2comp) ) then
+>       pio_option = POINT_TO_POINT
+>     else
+>       pio_option = FLOW_CONTROL
+>     end if
+>   else
+>     pio_option = COLLECTIVE
+>   end if
+> 
+>   ! The rearranger options passed in to this function overrides
+>   ! both the defaults and the options in IODESC
+222,223d209
+<   else
+<      pio_option = DEF_COMP2IO_OPTION
+224a211
+> 
+226,228c213,218
+<     pio_hs     = DEF_P2P_HANDSHAKE
+<     pio_isend  = DEF_P2P_ISEND
+<     pio_maxreq = DEF_P2P_MAXREQ
+---
+>     pio_hs     = IOsystem%rearr_opts%comm_fc_opts%enable_hs
+>     pio_isend  = IOsystem%rearr_opts%comm_fc_opts%enable_isend
+>     pio_maxreq = IOsystem%rearr_opts%comm_fc_opts%max_pend_req
+> 
+>     ! The rearranger options passed to this function overrides
+>     ! both the default and the options in IODESC
+296d285
+< #ifdef _USE_ALLTOALLW
+298a288,290
+> #ifdef TIMING
+>       call t_startf("PIO:a2a_box_rear_comp2io_{TYPE}")
+> #endif
+301a294,296
+> #ifdef TIMING
+>       call t_stopf("PIO:a2a_box_rear_comp2io_{TYPE}")
+> #endif
+303a299,300
+> #ifdef TIMING
+>       call t_startf("PIO:swapm_box_rear_comp2io_{TYPE}")
+309,310c306,307
+< #ifdef _USE_ALLTOALLW
+<     endif
+---
+> #ifdef TIMING
+>        call t_stopf("PIO:swapm_box_rear_comp2io_{TYPE}")
+311a309
+>     endif
+326a325,327
+> #ifdef TIMING
+>     call t_startf("PIO:p2p_box_rear_comp2io_{TYPE}")
+> #endif
+381a383,386
+> #ifdef TIMING
+>     call t_stopf("PIO:p2p_box_rear_comp2io_{TYPE}")
+> #endif
+> 
+479a485,502
+>   ! FIXME: Ideally the iodesc should contain the rearr and
+>   ! the rearr_opts - however the current code sets the
+>   ! rearr and rearr_opts on the IOsystem
+> 
+>   ! The rearranger options in IODESC overrides the defaults
+>   if(IOsystem%rearr_opts%comm_type == PIO_rearr_comm_p2p) then
+>     if( (IOsystem%rearr_opts%comm_fc_opts%fcd == PIO_rearr_comm_fc_2d_disable) .or.&
+>         (IOsystem%rearr_opts%comm_fc_opts%fcd == PIO_rearr_comm_fc_1d_comp2io) ) then
+>       pio_option = POINT_TO_POINT
+>     else
+>       pio_option = FLOW_CONTROL
+>     end if
+>   else
+>     pio_option = COLLECTIVE
+>   end if
+> 
+>   ! The rearranger options passed in to this function overrides
+>   ! both the defaults and the options in IODESC
+486,487d508
+<   else
+<      pio_option = DEF_IO2COMP_OPTION
+488a510
+> 
+490,492c512,517
+<     pio_hs     = DEF_P2P_HANDSHAKE
+<     pio_isend  = DEF_P2P_ISEND
+<     pio_maxreq = DEF_P2P_MAXREQ
+---
+>     pio_hs     = IOsystem%rearr_opts%comm_fc_opts%enable_hs
+>     pio_isend  = IOsystem%rearr_opts%comm_fc_opts%enable_isend
+>     pio_maxreq = IOsystem%rearr_opts%comm_fc_opts%max_pend_req
+> 
+>     ! The rearranger options passed to this function overrides
+>     ! both the default and the options in IODESC
+563d587
+< #ifdef _USE_ALLTOALLW
+564a589,592
+> 
+> #ifdef TIMING
+>       call t_startf("PIO:a2a_box_rear_io2comp_{TYPE}")
+> #endif
+567a596,598
+> #ifdef TIMING
+>       call t_stopf("PIO:a2a_box_rear_io2comp_{TYPE}")
+> #endif
+569a601,603
+> 
+> #ifdef TIMING
+>       call t_startf("PIO:swapm_box_rear_io2comp_{TYPE}")
+575,576c609,610
+< #ifdef _USE_ALLTOALLW
+<     endif
+---
+> #ifdef TIMING
+>       call t_stopf("PIO:swapm_box_rear_io2comp_{TYPE}")
+577a612
+>     endif
+585a621,623
+> #ifdef TIMING
+>     call t_startf("PIO:p2p_box_rear_io2comp_{TYPE}")
+> #endif
+644a683,685
+> #ifdef TIMING
+>     call t_stopf("PIO:p2p_box_rear_io2comp_{TYPE}")
+> #endif
+743c784
+<     loop_ioproc: do while(.not. found.and.k<1004)
+---
+>     loop_ioproc: do while(.not. found.and.k<5004)
+748c789
+<              if(k>1000) print *,__FILE__,__LINE__,i,gcoord(:),lb(:,i),ub(:,i)
+---
+>              if(k>5000) print *,__PIO_FILE__,__LINE__,i,gcoord(:),lb(:,i),ub(:,i)
+752c793
+<              if(k>1000) print *,__FILE__,__LINE__,i,gcoord(:),lb(:,i),ub(:,i)
+---
+>              if(k>5000) print *,__PIO_FILE__,__LINE__,i,gcoord(:),lb(:,i),ub(:,i)
+1335,1338d1375
+<        rbuf_size = niodof
+<        call alloc_check(rindex, niodof, 'rindex buffer')
+<        rindex = 0
+< 
+1343a1381,1384
+>        rbuf_size = sum(recv_counts)
+>        call alloc_check(rindex, rbuf_size, 'rindex buffer')
+>        rindex = 0
+> 
+diff -r pio/pio/calcdecomp.F90 pio_chense31_xiugai/pio/calcdecomp.F90
+171c171
+< !       print *,__FILE__,__LINE__,use_io_procs,gdims,start,kount
+---
+> !       print *,__PIO_FILE__,__LINE__,use_io_procs,gdims,start,kount
+diff -r pio/pio/CMakeLists.txt pio_chense31_xiugai/pio/CMakeLists.txt
+32,41d31
+< 
+< TRY_COMPILE(WITHOUT_MPISERIAL ${CMAKE_CURRENT_BINARY_DIR}/tryCompileMPISERIAL
+<                             ${TESTFILEPATH}/TryMPISERIAL.f90)
+< 
+< IF(${WITHOUT_MPISERIAL} STREQUAL FALSE)
+<     MESSAGE("Building PIO with mpi serial stubs library")
+<     SET(bld_PIO_DEFINITIONS ${bld_PIO_DEFINITIONS} -D_MPISERIAL)
+< ENDIF()
+< 
+< 
+44,46c34,36
+< SET (NETCDF_FIND_COMPONENTS F90)
+< FIND_PACKAGE(NETCDF)
+< IF (${NETCDF_FOUND})
+---
+> #SET (NETCDF_FIND_COMPONENTS F90)
+> FIND_PACKAGE(NETCDF_Fortran REQUIRED)
+> IF (${NETCDF_Fortran_FOUND})
+48,52c38,39
+<   SET(bld_PIO_DEFINITIONS ${bld_PIO_DEFINITIONS} -D_NETCDF)
+<   IF (${WITHOUT_MPISERIAL} AND ${NETCDF4_PARALLEL})
+<     MESSAGE("Building PIO with netcdf4 parallel support") 
+<     SET(bld_PIO_DEFINITIONS ${bld_PIO_DEFINITIONS} -D_NETCDF4)
+<   ENDIF ()
+---
+>   SET(pio_include_dirs_ ${pio_include_dirs_} ${NETCDF_Fortran_INCLUDE_DIR})
+>   SET(bld_PIO_DEFINITIONS ${bld_PIO_DEFINITIONS} ${NETCDF_Fortran_DEFINITIONS})
+91,93c78,80
+< IF(NETCDF_FOUND) 
+<   SET(pio_include_dirs_ ${pio_include_dirs_} ${NETCDF_INCLUDE_DIR})
+<   SET(bld_PIO_DEFINITIONS ${bld_PIO_DEFINITIONS} -D_NETCDF)
+---
+> IF(NETCDF_C_FOUND) 
+>   SET(pio_include_dirs_ ${pio_include_dirs_} ${NETCDF_C_INCLUDE_DIR})
+>   SET(bld_PIO_DEFINITIONS ${bld_PIO_DEFINITIONS} ${NETCDF_C_DEFINITIONS})
+186,192d172
+< 
+< # added by zliu, 20180116
+< #**************qnlm 0**************#
+< #if("${CMAKE_Fortran_COMPILER_ID}" STREQUAL "GNU")
+< #   SET(CMAKE_Fortran_FLAGS      "${CMAKE_Fortran_FLAGS} -ffree-line-length-none")
+< #endif()
+< 
+194c174
+<    SET(CMAKE_Fortran_FLAGS      "${CMAKE_Fortran_FLAGS}")
+---
+> #   SET(CMAKE_Fortran_FLAGS	"${CMAKE_Fortran_FLAGS} -ffree-line-length-none")
+196d175
+< #**************qnlm 1**************#
+Only in pio_chense31_xiugai/pio: CMakeLists.txt.bak
+Only in pio/pio: CMakeLists.txt.old
+Only in pio/pio: iompi_mod.F90
+diff -r pio/pio/iompi_mod.F90.in pio_chense31_xiugai/pio/iompi_mod.F90.in
+197c197
+<     call t_startf("pio_write_mpiio_{TYPE}")
+---
+>     call t_startf("PIO:pio_write_mpiio_{TYPE}")
+243c243
+<     call t_stopf("pio_write_mpiio_{TYPE}")
+---
+>     call t_stopf("PIO:pio_write_mpiio_{TYPE}")
+274c274
+<     call t_startf("pio_read_mpiio_{TYPE}")
+---
+>     call t_startf("PIO:pio_read_mpiio_{TYPE}")
+314c314
+<     call t_stopf("pio_read_mpiio_{TYPE}")
+---
+>     call t_stopf("PIO:pio_read_mpiio_{TYPE}")
+diff -r pio/pio/ionf_mod.F90 pio_chense31_xiugai/pio/ionf_mod.F90
+104,105c104,105
+< !             if(ierr==PIO_NOERR) &
+< !                  ierr = nf90_set_fill(File%fh, NF90_NOFILL, nmode)
+---
+>              if(ierr==PIO_NOERR) &
+>                   ierr = nf90_set_fill(File%fh, NF90_NOFILL, nmode)
+262c262
+<              if(Debug) print *,__FILE__,__LINE__,ierr
+---
+>              if(Debug) print *,__PIO_FILE__,__LINE__,ierr
+264c264
+<              if(Debug) print *,__FILE__,__LINE__,ierr
+---
+>              if(Debug) print *,__PIO_FILE__,__LINE__,ierr
+diff -r pio/pio/nf_mod.F90 pio_chense31_xiugai/pio/nf_mod.F90
+717,718d716
+< !wanghong test
+< write(*,*) name(1:nlen)
+1745c1743,1744
+<           ierr = nf90_def_var_fill(File%fh, vardesc%varid, 1, 0)
+---
+> !        removed , use nf90_set_fill instead
+> !          ierr = nf90_def_var_fill(File%fh, vardesc%varid, 1, 0)
+Only in pio/pio: piodarray.F90
+diff -r pio/pio/piodarray.F90.in pio_chense31_xiugai/pio/piodarray.F90.in
+210c210
+<     if(debugasync .and. ios%ioproc) print *,__FILE__,__LINE__,iodesc%async_id
+---
+>     if(debugasync .and. ios%ioproc) print *,__PIO_FILE__,__LINE__,iodesc%async_id
+481c481
+<     call t_startf("pio_write_darray")
+---
+>     call t_startf("PIO:pio_write_darray")
+505c505,506
+<     call t_startf("pio_rearrange_write")
+---
+>     call t_startf("PIO:pio_rearrange_write")
+>     call t_startf("PIO:pre_pio_write_nf")
+569c570
+<     call t_stopf("pio_rearrange_write")
+---
+>     call t_stopf("PIO:pio_rearrange_write")
+641c642,643
+<     call t_startf("pio_write_nf")
+---
+>     call t_stopf("PIO:pre_pio_write_nf")
+>     call t_startf("PIO:pio_write_nf")
+645c647
+<     call t_stopf("pio_write_nf")
+---
+>     call t_stopf("PIO:pio_write_nf")
+650a653,655
+> #ifdef TIMING
+>        call t_startf("PIO:post_pio_write_nf")
+> #endif
+655a661,663
+> #ifdef TIMING
+>        call t_stopf("PIO:post_pio_write_nf")
+> #endif
+668c676
+<     call t_stopf("pio_write_darray")
+---
+>     call t_stopf("PIO:pio_write_darray")
+738c746
+<     call t_startf("pio_write_darray")
+---
+>     call t_startf("PIO:pio_write_darray")
+788c796
+<     call t_startf("pio_rearrange_write")
+---
+>     call t_startf("PIO:pio_rearrange_write")
+822c830
+<     call t_stopf("pio_rearrange_write")
+---
+>     call t_stopf("PIO:pio_rearrange_write")
+827c835
+<     call t_startf("pio_write_bin")
+---
+>     call t_startf("PIO:pio_write_bin")
+834c842
+<     call t_stopf("pio_write_bin")
+---
+>     call t_stopf("PIO:pio_write_bin")
+852c860
+<     call t_stopf("pio_write_darray")
+---
+>     call t_stopf("PIO:pio_write_darray")
+921c929
+<     call t_startf("pio_read_darray")
+---
+>     call t_startf("PIO:pio_read_darray")
+991c999
+< !    print *,__FILE__,__LINE__,ndims, fndims, start(1:fndims),count(1:fndims),vardesc%rec
+---
+> !    print *,__PIO_FILE__,__LINE__,ndims, fndims, start(1:fndims),count(1:fndims),vardesc%rec
+994c1002
+<     call t_startf("pio_read_nf")
+---
+>     call t_startf("PIO:pio_read_nf")
+998c1006
+<     call t_stopf("pio_read_nf")
+---
+>     call t_stopf("PIO:pio_read_nf")
+1006c1014
+<     call t_startf("pio_rearrange_read")
+---
+>     call t_startf("PIO:pio_rearrange_read")
+1041c1049
+<     call t_stopf("pio_rearrange_read")
+---
+>     call t_stopf("PIO:pio_rearrange_read")
+1051c1059
+<     call t_stopf("pio_read_darray")
+---
+>     call t_stopf("PIO:pio_read_darray")
+1121c1129
+<     call t_startf("pio_read_darray")
+---
+>     call t_startf("PIO:pio_read_darray")
+1160c1168
+<     call t_startf("pio_read_bin")
+---
+>     call t_startf("PIO:pio_read_bin")
+1164c1172
+<     call t_stopf("pio_read_bin")
+---
+>     call t_stopf("PIO:pio_read_bin")
+1174c1182
+<     call t_startf("pio_rearrange_read")
+---
+>     call t_startf("PIO:pio_rearrange_read")
+1210c1218
+<     call t_stopf("pio_rearrange_read")
+---
+>     call t_stopf("PIO:pio_rearrange_read")
+1220c1228
+<     call t_stopf("pio_read_darray")
+---
+>     call t_stopf("PIO:pio_read_darray")
+1251a1260,1262
+> #ifdef TIMING
+>     call t_startf("PIO:allred_add_data_to_buf")
+> #endif
+1252a1264,1266
+> #ifdef TIMING
+>     call t_stopf("PIO:allred_add_data_to_buf")
+> #endif
+1297c1311
+<        if(DEBUG) print *,__FILE__,__LINE__,status, ierr, total_buffsize
+---
+>        if(DEBUG) print *,__PIO_FILE__,__LINE__,status, ierr, total_buffsize
+diff -r pio/pio/pio.F90 pio_chense31_xiugai/pio/pio.F90
+5,6c5,6
+< !! $Revision$
+< !! $LastChangedDate$
+---
+> !! $Revision: 856 $
+> !! $LastChangedDate: 2013-11-19 15:48:54 -0600 (Tue, 19 Nov 2013) $
+22c22,26
+<   use pio_types, only : io_desc_t, file_desc_t, var_desc_t, iosystem_desc_t, &
+---
+>   use pio_types, only : io_desc_t, file_desc_t, var_desc_t, iosystem_desc_t,&
+>     pio_rearr_opt_t, pio_rearr_comm_fc_opt_t, pio_rearr_comm_fc_2d_enable,&
+>     pio_rearr_comm_fc_1d_comp2io, pio_rearr_comm_fc_1d_io2comp,&
+>     pio_rearr_comm_fc_2d_disable, pio_rearr_comm_unlimited_pend_req,&
+>     pio_rearr_comm_p2p, pio_rearr_comm_coll,&
+65a70,72
+>    
+> 
+> 
+71d77
+< 
+diff -r pio/pio/pio_kinds.F90 pio_chense31_xiugai/pio/pio_kinds.F90
+35c35
+<       char_len  = 360                    ,&
+---
+>       char_len  = 2500                    ,&
+Only in pio/pio: piolib_mod.F90_bak
+Only in pio_chense31_xiugai/pio: piolib_mod.F90.bak
+Only in pio_chense31_xiugai/pio: pio_msg_callbacks.F90.bak
+diff -r pio/pio/pio_msg_getput_callbacks.F90 pio_chense31_xiugai/pio/pio_msg_getput_callbacks.F90
+3c3
+< ! DO NOT EDIT THIS FILE, it was generated using bin/genf90.pl 
+---
+> ! DO NOT EDIT THIS FILE, it was generated using /home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/tools/cprnc/genf90/genf90.pl 
+9,10c9,10
+< !! $Revision: 757 $
+< !! $LastChangedDate: 2013-04-02 13:55:15 -0600 (Tue, 02 Apr 2013) $
+---
+> !! $Revision$
+> !! $LastChangedDate$
+13c13
+< # 8 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 8 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+29c29
+< # 23 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 23 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+32c32
+< # 25 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 25 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+91c91
+< # 83 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 83 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+95c95
+< # 86 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 86 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+193c193
+< # 183 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 183 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+196c196
+< # 86 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 86 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+294c294
+< # 183 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 183 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+297c297
+< # 86 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 86 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+395c395
+< # 183 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 183 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+398c398
+< # 86 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 86 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+496c496
+< # 183 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 183 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+499c499
+< # 86 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 86 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+597c597
+< # 183 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 183 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+600c600
+< # 185 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 185 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+615c615
+< # 199 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 199 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+618c618
+< # 201 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 201 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+671c671
+< # 253 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 253 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+675c675
+< # 256 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 256 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+704c704
+< # 284 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 284 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+707c707
+< # 256 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 256 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+736c736
+< # 284 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 284 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+739c739
+< # 256 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 256 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+768c768
+< # 284 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 284 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+771c771
+< # 256 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 256 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+800c800
+< # 284 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 284 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+803c803
+< # 256 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 256 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+832c832
+< # 284 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 284 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+836c836
+< # 287 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 287 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+866c866
+< # 316 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 316 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+869c869
+< # 287 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 287 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+899c899
+< # 316 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 316 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+902c902
+< # 287 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 287 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+932c932
+< # 316 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 316 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+935c935
+< # 287 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 287 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+965c965
+< # 316 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 316 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+968c968
+< # 287 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 287 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+998c998
+< # 316 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 316 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+1003c1003
+< # 320 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 320 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+1098c1098
+< # 414 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 414 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+1101c1101
+< # 320 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 320 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+1196c1196
+< # 414 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 414 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+1199c1199
+< # 320 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 320 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+1294c1294
+< # 414 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 414 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+1297c1297
+< # 320 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 320 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+1392c1392
+< # 414 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 414 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+1395c1395
+< # 320 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 320 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+1490c1490
+< # 414 "/glade/u/home/jedwards/pio_trunk/pio/pio_msg_getput_callbacks.F90.in"
+---
+> # 414 "/home/export/online1/cesm01/chenyuhu/cesm1_3_beta17_sehires31/models/utils/pio/pio/pio_msg_getput_callbacks.F90.in"
+diff -r pio/pio/pio_msg_mod.F90 pio_chense31_xiugai/pio/pio_msg_mod.F90
+302c302
+<        if(debugasync) print *,__FILE__,__LINE__,index
+---
+>        if(debugasync) print *,__PIO_FILE__,__LINE__,index
+309c309
+<     if(debugasync) print *,__FILE__,__LINE__,index,list_item%iodesc%async_id
+---
+>     if(debugasync) print *,__PIO_FILE__,__LINE__,index,list_item%iodesc%async_id
+323a324
+> 
+355c356
+<                 print *,__FILE__,__LINE__,id,list_item%index,list_item%iodesc%async_id
+---
+>                 print *,__PIO_FILE__,__LINE__,id,list_item%index,list_item%iodesc%async_id
+432c433
+<        if(debugasync) print *,__FILE__,__LINE__,list_item%index,async_id,list_item%iodesc%async_id
+---
+>        if(debugasync) print *,__PIO_FILE__,__LINE__,list_item%index,async_id,list_item%iodesc%async_id
+435c436
+<           if(debugasync) print *,__FILE__,__LINE__,async_id,list_item%index,iodesc%write%n_elemtype
+---
+>           if(debugasync) print *,__PIO_FILE__,__LINE__,async_id,list_item%index,iodesc%write%n_elemtype
+Only in pio/pio: pionfatt_mod.F90
+diff -r pio/pio/pionfatt_mod.F90.in pio_chense31_xiugai/pio/pionfatt_mod.F90.in
+158c158
+<              if(debug) print *,__FILE__,__LINE__,name,value
+---
+>              if(debug) print *,__PIO_FILE__,__LINE__,name,value
+Only in pio/pio: pionfget_mod.F90
+diff -r pio/pio/pionfget_mod.F90.in pio_chense31_xiugai/pio/pionfget_mod.F90.in
+80c80
+<     call t_startf("pio_get_var1_{TYPE}")
+---
+>     call t_startf("PIO:pio_get_var1_{TYPE}")
+154c154
+<     call t_stopf("pio_get_var1_{TYPE}")
+---
+>     call t_stopf("PIO:pio_get_var1_{TYPE}")
+223c223
+<     call t_startf("pio_get_vara_{DIMS}d_{TYPE}")
+---
+>     call t_startf("PIO:pio_get_vara_{DIMS}d_{TYPE}")
+298c298
+<     call t_stopf("pio_get_vara_{DIMS}d_{TYPE}")
+---
+>     call t_stopf("PIO:pio_get_vara_{DIMS}d_{TYPE}")
+368c368
+<     call t_startf("pio_get_var_{DIMS}d_{TYPE}")
+---
+>     call t_startf("PIO:pio_get_var_{DIMS}d_{TYPE}")
+432c432
+<     call t_stopf("pio_get_var_{DIMS}d_{TYPE}")
+---
+>     call t_stopf("PIO:pio_get_var_{DIMS}d_{TYPE}")
+Only in pio/pio: pionfput_mod.F90
+diff -r pio/pio/pionfput_mod.F90.in pio_chense31_xiugai/pio/pionfput_mod.F90.in
+84c84
+<     call t_startf("pio_put_var1_text")
+---
+>     call t_startf("PIO:pio_put_var1_text")
+128c128
+<              print *,__FILE__,__LINE__,index,count,trim(ival)
+---
+>              print *,__PIO_FILE__,__LINE__,index,count,trim(ival)
+137c137
+< !          print *,__FILE__,__LINE__,index,count,trim(ival)
+---
+> !          print *,__PIO_FILE__,__LINE__,index,count,trim(ival)
+164c164
+<     call t_stopf("pio_put_var1_text")
+---
+>     call t_stopf("PIO:pio_put_var1_text")
+189c189
+<     call t_startf("pio_put_var1_{TYPE}")
+---
+>     call t_startf("PIO:pio_put_var1_{TYPE}")
+260c260
+<     call t_stopf("pio_put_var1_{TYPE}")
+---
+>     call t_stopf("PIO:pio_put_var1_{TYPE}")
+307c307
+<     call t_startf("pio_put_var_{DIMS}d_text")
+---
+>     call t_startf("PIO:pio_put_var_{DIMS}d_text")
+401c401
+<     call t_stopf("pio_put_var_{DIMS}d_text")
+---
+>     call t_stopf("PIO:pio_put_var_{DIMS}d_text")
+447c447
+<     call t_startf("pio_put_var_{DIMS}d_{TYPE}")
+---
+>     call t_startf("PIO:pio_put_var_{DIMS}d_{TYPE}")
+499c499
+<     call t_stopf("pio_put_var_{DIMS}d_{TYPE}")
+---
+>     call t_stopf("PIO:pio_put_var_{DIMS}d_{TYPE}")
+532c532
+<     call t_startf("pio_put_var_0d_{TYPE}")
+---
+>     call t_startf("PIO:pio_put_var_0d_{TYPE}")
+575c575
+<     call t_stopf("pio_put_var_0d_{TYPE}")
+---
+>     call t_stopf("PIO:pio_put_var_0d_{TYPE}")
+626c626
+<     call t_startf("pio_put_vara_{DIMS}d_text")
+---
+>     call t_startf("PIO:pio_put_vara_{DIMS}d_text")
+717c717
+<     call t_stopf("pio_put_vara_{DIMS}d_{TYPE}")
+---
+>     call t_stopf("PIO:pio_put_vara_{DIMS}d_{TYPE}")
+747c747
+<     call t_startf("pio_put_vara_{DIMS}d_{TYPE}")
+---
+>     call t_startf("PIO:pio_put_vara_{DIMS}d_{TYPE}")
+837c837
+<     call t_stopf("pio_put_vara_{DIMS}d_{TYPE}")
+---
+>     call t_stopf("PIO:pio_put_vara_{DIMS}d_{TYPE}")
+Only in pio/pio: pionfread_mod.F90
+diff -r pio/pio/pionfread_mod.F90.in pio_chense31_xiugai/pio/pionfread_mod.F90.in
+76c76
+<     call t_startf("pio_read_nfdarray_{TYPE}")
+---
+>     call t_startf("PIO:pio_read_nfdarray_{TYPE}")
+206c206
+<     call t_stopf("pio_read_nfdarray_{TYPE}")
+---
+>     call t_stopf("PIO:pio_read_nfdarray_{TYPE}")
+Only in pio/pio: pionfwrite_mod.F90
+diff -r pio/pio/pionfwrite_mod.F90.in pio_chense31_xiugai/pio/pionfwrite_mod.F90.in
+0a1
+> #define __PIO_FILE__ "pionfwrite_mod.F90"
+86c87
+<     call t_startf("pio_write_nfdarray_{TYPE}")
+---
+>     call t_startf("PIO:pio_write_nfdarray_{TYPE}")
+124c125
+<              if(Debug) print *,__FILE__,__LINE__
+---
+>              if(Debug) print *,__PIO_FILE__,__LINE__
+128c129
+<              if(Debug) print *,__FILE__,__LINE__,iobuf_size
+---
+>              if(Debug) print *,__PIO_FILE__,__LINE__,iobuf_size
+150c151
+<           if(Debug) print *,__FILE__,__LINE__,ndims,temp_start(1:ndims),temp_count(1:ndims)
+---
+>           if(Debug) print *,__PIO_FILE__,__LINE__,ndims,temp_start(1:ndims),temp_count(1:ndims)
+217c218
+<                       call t_startf("nc_put_var2")
+---
+>                       call t_startf("PIO:nc_put_var2")
+223c224
+<                       call t_stopf("nc_put_var2")
+---
+>                       call t_stopf("PIO:nc_put_var2")
+251c252
+<     call t_stopf("pio_write_nfdarray_{TYPE}")
+---
+>     call t_stopf("PIO:pio_write_nfdarray_{TYPE}")
+Only in pio/pio: pio_spmd_utils.F90
+diff -r pio/pio/pio_types.F90 pio_chense31_xiugai/pio/pio_types.F90
+6,7c6,7
+< !! $Revision$
+< !! $LastChangedDate$
+---
+> !! $Revision: 943 $
+> !! $LastChangedDate: 2014-02-14 10:20:17 -0600 (Fri, 14 Feb 2014) $
+36a37,110
+> !>
+> !! @defgroup PIO_rearr_method PIO_rearr_method
+> !! @public 
+> !! @brief The three choices to control rearrangement are:
+> !! @details
+> !!  - PIO_rearr_none : Do not use any form of rearrangement
+> !!  - PIO_rearr_box : Use a PIO internal box rearrangement
+> !>
+>     integer(i4), public, parameter :: PIO_rearr_none = 0
+>     integer(i4), public, parameter :: PIO_rearr_box =  1
+> 
+> !>
+> !! @defgroup PIO_rearr_comm_t PIO_rearr_comm_t
+> !! @public 
+> !! @brief The two choices for rearranger communication
+> !! @details
+> !!  - PIO_rearr_comm_p2p : Point to point
+> !!  - PIO_rearr_comm_coll : Collective
+> !>
+>     enum, bind(c)
+>       enumerator :: PIO_rearr_comm_p2p = 0
+>       enumerator :: PIO_rearr_comm_coll
+>     end enum
+> 
+> !>
+> !! @defgroup PIO_rearr_comm_dir PIO_rearr_comm_dir
+> !! @public 
+> !! @brief The four choices for rearranger communication direction
+> !! @details
+> !!  - PIO_rearr_comm_fc_2d_enable : COMM procs to IO procs and vice versa
+> !!  - PIO_rearr_comm_fc_1d_comp2io: COMM procs to IO procs only
+> !!  - PIO_rearr_comm_fc_1d_io2comp: IO procs to COMM procs only
+> !!  - PIO_rearr_comm_fc_2d_disable: Disable flow control
+> !>
+>     enum, bind(c)
+>       enumerator :: PIO_rearr_comm_fc_2d_enable = 0
+>       enumerator :: PIO_rearr_comm_fc_1d_comp2io
+>       enumerator :: PIO_rearr_comm_fc_1d_io2comp
+>       enumerator :: PIO_rearr_comm_fc_2d_disable
+>     end enum
+> 
+> !>
+> !! @defgroup PIO_rearr_comm_fc_options PIO_rearr_comm_fc_options
+> !! @brief Type that defines the PIO rearranger options
+> !! @details
+> !!  - fcd : @copydoc PIO_rearr_comm_dir
+> !!  - enable_hs : Enable handshake (true/false) 
+> !!  - enable_isend : Enable Isends (true/false)
+> !!  - max_pend_req : Maximum pending requests (To indicated unlimited
+> !!                    number of requests use PIO_REARR_COMM_UNLIMITED_PEND_REQ)
+> !>
+>     type, public :: PIO_rearr_comm_fc_opt_t
+>       integer :: fcd                  ! Flow control direction
+>       logical :: enable_hs            ! Enable handshake?
+>       logical :: enable_isend         ! Enable isends?
+>       integer :: max_pend_req         ! Maximum pending requests
+>     end type PIO_rearr_comm_fc_opt_t
+> 
+>     integer, public, parameter :: PIO_REARR_COMM_UNLIMITED_PEND_REQ = -1
+> !>
+> !! @defgroup PIO_rearr_options PIO_rearr_options
+> !! @brief Type that defines the PIO rearranger options
+> !! @details
+> !!  - comm_type : @copydoc PIO_rearr_comm_t
+> !!  - comm_fc_opts : @copydoc PIO_rearr_comm_fc_options
+> !>
+>     type, public :: PIO_rearr_opt_t
+>       integer                         :: comm_type
+>       type(PIO_rearr_comm_fc_opt_t)   :: comm_fc_opts
+>     end type PIO_rearr_opt_t
+> 
+>     public :: PIO_rearr_comm_p2p, PIO_rearr_comm_coll,&
+>               PIO_rearr_comm_fc_2d_enable, PIO_rearr_comm_fc_1d_comp2io,&
+>               PIO_rearr_comm_fc_1d_io2comp, PIO_rearr_comm_fc_2d_disable
+81a156,157
+>         !integer(i4), dimension(IOSYS_REARR_OPT_MAX) :: rearr_opts ! Rearranger options - see PIO_rearr_opt_t for details
+>         type(PIO_rearr_opt_t)   :: rearr_opts       ! Rearranger options
+245,254d320
+< !>
+< !! @defgroup PIO_rearr_method PIO_rearr_method
+< !! @public 
+< !! @brief The three choices to control rearrangement are:
+< !! @details
+< !!  - PIO_rearr_none : Do not use any form of rearrangement
+< !!  - PIO_rearr_box : Use a PIO internal box rearrangement
+< !>
+<     integer(i4), public, parameter :: PIO_rearr_none = 0
+<     integer(i4), public, parameter :: PIO_rearr_box =  1
+Only in pio/pio: rearrange.F90
+diff -r pio/pio/rearrange.F90.in pio_chense31_xiugai/pio/rearrange.F90.in
+76c76
+<     call t_startf("pio_rearrange_comp2io_{TYPE}")
+---
+>     call t_startf("PIO:pio_rearrange_comp2io_{TYPE}")
+83c83
+<     call t_stopf("pio_rearrange_comp2io_{TYPE}")
+---
+>     call t_stopf("PIO:pio_rearrange_comp2io_{TYPE}")
+105c105
+<     call t_startf("pio_rearrange_io2comp_{TYPE}")
+---
+>     call t_startf("PIO:pio_rearrange_io2comp_{TYPE}")
+111c111
+<     call t_stopf("pio_rearrange_io2comp_{TYPE}")
+---
+>     call t_stopf("PIO:pio_rearrange_io2comp_{TYPE}")
+155c155
+<      call t_startf("pio_rearrange_create_box")
+---
+>      call t_startf("PIO:pio_rearrange_create_box")
+169c169
+<      call t_stopf("pio_rearrange_create_box")
+---
+>      call t_stopf("PIO:pio_rearrange_create_box")
+Binary files pio/.svn/wc.db and pio_chense31_xiugai/.svn/wc.db differ

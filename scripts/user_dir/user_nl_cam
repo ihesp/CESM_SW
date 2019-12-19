@@ -1,0 +1,6 @@
+! Users should add all user specific namelist changes below in the form of 
+! namelist_var = new_namelist_value 
+ 
+phys_loadbalance=4
+se_partmethod=4
+statefreq=10000

@@ -1,0 +1,22 @@
+#! /bin/csh -f
+#==============================================================================
+# Purpose:
+#     (a) Build gptl library
+#==============================================================================
+
+if (-d $CASEROOT/SourceMods/src.gptl) then
+    setenv GPTL_DIR $CASEROOT/SourceMods/src.gptl
+else
+    setenv GPTL_DIR $CCSMROOT/models/utils/timing   # gptl directory
+endif
+
+setenv SHAREDPATH  $1
+setenv GPTL_LIBDIR $SHAREDPATH/gptl
+
+echo "Copying source to CESM EXEROOT..."
+
+cd $GPTL_LIBDIR
+cp $GPTL_DIR/gptl/*.h $SHAREDPATH/include
+$GMAKE  -f $GPTL_DIR/Makefile install  MACFILE=$CASEROOT/Macros || exit 1
+
+exit 0

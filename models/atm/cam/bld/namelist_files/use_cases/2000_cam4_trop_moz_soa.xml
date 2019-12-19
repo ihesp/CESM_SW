@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<namelist_defaults>
+
+<start_ymd>0101</start_ymd>
+<ncdata dyn="fv" hgrid="1.9x2.5">'atm/cam/chem/ic/f2000_tropbam_soa_alpha03c_chem2_1.9x2.5_L26_0011-01-01-00000_c130328.nc'</ncdata>
+<ncdata dyn="fv" hgrid="4x5">'atm/cam/chem/ic/f2000_tropbam_soa_alpha03c_chem2_4x5_L26_0011-01-01-00000_c130328.nc'</ncdata>
+
+<!-- turn on clm MEGAN VOC emis -->
+<megan_specifier>
+    'ISOP = isoprene',
+    'CH3OH =  methanol',
+    'CH3COCH3 = acetone',
+    'CH3CHO = acetaldehyde',
+    'CH2O =  formaldehyde',
+    'CO = carbon_monoxide',
+    'C2H6  = ethane',
+    'C3H8 = propane',
+    'C2H4 = ethene',
+    'C3H6 = propene',
+    'C2H5OH = ethanol',
+    'C10H16 = myrcene + sabinene + limonene + carene_3 + ocimene_t_b + pinene_b + pinene_a + 2met_styrene + cymene_p + cymene_o + phellandrene_a + thujene_a + terpinene_a + terpinene_g + terpinolene + phellandrene_b + camphene + bornene + fenchene_a + ocimene_al + ocimene_c_b'
+</megan_specifier>
+
+<megan_factors_file>'atm/cam/chem/trop_mozart/emis/megan21_emis_factors_c20130304.nc'</megan_factors_file> 
+
+<!-- specify which species have emissions from file -->
+<srf_emis_specifier>
+  'BENZENE  -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.SOA_BENZENE.surface.1.9x2.5_c120313.nc',
+  'BIGALK   -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.BIGALK.surface.1.9x2.5_c110426.nc',
+  'BIGENE   -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.BIGENE.surface.1.9x2.5_c110426.nc',
+  'C2H2     -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.C2H2.surface.1.9x2.5_c110426.nc',
+  'C2H4     -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.C2H4_no_bg.surface.1.9x2.5_c121022.nc',
+  'C2H5OH   -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.C2H5OH.surface.1.9x2.5_c110426.nc',
+  'C2H6     -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.C2H6_no_bg.surface.1.9x2.5_c121022.nc',
+  'C3H6     -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.C3H6_no_bg.surface.1.9x2.5_c121022.nc',
+  'C3H8     -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.C3H8_no_bg.surface.1.9x2.5_c121022.nc',
+  'CB1      -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.CB1.surface.1.9x2.5_c110426.nc',
+  'CB2      -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.CB2.surface.1.9x2.5_c110426.nc',
+  'CH2O     -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.CH2O.surface.1.9x2.5_c110426.nc',
+  'CH3CHO   -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.CH3CHO.surface.1.9x2.5_c110426.nc',
+  'CH3CN    -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.CH3CN.surface.1.9x2.5_c110426.nc',
+  'CH3COCH3 -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.CH3COCH3.surface.1.9x2.5_c110426.nc',
+  'CH3COOH  -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.CH3COOH.surface.1.9x2.5_c110426.nc',
+  'CH3OH    -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.CH3OH_no_bg.surface.1.9x2.5_c121022.nc',
+  'CO       -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.CO_no_bg.surface.1.9x2.5_c121022.nc',
+  'DMS      -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.DMS.surface.1.9x2.5_c110426.nc',
+  'HCN      -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.HCN.surface.1.9x2.5_c110426.nc',
+  'HCOOH    -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.HCOOH.surface.1.9x2.5_c110426.nc',
+  'MEK      -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.MEK.surface.1.9x2.5_c110426.nc',
+  'NH3      -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.NH3.surface.1.9x2.5_c110426.nc',
+  'NO       -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.NO.surface.1.9x2.5_c110426.nc',
+  'OC1      -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.OC1.surface.1.9x2.5_c110426.nc',
+  'OC2      -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.OC1.surface.1.9x2.5_c110426.nc',
+  'SO2      -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.SO2.surface.1.9x2.5_c110426.nc',
+  'TOLUENE  -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.SOA_TOLUENE.surface.1.9x2.5_c120313.nc',
+  'XYLENE   -> $INPUTDATA_ROOT/atm/cam/chem/emis/1992-2010/emissions.SOA_XYLENE.surface.1.9x2.5_c120313.nc'
+</srf_emis_specifier>
+
+<megan_mapped_emisfctrs>.false.</megan_mapped_emisfctrs>
+
+
+<gas_wetdep_method>NEU</gas_wetdep_method>
+
+<fincl1>
+  'Q', 'U', 'V', 'OMEGA', 'T', 'PS', 'TROP_P', 'PBLH', 'PRECC', 'PRECL', 'CLOUD', 'TOT_CLD_VISTAU', 'PHIS', 'ORO',
+  'QFLX', 'SHFLX', 'TAUX', 'TAUY', 'Z3', 'AEROD_v', 'FSDS', 'FSNS', 'FLNS', 'FLDS', 'O3', 'O', 'O1D', 'N2O', 'NO', 'NO2',
+  'NO3', 'NOY', 'NOX', 'HNO3', 'HO2NO2', 'N2O5', 'H2', 'OH', 'HO2', 'H2O2', 'CH4', 'CO', 'CH3O2', 'CH3OOH', 'CH2O',
+  'CH3OH', 'C2H5OH', 'C2H4', 'EO', 'EO2', 'CH3COOH', 'GLYALD', 'C2H6', 'C2H5O2', 'C2H5OOH', 'HCOOH', 'CH3CHO',
+  'CH3CO3', 'CH3COOOH', 'C3H6', 'C3H8', 'C3H7O2', 'C3H7OOH', 'PO2', 'POOH', 'CH3COCH3', 'RO2', 'ROOH', 'MACR',
+  'MACRO2', 'MACROOH', 'MCO3', 'HYDRALD', 'HYAC', 'CH3COCHO', 'XO2', 'XOOH', 'C10H16', 'TERPO2', 'TERPOOH',
+  'TOLUENE', 'CRESOL', 'TOLO2', 'TOLOOH', 'XOH', 'BIGALD', 'GLYOXAL', 'PAN', 'ONIT', 'MPAN', 'ISOPNO3', 'ONITR',
+  'CB1', 'CB2', 'OC1', 'OC2', 'SO2', 'SO4', 'DMS', 'NH3', 'NH4', 'NH4NO3', 'Rn', 'SFO3', 'SFCO', 'SFNO', 'SFNO2',
+  'SFHNO3', 'SFPAN', 'SFOH', 'SFHO2', 'SFCH3O2', 'SFCH3CO3', 'SFISOP', 'SFCH2O', 'SFC2H2', 'SFBIGENE',
+  'SFC10H16', 'SFC2H4', 'SFC2H5OH', 'SFC2H6', 'SFC3H6', 'SFC3H8', 'SFCH3CHO', 'SFCH4', 'SFH2O2', 'SFCH3COCH3',
+  'SFCH3OH', 'SFDMS', 'SFMEK', 'SFNH3', 'SFCB1', 'SFCB2', 'SFOC1', 'SFOC2', 'SFSO2', 'SFSO4', 'WD_CB1', 'WD_CB2',
+  'WD_OC1', 'WD_OC2', 'WDR_CB1', 'WDR_CB2', 'WDR_OC1', 'WDR_OC2', 'DF_OC1', 'DF_OC2', 'OC2SFWET', 'OC2WET',
+  'WD_HNO3', 'SFTOLUENE', 'SFHCN', 'SFCH3CN', 'DV_HCN', 'DV_CH3CN', 'DV_O3', 'DV_NO2', 'DV_PAN', 'DV_HNO3',
+  'DV_CO', 'WDR_HCN', 'WDR_CH3CN', 'WD_HCN', 'WD_CH3CN', 'WDR_SO2', 'WDR_HNO3', 'WDR_H2O2', 'WDR_CH2O',
+  'WD_SO2', 'WD_SO4', 'O3_CHMP', 'O3_CHML', 'DO3CHM', 'CO_CHMP', 'CO_CHML', 'CH4_CHML', 'SO4_CHMP',
+  'SO4_CHML', 'SO4SFWET', 'LNO_PROD', 'LNO_COL_PROD', 'SFRn', 'SFHCOOH', 'SFBIGALD', 'SFCH3COCHO',
+  'SFCH3COOH', 'SAD_TROP', 'jo3_b', 'jno2', 'jpan', 'jh2o2', 'ODV_DST01', 'ODV_DST02', 'ODV_DST03',
+  'ODV_DST04', 'ODV_CB1', 'ODV_CB2', 'ODV_OC1', 'ODV_OC2', 'DST01', 'DST02', 'DST03', 'DST04', 'ODV_SO4',
+  'ODV_SSLTA', 'ODV_SSLTC', 'a2x_DSTWET1', 'a2x_DSTWET2', 'a2x_DSTWET3', 'a2x_DSTWET4', 'DF_SO4',
+  'DF_SO2', 'DF_DMS', 'WDR_DMS', 'DV_DST01', 'DV_DST02', 'DV_DST03', 'DV_DST04', 'OH_CHMP', 'OH_CHML',
+  'DV_ISOP', 'DV_OH', 'SSLT01', 'SSLT02', 'SSLT03', 'SSLT04', 'SSLT01PP', 'SSLT02PP', 'SSLT03PP', 'SSLT04PP',
+  'SFSSLT01', 'SFSSLT02', 'SFSSLT03', 'SFSSLT04', 'DV_SSLT01', 'DV_SSLT02', 'DV_SSLT03', 'DV_SSLT04',
+  'SOAM', 'SOAI', 'SOAT', 'SOAB', 'SOAX', 'TMSOAM', 'TMSOAI', 'TMSOAT', 'TMSOAB', 'TMSOAX', 'SOGM', 'SOGI', 'SOGT',
+  'SOGB', 'SOGX', 'TMSOGM', 'TMSOGI', 'TMSOGT', 'TMSOGB', 'TMSOGX', 'SOAM', 'SFSOAI', 'SFSOAT', 'SFSOAB',
+  'SFSOAX', 'DF_SOAM', 'DF_SOAI', 'DF_SOAT', 'DF_SOAB', 'DF_SOAX', 'SOAISFWET', 'SOATSFWET', 'SOABSFWET',
+  'SOAXSFWET', 'SOAMSFWET', 'SOAM_CHMP', 'SOAI_CHMP', 'SOAT_CHMP', 'SOAB_CHMP', 'SOAX_CHMP', 'SOAM_PROD',
+  'SOAI_PROD', 'SOAT_PROD', 'SOAB_PROD', 'SOAX_PROD', 'SOAI_dens', 'SOAT_dens', 'SOAB_dens', 'SOAX_dens',
+  'SOAM_dens', 'WDR_SOAI', 'WDR_SOAT', 'WDR_SOAB', 'WDR_SOAX', 'WDR_SOAM', 'WDR_SOGI', 'WDR_SOGT',
+  'WDR_SOGB', 'WDR_SOGX', 'WDR_SOGM', 'WDR_SO4', 'WD_SOGM', 'WD_SOGI', 'WD_SOGT', 'WD_SOGB', 'WD_SOGX',
+  'WD_NOY', 'WD_NO3', 'WD_NH4NO3', 'WD_SSLT01', 'WD_SSLT02', 'WD_SSLT03', 'WD_SSLT04', 'WD_DST01',
+  'WD_DST02', 'WD_DST03', 'WD_DST04', 
+   'MEG_ISOP','MEG_CH3OH','MEG_CH3COCH3','MEG_CH3CHO','MEG_CH2O','MEG_CO','MEG_C2H6','MEG_C3H8','MEG_C2H4','MEG_C3H6','MEG_C2H5OH','MEG_C10H16'
+</fincl1>
+
+<cosp_amwg>.true.</cosp_amwg>
+
+</namelist_defaults>

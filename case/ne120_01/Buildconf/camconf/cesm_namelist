@@ -1,0 +1,14 @@
+&cam_inparm
+ dtime = 900
+ 
+ 
+ co2vmr=284.7e-6
+ start_ymd = 00010101 
+ 
+ 
+ 
+state_debug_checks=.false.
+phys_loadbalance=-1
+se_partmethod=4
+statefreq=10000
+/

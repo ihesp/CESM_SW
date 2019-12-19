@@ -1,0 +1,8 @@
+-spmd -nosmp
+-dyn fv
+-res 10x15
+-phys cam4
+-debug
+-chem waccm_tsmlt_sulfur
+-carma sulfate
+-s

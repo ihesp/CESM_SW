@@ -1,0 +1,47 @@
+create_newcase -mach sunway -user_mods_dir user_dir -case ../cases/test54_merge_code_new -compset B1850C5 -res ne120_t12 -pes_file ../cases/test50_mergecode/env_mach_pes.xml -compiler sw5c
+
+
+Component set: longname (shortname) (alias) 
+  1850_CAM5_CLM40%SP_CICE_POP2_RTM_SGLC_SWAV (B_1850_CAM5) (B1850C5) 
+Component set Description: 
+  CAM: CLM: RTM: CICE: POP2: SGLC: SWAV: pre-industrial: cam5 physics: clm4.0 physics: clm4.0 Satellite phenology: prognostic cice: POP2 default: 
+Grid: 
+  a%ne120np4_l%ne120np4_oi%tx0.1v2_r%r05_m%tx0.1v2_g%null_w%null (ne120np4_tx0.1v2) 
+  ATM_GRID = ne120np4  NX_ATM=777602 NY_ATM=1 
+  LND_GRID = ne120np4  NX_LND=777602 NX_LND=1 
+  ICE_GRID = tx0.1v2  NX_ICE=3600 NX_ICE=2400 
+  OCN_GRID = tx0.1v2  NX_OCN=3600 NX_OCN=2400 
+  ROF_GRID = r05  NX_ROF=720 NX_ROF=360 
+  GLC_GRID = ne120np4  NX_GLC=777602 NX_GLC=1 
+  WAV_GRID = null  NX_WAV=0 NX_WAV=0 
+Grid Description: 
+  null is no grid: ne120np4 is Spectral Elem 1/4-deg grid: tx0.1v2 is tripole v2 1/10-deg grid: r05 is 1/2 degree river routing grid: 
+Non-Default Options: 
+  ATM_NCPL: 144 
+  BUDGETS: TRUE 
+  CAM_CONFIG_OPTS: -phys cam5 
+  CAM_DYCORE: se 
+  CAM_NML_USE_CASE: 1850_cam5 
+  CCSM_BGC: CO2A 
+  CCSM_CCOST: 1 
+  CCSM_CO2_PPMV: 284.7 
+  CICE_MODE: prognostic 
+  CLM_CO2_TYPE: diagnostic 
+  CLM_CONFIG_OPTS: -phys clm4_0 
+  CLM_NML_USE_CASE: 1850_control 
+  COMP_ATM: cam 
+  COMP_GLC: sglc 
+  COMP_ICE: cice 
+  COMP_LND: clm 
+  COMP_OCN: pop2 
+  COMP_ROF: rtm 
+  COMP_WAV: swav 
+  CPL_ALBAV: false 
+  CPL_EPBAL: off 
+  CPL_SEQ_OPTION: CESM1_MOD 
+  OCN_COUPLING: full 
+  OCN_NCPL: 48 
+  OCN_TRACER_MODULES:  iage 
+  ROF_NCPL: 8 
+  RTM_BLDNML_OPTS: -simyr 1850 
+  SCIENCE_SUPPORT: NO 

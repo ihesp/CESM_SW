@@ -1,0 +1,4 @@
+profile_depth_limit=99999
+profile_detail_limit=99999
+profile_outpe_num=512
+profile_outpe_stride=4

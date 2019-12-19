@@ -1,0 +1,454 @@
+&domain_nml
+ clinic_distribution_type = 'spacecurve'
+ ew_boundary_type = 'cyclic'
+ nprocs_clinic = 18400
+ nprocs_tropic = 18400
+ ns_boundary_type = 'tripole'
+ profile_barrier = .false.
+ tropic_distribution_type = 'spacecurve'
+/
+&io_nml
+ log_filename = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/ocn.log.190813-183408'
+ lredirect_stdout = .true.
+ luse_nf_64bit_offset = .true.
+ luse_pointer_files = .true.
+ num_iotasks = 1
+/
+&time_manager_nml
+ accel_file = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/tx0.1v2_depth_accel'
+ allow_leapyear = .false.
+ date_separator = '-'
+ dt_count = 576
+ dt_option = 'steps_per_day'
+ dtuxcel = 1.0
+ fit_freq = 48
+ iday0 = 1
+ ihour0 = 0
+ iminute0 = 30
+ imonth0 = 1
+ impcor = .true.
+ isecond0 = 0
+ iyear0 = 1
+ laccel = .false.
+ runid = 'test100_95ocn190515'
+ stop_count = 1000
+ stop_option = 'nyear'
+ time_mix_freq = 17
+ time_mix_opt = 'avgfit'
+/
+&grid_nml
+ bathymetry_file = 'unknown_bathymetry'
+ bottom_cell_file = '/home/export/online1/xwan/cesm/inputdata/ocn/pop/tx0.1v2/grid/dzbc_km62_201209.ieeer8'
+ flat_bottom = .false.
+ horiz_grid_file = '/home/export/online1/xwan/cesm/inputdata/ocn/pop/tx0.1v2/grid/horiz_grid_200709.ieeer8'
+ horiz_grid_opt = 'file'
+ kmt_kmin = 3
+ l1ddyn = .false.
+ lremove_points = .false.
+ n_topo_smooth = 0
+ partial_bottom_cells = .true.
+ region_info_file = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/tx0.1v2_region_ids'
+ region_mask_file = '/home/export/online1/xwan/cesm/inputdata/ocn/pop/tx0.1v2/grid/region_mask_20080702.ieeei4'
+ sfc_layer_opt = 'varthick'
+ topography_file = '/home/export/online1/xwan/cesm/inputdata/ocn/pop/tx0.1v2/grid/topography_km62_201209.ieeei4'
+ topography_opt = 'file'
+ topography_outfile = './test100_95ocn190515.pop.h.topography_bathymetry.ieeer8'
+ vert_grid_file = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/tx0.1v2_vert_grid'
+ vert_grid_opt = 'file'
+/
+&pop1d_nml
+/
+&init_ts_nml
+ init_ts_file = '/home/export/online1/xwan/cesm/inputdata/ocn/pop/tx0.1v2/ic/ts_WOA13v2_jan_ic_tx0.1v2_62L_20171222.ieeer8'
+ init_ts_file_fmt = 'bin'
+ init_ts_option = 'ccsm_startup'
+ init_ts_outfile = './test100_95ocn190515.pop.h.ts_ic'
+ init_ts_outfile_fmt = 'bin'
+ init_ts_suboption = 'null'
+/
+&diagnostics_nml
+ cfl_all_levels = .false.
+ diag_all_levels = .false.
+ diag_cfl_freq = 1
+ diag_cfl_freq_opt = 'nday'
+ diag_global_freq = 1
+ diag_global_freq_opt = 'nday'
+ diag_outfile = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/./test100_95ocn190515.pop.dd'
+ diag_transp_freq = 1
+ diag_transp_freq_opt = 'nday'
+ diag_transport_file = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/tx0.1v2_transport_contents'
+ diag_transport_outfile = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/./test100_95ocn190515.pop.dt'
+ diag_velocity_outfile = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/./test100_95ocn190515.pop.dv'
+ ldiag_velocity = .false.
+/
+&budget_diagnostics_nml
+ ldiag_global_tracer_budgets = .false.
+/
+&bsf_diagnostic_nml
+ ldiag_bsf = .false.
+/
+&restart_nml
+ even_odd_freq = 100000
+ leven_odd_on = .false.
+ pressure_correction = .false.
+ restart_fmt = 'nc'
+ restart_freq = 100000
+ restart_freq_opt = 'nyear'
+ restart_outfile = './test100_95ocn190515.pop.r'
+ restart_start =  0
+ restart_start_opt = 'nstep'
+/
+&tavg_nml
+ ltavg_has_offset_date = .false. .false.
+ ltavg_ignore_extra_streams = .false.
+ ltavg_nino_diags_requested = .false.
+ ltavg_one_time_header = .false. .false.
+ ltavg_streams_index_present = .true.
+ n_tavg_streams = 2
+ tavg_contents = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/tx0.1v2_tavg_contents'
+ tavg_file_freq = 1 1
+ tavg_file_freq_opt = 'nmonth' 'nmonth'
+ tavg_fmt_in = 'nc' 'nc'
+ tavg_fmt_out = 'nc' 'nc'
+ tavg_freq = 1 1
+ tavg_freq_opt = 'nmonth','never'
+ tavg_infile = './test100_95ocn190515.pop.hrestart.end'
+ tavg_offset_days = 2 2
+ tavg_offset_months = 1 1
+ tavg_offset_years = 1 1
+ tavg_outfile = './test100_95ocn190515.pop.h'
+ tavg_start = 0 0
+ tavg_start_opt = 'nstep' 'nstep'
+ tavg_stream_filestrings = 'nmonth1' 'nday1'
+/
+&history_nml
+ history_contents = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/tx0.1v2_history_contents'
+ history_fmt = 'nc'
+ history_freq = 1
+ history_freq_opt = 'never'
+ history_outfile = './test100_95ocn190515.pop.hs'
+/
+&movie_nml
+ movie_contents = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/tx0.1v2_movie_contents'
+ movie_fmt = 'nc'
+ movie_freq = 1
+ movie_freq_opt = 'never'
+ movie_outfile = './test100_95ocn190515.pop.hm'
+/
+&solvers
+ convergencecheckfreq = 10
+ convergencecheckstart = 60
+ convergencecriterion = 1.0e-13
+ lanczosconvergencecriterion = 0.15
+ maxiterations = 1000
+ maxlanczosstep = 100
+ preconditionerchoice = 'evp'
+ preconditionerfile = 'unknownPrecondFile'
+ solverchoice = 'PCSI'
+/
+&vertical_mix_nml
+ aidif = 1.0
+ bottom_drag = 1.0e-3
+ bottom_heat_flx = 0.0
+ bottom_heat_flx_depth = 1000.0e2
+ convect_diff = 10000.0
+ convect_visc = 10000.0
+ convection_type = 'diffusion'
+ implicit_vertical_mix = .true.
+ nconvad = 2
+ vmix_choice = 'kpp'
+/
+&vmix_const_nml
+ const_vdc = 0.25
+ const_vvc = 0.25
+/
+&vmix_rich_nml
+ bckgrnd_vdc = 0.1
+ bckgrnd_vvc = 1.0
+ rich_mix = 50.0
+/
+&tidal_nml
+ local_mixing_fraction = 0.33
+ ltidal_mixing = .false.
+ mixing_efficiency = 0.2
+ tidal_energy_file = 'unknown_tidal_mixing'
+ tidal_energy_file_fmt = 'bin'
+ tidal_mix_max = 100.0
+ vertical_decay_scale = 500.0e02
+/
+&vmix_kpp_nml
+ bckgrnd_vdc1 = 0.55
+ bckgrnd_vdc2 = 0.303615
+ bckgrnd_vdc_ban = 0.0
+ bckgrnd_vdc_dpth = 2500.0e02
+ bckgrnd_vdc_eq = 0.0
+ bckgrnd_vdc_linv = 4.5e-05
+ bckgrnd_vdc_psim = 0.0
+ larctic_bckgrnd_vdc = .false.
+ lcheckekmo = .false.
+ lcvmix = .false.
+ ldbl_diff = .true.
+ lhoriz_varying_bckgrnd = .false.
+ linertial = .false.
+ llangmuir = .false.
+ lrich = .true.
+ lshort_wave = .true.
+ num_v_smooth_ri = 1
+ prandtl = 10.0
+ rich_mix = 50.0
+/
+&advect_nml
+ tadvect_ctype = 'centered'
+/
+&hmix_nml
+ hmix_momentum_choice = 'del4'
+ hmix_tracer_choice = 'del4'
+ lsubmesoscale_mixing = .false.
+/
+&hmix_del2u_nml
+ am = 1.e8
+ lauto_hmix = .true.
+ lvariable_hmix = .false.
+/
+&hmix_del2t_nml
+ ah = 1.e8
+ lauto_hmix = .false.
+ lvariable_hmix = .true.
+/
+&hmix_del4u_nml
+ am = -27.0e17
+ lauto_hmix = .false.
+ lvariable_hmix = .true.
+/
+&hmix_del4t_nml
+ ah = -3.0e17
+ lauto_hmix = .false.
+ lvariable_hmix = .true.
+/
+&hmix_gm_nml
+ ah = 3.0e7
+ ah_bkg_bottom = 0.0
+ ah_bkg_srfbl = 3.0e7
+ ah_bolus = 3.0e7
+ buoyancy_freq_filename = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/buoyancy_freq'
+ buoyancy_freq_fmt = 'nc'
+ const_eg = 1.2
+ diag_gm_bolus = .false.
+ gamma_eg = 500.0
+ kappa_depth_1 = 1.0
+ kappa_depth_2 = 0.0
+ kappa_depth_scale = 150000.0
+ kappa_freq_choice = 'once_a_day'
+ kappa_isop_choice = 'bfre'
+ kappa_max_eg = 2.0e7
+ kappa_min_eg = 0.35e7
+ kappa_thic_choice = 'bfre'
+ read_n2_data = .false.
+ slm_b = 0.3
+ slm_r = 0.3
+ slope_control_choice = 'notanh'
+ transition_layer_on = .true.
+ use_const_ah_bkg_srfbl = .true.
+/
+&mix_submeso_nml
+ efficiency_factor = 0.07
+ hor_length_scale = 5.0e5
+ luse_const_horiz_len_scale = .false.
+ time_scale_constant = 8.64e4
+/
+&hmix_aniso_nml
+ c_para = 8.0
+ c_perp = 8.0
+ hmix_alignment_choice = 'east'
+ lsmag_aniso = .false.
+ lvariable_hmix_aniso = .true.
+ smag_lat = 20.0
+ smag_lat_fact = 0.98
+ smag_lat_gauss = 98.0
+ u_para = 5.0
+ u_perp = 5.0
+ var_viscosity_infile = 'ccsm-internal'
+ var_viscosity_infile_fmt = 'bin'
+ var_viscosity_outfile = './test100_95ocn190515.pop.hv'
+ var_viscosity_outfile_fmt = 'nc'
+ vconst_1 = 0.6e7
+ vconst_2 = 0.5
+ vconst_3 = 0.16
+ vconst_4 = 2.e-8
+ vconst_5 = 3
+ vconst_6 = 0.6e7
+ vconst_7 = 45.0
+ visc_para = 50.0e7
+ visc_perp = 50.0e7
+/
+&state_nml
+ state_choice = 'mwjf'
+ state_file = 'internal'
+ state_range_freq = 100000
+ state_range_opt = 'enforce'
+/
+&baroclinic_nml
+ reset_to_freezing = .false.
+/
+&ice_nml
+ ice_freq = 100000
+ ice_freq_opt = 'coupled'
+ kmxice = 1
+ lactive_ice = .true.
+/
+&pressure_grad_nml
+ lbouss_correct = .false.
+ lpressure_avg = .true.
+/
+&topostress_nml
+ ltopostress = .false.
+ nsmooth_topo = 0
+/
+&damping_nml
+ ldamp_uv = .false.
+/
+&forcing_ws_nml
+ ws_data_inc = 24.
+ ws_data_renorm = 10., 19*1.
+ ws_data_type = 'none'
+ ws_file_fmt = 'bin'
+ ws_filename = 'unknown-ws'
+ ws_interp_freq = 'every-timestep'
+ ws_interp_inc = 72.
+ ws_interp_type = 'linear'
+/
+&forcing_shf_nml
+ luse_cpl_ifrac = .false.
+ shf_data_inc = 24.
+ shf_data_renorm(3) = 0.94
+ shf_data_type = 'none'
+ shf_file_fmt = 'bin'
+ shf_filename = '/home/export/online1/xwan/cesm/inputdata/ocn/pop/tx0.1v2/forcing/shf_20100318.ieeer8'
+ shf_formulation = 'restoring'
+ shf_interp_freq = 'every-timestep'
+ shf_interp_inc = 72.
+ shf_interp_type = 'linear'
+ shf_restore_tau = 30.
+ shf_strong_restore = 0.0
+ shf_strong_restore_ms = 92.64
+ shf_weak_restore = 0.0
+/
+&forcing_sfwf_nml
+ ladjust_precip = .false.
+ lfw_as_salt_flx = .true.
+ lms_balance = .true.
+ lsend_precip_fact = .false.
+ sfwf_data_inc = 24.
+ sfwf_data_renorm = 0.001, 19*1.
+ sfwf_data_type = 'none'
+ sfwf_file_fmt = 'bin'
+ sfwf_filename = '/home/export/online1/xwan/cesm/inputdata/ocn/pop/tx0.1v2/forcing/sfwf_mm_PHC2_salx_flxio_20100323.ieeer8'
+ sfwf_formulation = 'restoring'
+ sfwf_interp_freq = 'every-timestep'
+ sfwf_interp_inc = 72.
+ sfwf_interp_type = 'linear'
+ sfwf_restore_tau = 30.
+ sfwf_strong_restore = 0.0
+ sfwf_strong_restore_ms = 0.6648
+ sfwf_weak_restore = 0.0115
+/
+&forcing_pt_interior_nml
+ pt_interior_data_inc = 24.
+ pt_interior_data_renorm = 20*1.
+ pt_interior_data_type = 'none'
+ pt_interior_file_fmt = 'bin'
+ pt_interior_filename = 'unknown-pt_interior'
+ pt_interior_formulation = 'restoring'
+ pt_interior_interp_freq = 'every-timestep'
+ pt_interior_interp_inc = 72.
+ pt_interior_interp_type = 'linear'
+ pt_interior_restore_file_fmt = 'bin'
+ pt_interior_restore_filename = 'unknown-pt_interior_restore'
+ pt_interior_restore_max_level = 0
+ pt_interior_restore_tau = 365.
+ pt_interior_surface_restore = .false.
+ pt_interior_variable_restore = .false.
+/
+&forcing_s_interior_nml
+ s_interior_data_inc = 24.
+ s_interior_data_renorm = 20*1.
+ s_interior_data_type = 'none'
+ s_interior_file_fmt = 'bin'
+ s_interior_filename = 'unknown-s_interior'
+ s_interior_formulation = 'restoring'
+ s_interior_interp_freq = 'every-timestep'
+ s_interior_interp_inc = 72.
+ s_interior_interp_type = 'linear'
+ s_interior_restore_file_fmt = 'bin'
+ s_interior_restore_filename = 'unknown-s_interior_restore'
+ s_interior_restore_max_level = 0
+ s_interior_restore_tau = 365.
+ s_interior_surface_restore = .false.
+ s_interior_variable_restore = .false.
+/
+&forcing_ap_nml
+ ap_data_inc = 1.e20
+ ap_data_renorm = 20*1.
+ ap_data_type = 'none'
+ ap_file_fmt = 'bin'
+ ap_filename = 'unknown-ap'
+ ap_interp_freq = 'never'
+ ap_interp_inc = 1.e20
+ ap_interp_type = 'nearest'
+/
+&coupled_nml
+ coupled_freq = 1800
+ coupled_freq_opt = 'nsecond'
+ qsw_distrb_opt = 'const'
+/
+&sw_absorption_nml
+ chl_file_fmt = 'bin'
+ chl_filename = '/home/export/online1/xwan/cesm/inputdata/ocn/pop/tx0.1v2/forcing/chlorophyll_1998-2003_monthly_20080418.ieeer8'
+ chl_option = 'file'
+ jerlov_water_type = 3
+ sw_absorption_type = 'chlorophyll'
+/
+&transports_nml
+ lat_aux_begin = -90.0
+ lat_aux_end = 90.0
+ lat_aux_grid_type = 'southern'
+ moc_requested = .false.
+ n_heat_trans_requested = .false.
+ n_lat_aux_grid = 180
+ n_salt_trans_requested = .false.
+ n_transport_reg = 2
+ transport_reg2_names = 'Atlantic Ocean', 'Mediterranean Sea', 'Labrador Sea', 'GIN Sea', 'Arctic Ocean', 'Hudson Bay'
+/
+&context_nml
+ b4b_flag = .false.
+ lccsm = .true.
+ lccsm_control_compatible = .false.
+ lcoupled = .true.
+/
+&overflows_nml
+ overflows_diag_outfile = '/home/export/online1/cesm06/dxh/workspace/cesm1_3_beta17_sehires31_newscripts/cases/run/test100_95ocn190515/./test100_95ocn190515.pop.do'
+ overflows_infile = 'unknown_overflow'
+ overflows_interactive = .false.
+ overflows_on = .false.
+ overflows_restart_type = 'ccsm_startup'
+ overflows_restfile = './test100_95ocn190515.pop.ro'
+/
+&niw_nml
+ lniw_mixing = .false.
+ niw_boundary_layer_absorption =  0.7
+ niw_energy_file = 'unknown_niw_energy'
+ niw_energy_file_fmt = 'bin'
+ niw_energy_type = 'blke'
+ niw_local_mixing_fraction = 0.5
+ niw_mix_max = 100.0
+ niw_mixing_efficiency = 0.2
+ niw_obs2model_ratio = 2.0
+ niw_vert_decay_scale = 2000.0e02
+/
+&passive_tracers_on_nml
+ iage_on = .true.
+/
+&iage_nml
+ init_iage_init_file = 'same_as_TS'
+ init_iage_option = 'ccsm_startup'
+/
